@@ -89,6 +89,45 @@ function ji_register_custom_post_types() {
     );
      
     register_post_type( 'ji-1-on-1', $args );
+
+
+    //Register Small Group CPT
+    $labels = array(
+        'name'               => _x( 'Small Group', 'post type general name' ),
+        'singular_name'      => _x( 'Small Group', 'post type singular name' ),
+        'menu_name'          => _x( 'Small Group', 'admin menu' ),
+        'name_admin_bar'     => _x( 'Small Group', 'add new on admin bar' ),
+        'add_new'            => _x( 'Add New', 'service'  ),
+        'add_new_item'       => __( 'Add New Small Group'  ),
+        'new_item'           => __( 'New Small Group' ),
+        'edit_item'          => __( 'Edit Small Group' ),
+        'view_item'          => __( 'View Small Group' ),
+        'all_items'          => __( 'All Small Group'  ),
+        'search_items'       => __( 'Search Small Group' ),
+        'parent_item_colon'  => __( 'Parent Small Group:' ),
+        'not_found'          => __( 'No Small Group found.' ),
+        'not_found_in_trash' => __( 'No Small Group found in Trash.' ),
+    );
+     
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'small-group'),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 6,
+        'menu_icon'          => 'dashicons-forms',
+        'supports'           => array( 'title' )
+    );
+     
+    register_post_type( 'ji-small-group', $args );
+    
 }
 add_action( 'init', 'ji_register_custom_post_types' );
 
@@ -148,7 +187,7 @@ function ji_register_taxonomies() {
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'training-goal' ),
     );
-    register_taxonomy( 'ji-training-goal', array( 'ji-1-on-1' ), $args );
+    register_taxonomy( 'ji-training-goal', array( 'ji-1-on-1','ji-small-group',), $args );
 
 }
 add_action( 'init', 'ji_register_taxonomies');

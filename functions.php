@@ -176,3 +176,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+* Custom Post Types & Taxonomies.
+*/
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+
+// function ji_register_custom_post_types() {
+//     $args = array(
+//         'public' => true,
+//         'label'  => 'Testimonials'
+//     );
+//     register_post_type( 'ji-testimonials', $args );
+// }
+// add_action( 'init', 'ji_register_custom_post_types' );

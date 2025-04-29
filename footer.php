@@ -12,6 +12,39 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+
+		<div class="footer-menus">
+			<nav class="footer-logo">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer-logo'
+					)
+				);
+				?>
+			</nav>
+
+			<nav class="footer-social-media">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer-social-media'
+					)
+				);
+				?>
+			</nav>
+
+			<nav class="footer-sitemap">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer-sitemap'
+					)
+				);
+				?>
+			</nav>
+		</div><!-- .footer-menus -->
+
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jifitness' ) ); ?>">
 				<?php

@@ -49,7 +49,10 @@ function jifitness_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'jifitness' ),
+			'header' => esc_html__( 'Header Menu', 'jifitness' ),
+			'footer-logo' => esc_html__( 'Footer Logo', 'jifitness' ),
+			'footer-social-media' => esc_html__( 'Footer Social Media', 'jifitness' ),
+			'footer-sitemap' => esc_html__( 'Footer Sitemap', 'jifitness' ),
 		)
 	);
 

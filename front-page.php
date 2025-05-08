@@ -10,6 +10,11 @@
 get_header();
 ?>
 
+<main id="primary" class="site-main">
+
+<h1 class="bg-red-500">Tailwind Works!!</h1>
+
+
 <section class="banner">
   <?php if ( have_rows( 'page_banner' ) ) : ?>
     <div class="swiper banner-swiper">
@@ -59,6 +64,9 @@ get_header();
     </div>
   <?php endif; ?>
 </section>
+
+</main>
+
 
 <?php
 get_footer();

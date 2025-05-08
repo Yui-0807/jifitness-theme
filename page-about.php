@@ -1,4 +1,12 @@
 <?php
+/**
+ * The template for displaying the about-us page
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Jifitness_Theme
+ */
+
 get_header();
 ?>
 
@@ -50,3 +58,12 @@ get_header();
 </main>
 
 
+
+    <main id="primary" class="site-main">
+
+            
+
+    </main>
+
+<?php
+get_footer();

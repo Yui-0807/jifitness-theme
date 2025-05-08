@@ -1,4 +1,12 @@
 <?php
+/**
+ * The template for displaying the testimonials page
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Jifitness_Theme
+ */
+
 get_header();
 ?>
 
@@ -26,3 +34,6 @@ if ( $query->have_posts() ) {
     wp_reset_postdata();
 } 
 ?>
+
+<?php
+get_footer();

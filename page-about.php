@@ -22,6 +22,7 @@ get_header();
 
     <?php get_template_part( 'template-parts/content', 'manifesto' ); ?>
 
+    <?php get_template_part( 'template-parts/content', 'contact' ); ?>
 </main>
 
 

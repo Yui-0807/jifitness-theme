@@ -47,7 +47,7 @@ function ji_register_custom_post_types() {
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
-        'menu_icon'          => 'dashicons-archive',
+        'menu_icon'          => 'dashicons-testimonial',
         'supports'           => array( 'title', 'thumbnail', 'editor' ),
     );
 
@@ -84,7 +84,7 @@ function ji_register_custom_post_types() {
         'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => 6,
-        'menu_icon'          => 'dashicons-forms',
+        'menu_icon'          => 'dashicons-welcome-learn-more',
         'supports'           => array( 'title' )
     );
      
@@ -122,7 +122,7 @@ function ji_register_custom_post_types() {
         'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => 6,
-        'menu_icon'          => 'dashicons-forms',
+        'menu_icon'          => 'dashicons-groups',
         'supports'           => array( 'title' )
     );
      

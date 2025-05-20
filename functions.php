@@ -50,7 +50,6 @@ function jifitness_setup() {
 	register_nav_menus(
 		array(
 			'header' => esc_html__( 'Header Menu', 'jifitness' ),
-			'footer-logo' => esc_html__( 'Footer Logo', 'jifitness' ),
 			'footer-social-media' => esc_html__( 'Footer Social Media', 'jifitness' ),
 			'footer-sitemap' => esc_html__( 'Footer Sitemap', 'jifitness' ),
 		)
@@ -100,6 +99,8 @@ function jifitness_setup() {
 			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
+			'header-text' => array( 'site-title', 'site-description' ),
+			'unlink-homepage-logo' => false, 
 		)
 	);
 }
@@ -142,7 +143,7 @@ add_action( 'widgets_init', 'jifitness_widgets_init' );
  */
 function jifitness_scripts() {
 	wp_enqueue_style( 'jifitness-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'tailwind-style', get_template_directory_uri().'/tailwind_output.css', array(), _S_VERSION );
+	wp_enqueue_style( 'tailwind-style', get_template_directory_uri().'/tailwind_output.css',array( 'jifitness-style' ), _S_VERSION );
 	wp_style_add_data( 'jifitness-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jifitness-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -153,10 +154,29 @@ function jifitness_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'jifitness_scripts' );
 
+// Remove the block editor from certain page
+function jifitness_post_filter( $use_block_editor, $post ) {
+    // Change the numbers of array to your Page ID
+    $page_ids = array( 40,42,36,38 );
+    if ( in_array( $post->ID, $page_ids ) ) {
+		remove_post_type_support( 'page', 'editor' ); // remove page editor then only keep the title
+        return false;
+    } else {
+        return $use_block_editor;
+    }
+}
+add_filter( 'use_block_editor_for_post', 'jifitness_post_filter', 10, 2 );
+
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Implement the Custom Footer - Social Media feature.
+ */
+require get_template_directory() . '/inc/custom-footer.php';
+
 
 /**
  * Custom template tags for this theme.

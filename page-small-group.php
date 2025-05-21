@@ -59,14 +59,14 @@ endif;
             <div class="one-on-one-item">
                 <h3><?php the_title(); ?></h3>
 
-                <?php if ( get_field('class_description_test') ): ?>
+                <?php if ( get_field('class_description') ): ?>
                     <div class="class-description">
-                        <?php echo wp_kses_post( get_field('class_description_test') ); ?>
+                        <?php echo wp_kses_post( get_field('class_description') ); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php
-                $image = get_field('class_image_test');
+                $image = get_field('class_image');
                 if ( $image ): ?>
                     <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" style="max-width:300px;" />
                 <?php endif; ?>

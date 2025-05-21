@@ -31,9 +31,6 @@ $images    = get_field( 'manifesto_images' );
                 <figure class="gallery-item">
                     <img src="<?php echo esc_url( $image['sizes']['medium'] ); ?>"
                          alt="<?php echo esc_attr( $image['alt'] ); ?>" />
-                    <?php if ( ! empty( $image['caption'] ) ) : ?>
-                        <figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
-                    <?php endif; ?>
                 </figure>
             <?php endforeach; ?>
         </div>

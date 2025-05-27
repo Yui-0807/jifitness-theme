@@ -23,12 +23,35 @@ get_header();
     <?php get_template_part( 'template-parts/content', 'manifesto' ); ?>
 
     <?php get_template_part( 'template-parts/content', 'contact' ); ?>
-</main>
 
+    <!-- studio icon -->
 
+    <?php
 
-    <main id="primary" class="site-main">
+    // Check rows exists.
+    if( have_rows('studio_description') ):
 
+        // Loop through rows.
+        while( have_rows('studio_description') ) : the_row();
+
+            // Load sub field value.
+            $icon = get_sub_field('studio_icon');
+            // Do something, but make sure you escape the value if outputting directly...
+            
+            if ($icon){
+                echo '<div class="studio-icon">';
+                echo ($icon);
+                echo '</div>';
+            } 
+        // End loop.
+        endwhile;
+
+    // No value.
+    else :
+        // Do something...
+    endif;
+    
+    ?>
             
 
     </main>

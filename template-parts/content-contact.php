@@ -46,14 +46,14 @@ if (have_rows('social_media', $menu)) {
         $social_media_links = get_sub_field('social_media_links');
         $category = get_sub_field('category');
        
-        if($category === 'Facebook'){
+        if($category === 'facebook'){
             echo '<div class="contact-item">';
             get_template_part('images/facebook');
             echo '<span>Facebook官方粉專</span>';  
             echo '<a href="' . $social_media_links . '" target="_blank" rel="noopener noreferrer">' . esc_html($title) . '</a></div>';
         }
 
-        if($category === 'Instagram'){
+        if($category === 'instagram'){
             echo '<div class="contact-item">';
             get_template_part('images/instagram');
             echo '<span>Instagram官方帳號</span>';

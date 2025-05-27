@@ -32,7 +32,7 @@ $images    = get_field( 'manifesto_images' , $page_id);
         <div class="acf-gallery">
             <?php foreach ( $images as $image ) : ?>
                 <figure class="gallery-item">
-                    <img src="<?php echo esc_url( $image['sizes']['large'] ); ?>"
+                    <img src="<?php echo esc_url( $image['sizes']['medium'] ); ?>"
                          alt="<?php echo esc_attr( $image['alt'] ); ?>" />
                 </figure>
             <?php endforeach; ?>

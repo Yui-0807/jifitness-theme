@@ -17,5 +17,6 @@
     "gulp-sourcemaps": "3.0.0",
     "postcss": "8.4.33",
     "sass": "^1.89.0"
-  }
+  },
+  "keywords": []
 }

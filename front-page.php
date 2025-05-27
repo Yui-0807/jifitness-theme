@@ -65,6 +65,38 @@ get_header();
   <?php endif; ?>
 </section>
 
+<!-- manifesto -->
+<?php
+$about_page = get_page_by_path('about'); // 假設關於頁面的 slug 是 'about'
+set_query_var('manifesto_page_id', $about_page->ID);
+get_template_part( 'template-parts/content', 'manifesto' );
+?>
+
+<!-- Fitness Classes -->
+<section>
+<h2>課程介紹</h2>
+<p>Fitness Classes</p>
+
+
+</section>
+
+<!-- Testimonials -->
+<section>
+<h2>學員推薦</h2>
+<p>Get inspired by our members</p>
+
+
+</section>
+
+<!-- Blog -->
+<section>
+<h2>Irene 教練小教室</h2>
+<p>Blog for fitness tips</p>
+
+
+</section>
+
+
 </main>
 
 

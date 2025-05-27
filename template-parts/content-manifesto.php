@@ -9,10 +9,13 @@ if ( ! function_exists( 'get_field' ) ) {
     return;
 }
 
-$heading   = get_field( 'manifesto_heading' );
-$quotation = get_field( 'manifesto_quotation' );
-$text      = get_field( 'manifesto_text' );
-$images    = get_field( 'manifesto_images' );
+
+$page_id = get_query_var('manifesto_page_id', get_the_ID());
+
+$heading   = get_field( 'manifesto_heading', $page_id );
+$quotation = get_field( 'manifesto_quotation', $page_id );
+$text      = get_field( 'manifesto_text' , $page_id);
+$images    = get_field( 'manifesto_images' , $page_id);
 
 ?>
 
@@ -29,7 +32,7 @@ $images    = get_field( 'manifesto_images' );
         <div class="acf-gallery">
             <?php foreach ( $images as $image ) : ?>
                 <figure class="gallery-item">
-                    <img src="<?php echo esc_url( $image['sizes']['medium'] ); ?>"
+                    <img src="<?php echo esc_url( $image['sizes']['large'] ); ?>"
                          alt="<?php echo esc_attr( $image['alt'] ); ?>" />
                 </figure>
             <?php endforeach; ?>

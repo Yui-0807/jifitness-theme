@@ -1,8 +1,10 @@
 
 <section class="banner">
-    <?php if (function_exists('get_field') && get_field('page_banner')) : ?>
+  <?php if (function_exists('get_field')) : 
+        $page_id = get_query_var('banner_page_id'); // get the id
+        $banner_data = get_field('page_banner', $page_id); // use the id of page
 
-    <?php while (have_rows('page_banner')) : the_row();
+    while (have_rows('page_banner', $page_id)) : the_row();
         $heading = get_sub_field('heading');
         $description = get_sub_field('description');
         $view_all = get_sub_field('view_all');

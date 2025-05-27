@@ -16,6 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		
 
 		<?php
 		if ( have_posts() ) :
@@ -26,12 +27,20 @@ get_header();
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
 				<?php
-			endif;
+			endif;?>
 
+		<!-- index.php - Banner -->
+		<?php
+		$banner_page_id = 33; // id of index.php
+		set_query_var('banner_page_id', $banner_page_id); // sent var
+		get_template_part('template-parts/content', 'banner'); // loaded into template
+		?>
+
+		<?php			
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-
+				
 				/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file

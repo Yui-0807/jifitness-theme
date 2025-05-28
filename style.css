@@ -1104,6 +1104,60 @@ header {
 	margin: 0 0 1.5em;
 }
 
+.manifesto-section {
+	text-align: center;
+	padding: 4rem 2rem;
+}
+.manifesto-section h3 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	line-height: 1.4;
+}
+.manifesto-section p {
+	max-width: 720px;
+	margin: 2rem auto 0;
+	font-size: 1.125rem;
+	line-height: 1.8;
+}
+.manifesto-section .acf-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 3rem;
+}
+.manifesto-section .acf-gallery .gallery-item {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}
+.manifesto-section .acf-gallery .gallery-item img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+.manifesto-section .acf-gallery .gallery-item:hover img {
+	transform: scale(1.05);
+}
+.manifesto-section .acf-gallery .blob-item {
+	clip-path: ellipse(50% 50% at 50% 50%);
+}
+.manifesto-section .acf-gallery .blob-1 {
+	clip-path: inset(10% 5% 15% 5% round 50% 30%);
+}
+.manifesto-section .acf-gallery .blob-2 {
+	clip-path: inset(10% 15% 15% 10% round 50% 30%);
+}
+.manifesto-section .acf-gallery .blob-3 {
+	clip-path: inset(10% 5% 15% 5% round 50% 30%);
+}
+.manifesto-section .acf-gallery .blob-4 {
+	clip-path: inset(10% 5% 15% 5% round 50% 30%);
+}
+
 .core-values-section {
 	padding: 4rem 1rem;
 	text-align: center;
@@ -1157,6 +1211,89 @@ header {
 .core-value-text {
 	font-size: 1rem;
 	line-height: 1.6;
+}
+
+.coaches {
+	padding: 4rem 1rem;
+	background-color: #f9f9f9;
+}
+
+.coach-nav {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	margin-bottom: 3rem;
+	flex-wrap: wrap;
+}
+.coach-nav .coach-nav-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	text-decoration: none;
+}
+.coach-nav .coach-nav-item img {
+	width: 64px;
+	height: 64px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	transition: border-color 0.3s ease;
+}
+.coach-nav .coach-nav-item .coach-nav-label {
+	margin-top: 0.5rem;
+	font-size: 0.85rem;
+	color: #444;
+}
+.coach-nav .coach-nav-item:hover img {
+	border-color: #000;
+}
+
+.coach-profile {
+	max-width: 800px;
+	margin: 0 auto 4rem;
+	text-align: center;
+}
+.coach-profile h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+.coach-profile img {
+	max-width: 300px;
+	width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+.coach-profile .coach-info {
+	font-size: 1rem;
+	line-height: 1.7;
+	margin-bottom: 1.5rem;
+	text-align: left;
+}
+.coach-profile blockquote {
+	font-style: italic;
+	border-left: 4px solid #ddd;
+	padding-left: 1rem;
+	color: #666;
+	margin: 1.5rem 0;
+	text-align: left;
+}
+
+.coach-cert-carousel {
+	display: flex;
+	overflow-x: auto;
+	gap: 1rem;
+	padding: 1rem 0;
+}
+.coach-cert-carousel .cert-slide {
+	flex: 0 0 auto;
+	width: 160px;
+}
+.coach-cert-carousel .cert-slide img {
+	width: 100%;
+	border-radius: 0.5rem;
 }
 
 /* Comments

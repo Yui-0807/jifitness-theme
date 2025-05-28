@@ -1,0 +1,58 @@
+.core-values-section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.core-values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.core-value-item {
+  width: 300px;
+  height: 450px;
+  padding: 5rem 2rem 2rem 2rem;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+
+   // 遮罩層讓背景變暗
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); // 黑色遮罩
+    z-index: 1;
+  }
+}
+
+  // 所有內文放上層
+  .core-value-icon,
+  .core-value-title,
+  .core-value-text {
+    position: relative;
+    z-index: 2;
+  }
+
+
+.core-value-icon {
+  width: 80px;
+  height: auto;
+}
+
+.core-value-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.core-value-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}

@@ -13,13 +13,13 @@
 
 	<footer id="colophon" class="site-footer bg-black">
 
-		<div class="footer-menus flex flex-col justify-between p-4 pb-0 [@media(min-width:37.5rem)]:grid [@media(min-width:37.5rem)]:grid-cols-2 
-            [@media(min-width:58rem)]:flex [@media(min-width:58rem)]:flex-row [@media(min-width:58rem)]:flex-wrap [@media(min-width:58rem)]:justify-around">
+		<div class="footer-menus">
 			<nav class="footer-logo">
-				<?php
-				if ( function_exists( 'the_custom_logo' ) ) {
-					the_custom_logo();
-				}
+				
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php get_template_part('images/logo'); ?>
+				</a>
+				<?php 
 
 				// get tag line
 				$jifitness_description = get_bloginfo( 'description', 'display' );
@@ -51,7 +51,7 @@
 			</nav>
 		</div><!-- .footer-menus -->
 
-		<hr class="mt-4 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+		<hr />
 		
 		<div class="site-info pb-6 text-center">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jifitness' ) ); ?>">

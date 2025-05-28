@@ -76,7 +76,55 @@ get_template_part( 'template-parts/content', 'manifesto' );
 <section>
 <h2>課程介紹</h2>
 <p>Fitness Classes</p>
+<?php
+    $args = array(
+        'post_type'      => 'ji-1-on-1',
+        'posts_per_page' => 3,
+        'tax_query' 		=> array(
+          array(
+            'taxonomy' => 'ji-featured',
+            'field' => 'slug',
+            'terms' => 'front-page',
+          )
+          ),
+          'order'      =>'ASC'
+    );
 
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post(); ?>
+
+            <article class="home-one-on-one-item">
+              <a href="<?php the_permalink(); ?>">
+                  <h3><?php the_title(); ?></h3>
+                  <?php if ( get_field('class_description') ): ?>
+                    <p class="home-class-description">
+                      <?php
+                        $class_description = get_field('class_description');
+                        if ($class_description) {
+                            // remove html tag then trim the text
+                            $text_only = strip_tags($class_description);
+                            $short_description = wp_trim_words($text_only, 60, '...繼續閱讀');
+                            echo '<div class="class-description">' . $short_description . '</div>';
+                        }
+                      ?>
+                    </p>
+                  <?php endif; ?>
+               </a>
+
+                <?php
+                $image = get_field('class_image');
+                if ( $image ): ?>
+                    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" style="max-width:300px;" />
+                <?php endif; ?>
+            </article>
+
+        <?php }
+        wp_reset_postdata();
+    }
+?>
 
 </section>
 
@@ -85,14 +133,72 @@ get_template_part( 'template-parts/content', 'manifesto' );
 <h2>學員推薦</h2>
 <p>Get inspired by our members</p>
 
+<?php
+    $args = array(
+        'post_type'      => 'ji-testimonials',
+        'posts_per_page' => 3,
+        'tax_query' 		=> array(
+          array(
+            'taxonomy' => 'ji-featured',
+            'field' => 'slug',
+            'terms' => 'front-page',
+          )
+          )
+    );
+
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post(); ?>
+
+            <article class="home-testimonials">
+              <a href="<?php the_permalink(); ?>">
+                  <h3><?php the_title(); ?></h3>
+                    <div class="home-testimonials-description">
+                    <?php the_excerpt(); ?>
+                    </div>
+              </a>
+              <?php the_post_thumbnail( 'landscape-blog' ); ?>
+            </article>
+
+        <?php }
+        wp_reset_postdata();
+    }
+?>
+
 
 </section>
 
 <!-- Blog -->
-<section>
+<section class="home-blog">
 <h2>Irene 教練小教室</h2>
 <p>Blog for fitness tips</p>
 
+			<?php $args = array(
+				'post_type' 	 => 'post',
+				'posts_per_page' => 3
+			); 
+			
+			$blog_query = new WP_Query( $args );
+			if ($blog_query -> have_posts() ){
+				while( $blog_query -> have_posts() ){
+					$blog_query -> the_post();
+					?>
+					<article>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail( 'landscape-blog' ); ?>
+							<h3><?php the_title(); ?></h3>
+              <?php the_excerpt(); ?>
+							<!-- Output the Published Date -->
+							<?php echo get_the_date(); ?>
+						</a>
+					</article>
+					<?php
+				}
+				wp_reset_postdata();
+			}
+			?>
 
 </section>
 

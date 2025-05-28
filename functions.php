@@ -199,6 +199,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Change the excerpt more text
+function fwd_excerpt_more () {
+	$more = '...<a class="read-more" href="'.esc_url( get_permalink() ).'">繼續閱讀</a>';
+	return $more;
+}
+add_filter('excerpt_more', 'fwd_excerpt_more');
+
 /**
 * Custom Post Types & Taxonomies.
 */
@@ -213,3 +220,4 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 //     register_post_type( 'ji-testimonials', $args );
 // }
 // add_action( 'init', 'ji_register_custom_post_types' );
+

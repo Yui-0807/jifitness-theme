@@ -6,6 +6,7 @@ extract($args);
 
 <!-- Testimonial Card (点击触发 Modal) -->
 <article 
+    id="modal-<?php the_ID(); ?>" <?php post_class();?>
     data-modal-target="<?php echo esc_attr( $modal_id ); ?>" 
     data-modal-toggle="<?php echo esc_attr( $modal_id ); ?>"  
     class="cursor-pointer bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"

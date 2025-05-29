@@ -39,16 +39,26 @@ get_header();
 		<?php			
 			/* Start the Loop */
 			while ( have_posts() ) :
-				the_post();
-				
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				the_post();?>
 
-			endwhile;
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<a href="<?php the_permalink(); ?>">
+						<div class="entry-header">
+							<?php the_post_thumbnail( 'landscape-blog' ); ?>
+							<p class="date"><?php echo get_the_date(); ?> </p>
+							<h2><?php the_title(); ?></h2>
+						</div><!-- .entry-header -->
+
+						<div class="entry-content">
+							<?php the_excerpt(); ?>
+						</div><!-- .entry-content -->	
+
+						<button class="read_post_link">
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+						</button>
+					</a>
+				</article><!-- #post-<?php the_ID(); ?> -->
+			<?php endwhile;
 
 			the_posts_navigation();
 

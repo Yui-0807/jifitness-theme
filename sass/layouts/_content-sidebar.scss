@@ -5,6 +5,18 @@
 		"header header"
 		"main sidebar"
 		"footer footer";
+
+
+	@include mq-down(tablet-sm) {
+
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-areas:
+			"header"
+			"main"
+			"sidebar"
+			"footer";
+	}
 }
 
 .site-header {
@@ -13,7 +25,8 @@
 
 .site-main {
 	grid-area: main;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+	overflow: hidden;
+	/* Resolves issue with <pre> elements forcing full width. */
 }
 
 .widget-area {
@@ -23,5 +36,3 @@
 .site-footer {
 	grid-area: footer;
 }
-
-@import "no-sidebar";

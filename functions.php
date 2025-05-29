@@ -168,6 +168,27 @@ function jifitness_scripts() {
 		);
 		
 	}
+	// Enqueue class-recommendation file and rest api
+	if ( is_page(36) ) {
+		wp_enqueue_script(
+            'ji-class-recomendation-scripts', 
+            get_template_directory_uri() . '/js/recommendation.js',
+            array(), // 不再需要 jQuery 作为依赖
+            _S_VERSION, 
+            true
+        );
+        
+        // 传递 REST API 基础 URL
+        wp_localize_script(
+            'ji-class-recomendation-scripts',
+            'jiFitnessVars',
+            array(
+                'apiBaseUrl' => rest_url('wp/v2'),
+                'nonce' => wp_create_nonce('wp_rest') // WordPress REST API 默认 nonce
+            )
+        );
+		
+	}
 }
 add_action( 'wp_enqueue_scripts', 'jifitness_scripts' );
 
@@ -216,6 +237,12 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Load class-recommendation file.
+ */
+require get_template_directory() . '/inc/class-recommendation.php';
+
 
 // Change the excerpt more text
 function ji_excerpt_more () {

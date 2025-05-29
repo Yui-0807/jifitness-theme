@@ -151,6 +151,32 @@ function jifitness_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Enqueue Swiper styles and scripts for homepage and team certificates
+	wp_enqueue_style( 
+		'swiper-style', 
+		'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', 
+		array(), 
+		null 
+	);
+
+	wp_enqueue_script( 
+		'swiper-script', 
+		'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', 
+		array(), 
+		null, 
+		true 
+	);
+
+	// Enqueue your custom swiper config JS
+	wp_enqueue_script( 
+		'jifitness-main', 
+		get_template_directory_uri() . '/js/main.js', 
+		array('swiper-script'), 
+		null, 
+		true 
+	);
+
+
 	// Enqueue Modal on the Homepage and Testimonials
 	if ( is_front_page() || is_page(223) ) {
 		wp_enqueue_style( 

@@ -1107,11 +1107,14 @@ header {
 .manifesto-section {
 	text-align: center;
 	padding: 4rem 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 .manifesto-section h3 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 	line-height: 1.4;
+	color: red;
 }
 .manifesto-section p {
 	max-width: 720px;
@@ -1145,15 +1148,9 @@ header {
 .manifesto-section .acf-gallery .blob-item {
 	clip-path: ellipse(50% 50% at 50% 50%);
 }
-.manifesto-section .acf-gallery .blob-1 {
-	clip-path: inset(10% 5% 15% 5% round 50% 30%);
-}
-.manifesto-section .acf-gallery .blob-2 {
-	clip-path: inset(10% 15% 15% 10% round 50% 30%);
-}
-.manifesto-section .acf-gallery .blob-3 {
-	clip-path: inset(10% 5% 15% 5% round 50% 30%);
-}
+.manifesto-section .acf-gallery .blob-1,
+.manifesto-section .acf-gallery .blob-2,
+.manifesto-section .acf-gallery .blob-3,
 .manifesto-section .acf-gallery .blob-4 {
 	clip-path: inset(10% 5% 15% 5% round 50% 30%);
 }
@@ -1161,6 +1158,8 @@ header {
 .core-values-section {
 	padding: 4rem 1rem;
 	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .core-values-grid {
@@ -1189,10 +1188,9 @@ header {
 	background: rgba(0, 0, 0, 0.45);
 	z-index: 1;
 }
-
-.core-value-icon,
-.core-value-title,
-.core-value-text {
+.core-value-item .core-value-icon,
+.core-value-item .core-value-title,
+.core-value-item .core-value-text {
 	position: relative;
 	z-index: 2;
 }
@@ -1216,6 +1214,8 @@ header {
 .coaches {
 	padding: 4rem 1rem;
 	background-color: #f9f9f9;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .coach-nav {
@@ -1231,6 +1231,7 @@ header {
 	align-items: center;
 	text-align: center;
 	text-decoration: none;
+	max-width: 90px;
 }
 .coach-nav .coach-nav-item img {
 	width: 64px;
@@ -1286,10 +1287,12 @@ header {
 	overflow-x: auto;
 	gap: 1rem;
 	padding: 1rem 0;
+	scroll-snap-type: x mandatory;
 }
 .coach-cert-carousel .cert-slide {
 	flex: 0 0 auto;
 	width: 160px;
+	scroll-snap-align: start;
 }
 .coach-cert-carousel .cert-slide img {
 	width: 100%;
@@ -1298,6 +1301,8 @@ header {
 
 .studio-environment-gallery {
 	padding: 4rem 1rem;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 .studio-environment-gallery .section-heading {
 	text-align: center;
@@ -1305,21 +1310,21 @@ header {
 	margin-bottom: 2rem;
 }
 .studio-environment-gallery .gallery-grid {
-	-moz-column-count: 3;
-	     column-count: 3;
+	-moz-column-count: 1;
+	     column-count: 1;
 	-moz-column-gap: 1.5rem;
 	     column-gap: 1.5rem;
 }
-@media (max-width: 1024px) {
+@media (min-width: 48em) {
 	.studio-environment-gallery .gallery-grid {
 		-moz-column-count: 2;
 		     column-count: 2;
 	}
 }
-@media (max-width: 600px) {
+@media (min-width: 64em) {
 	.studio-environment-gallery .gallery-grid {
-		-moz-column-count: 1;
-		     column-count: 1;
+		-moz-column-count: 3;
+		     column-count: 3;
 	}
 }
 .studio-environment-gallery .gallery-item {
@@ -1356,6 +1361,7 @@ header {
 	color: #fff;
 	text-align: center;
 	z-index: 2;
+	line-height: 1.4;
 }
 
 /* Comments

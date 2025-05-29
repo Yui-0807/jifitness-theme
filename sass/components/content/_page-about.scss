@@ -2,19 +2,20 @@
 .manifesto-section {
   text-align: center;
   padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 
-  @include mq(mobile-sm) {
-    padding: 2rem 1rem;
-  }
+  // @include mq(mobile-sm) {
+  //   padding: 2rem 1rem;
+  // }
 
   h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
     line-height: 1.4;
+    color: red;
 
-    @include mq(mobile) {
-      font-size: 1.5rem;
-    }
+
   }
 
   p {
@@ -23,10 +24,7 @@
     font-size: 1.125rem;
     line-height: 1.8;
 
-    @include mq(mobile-sm) {
-      font-size: 1rem;
-      padding: 0 1rem;
-    }
+
   }
 
   .acf-gallery {
@@ -41,10 +39,7 @@
       height: 200px;
       overflow: hidden;
 
-      @include mq(mobile) {
-        width: 100%;
-        height: auto;
-      }
+
 
       img {
         width: 100%;
@@ -53,9 +48,7 @@
         display: block;
         transition: transform 0.3s ease;
 
-        @include mq(mobile) {
-          height: auto;
-        }
+
       }
 
       &:hover img {
@@ -79,6 +72,8 @@
 .core-values-section {
   padding: 4rem 1rem;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .core-values-grid {
@@ -86,6 +81,8 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+
+
 }
 
 .core-value-item {
@@ -100,11 +97,7 @@
   overflow: hidden;
   text-align: left;
 
-  @include mq(mobile) {
-    width: 100%;
-    height: auto;
-    padding: 3rem 1.5rem;
-  }
+
 
   &::before {
     content: '';
@@ -132,23 +125,20 @@
   font-weight: bold;
   margin: 0;
 
-  @include mq(mobile-sm) {
-    font-size: 1.4rem;
-  }
+
 }
 
 .core-value-text {
   font-size: 1rem;
   line-height: 1.6;
 
-  @include mq(mobile-sm) {
-    font-size: 0.9rem;
-  }
 }
 
 .coaches {
   padding: 4rem 1rem;
   background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .coach-nav {
@@ -164,6 +154,7 @@
     align-items: center;
     text-align: center;
     text-decoration: none;
+    max-width: 90px;
 
     img {
       width: 64px;
@@ -191,10 +182,6 @@
   margin: 0 auto 4rem;
   text-align: center;
 
-  @include mq(mobile) {
-    padding: 0 1rem;
-    max-width: 95%;
-  }
 
   h3 {
     font-size: 1.5rem;
@@ -231,10 +218,12 @@
   overflow-x: auto;
   gap: 1rem;
   padding: 1rem 0;
+  scroll-snap-type: x mandatory;
 
   .cert-slide {
     flex: 0 0 auto;
     width: 160px;
+    scroll-snap-align: start;
 
     img {
       width: 100%;
@@ -244,7 +233,9 @@
 }
 
 .studio-environment-gallery {
-  padding: 4rem;
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 
   .section-heading {
     text-align: center;
@@ -253,16 +244,17 @@
   }
 
   .gallery-grid {
-    column-count: 3;
+    column-count: 1;
     column-gap: 1.5rem;
 
-    @include mq(tablet-sm) {
+      @include mq(tablet-sm) {
       column-count: 2;
     }
 
-    @include mq(mobile) {
-      column-count: 1;
+    @include mq(tablet) {
+      column-count: 3;
     }
+
   }
 
   .gallery-item {
@@ -300,6 +292,7 @@
       color: #fff;
       text-align: center;
       z-index: 2;
+      line-height: 1.4;
     }
   }
 }

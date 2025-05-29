@@ -94,10 +94,11 @@ get_template_part( 'template-parts/content', 'manifesto' );
 
     if ( $query->have_posts() ) {
         while ( $query->have_posts() ) {
-            $query->the_post(); ?>
+            $query->the_post(); 
+            $post_id = get_the_ID(); //get the post id to get to certain page section ?>
 
             <article class="home-one-on-one-item">
-              <a href="<?php the_permalink(); ?>">
+              <a href="<?php echo esc_url(home_url('/1-on-1#1-on-1-' . $post_id)); ?>">
                   <h3><?php the_title(); ?></h3>
                   <?php if ( get_field('class_description') ): ?>
                     <p class="home-class-description">
@@ -150,19 +151,19 @@ get_template_part( 'template-parts/content', 'manifesto' );
 
     if ( $query->have_posts() ) {
         while ( $query->have_posts() ) {
-            $query->the_post(); ?>
-
-            <article class="home-testimonials">
-              <a href="<?php the_permalink(); ?>">
-                  <h3><?php the_title(); ?></h3>
-                    <div class="home-testimonials-description">
-                    <?php the_excerpt(); ?>
-                    </div>
-              </a>
-              <?php the_post_thumbnail( 'landscape-blog' ); ?>
-            </article>
-
-        <?php }
+            $query->the_post(); 
+            $modal_id = 'testimonial-modal-' . get_the_ID(); // 唯一 Modal ID
+        
+        // 设置模板需要的变量
+        $template_args = array(
+           'modal_id' => $modal_id,
+           'post_title' => get_the_title(),
+           'post_content' => get_the_content(),
+           'post_thumbnail' => get_the_post_thumbnail(null, 'medium')
+       );
+       get_template_part( 'template-parts/content', 'modal', $template_args );
+       
+        }
         wp_reset_postdata();
     }
 ?>

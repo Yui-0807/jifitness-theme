@@ -150,13 +150,31 @@ function jifitness_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Enqueue Modal on the Homepage and Testimonials
+	if ( is_front_page() || is_page(223) ) {
+		wp_enqueue_style( 
+			'ji-modal-style', 
+			'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', 
+			array(), 
+			_S_VERSION
+		);
+		wp_enqueue_script( 
+			'ji-modal-scripts', 
+			'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js', 
+			array(), 
+			_S_VERSION, 
+			array( 'strategy' => 'defer' )  
+		);
+		
+	}
 }
 add_action( 'wp_enqueue_scripts', 'jifitness_scripts' );
 
 // Remove the block editor from certain page
 function jifitness_post_filter( $use_block_editor, $post ) {
     // Change the numbers of array to your Page ID
-    $page_ids = array( 40,42,36,38,33,15 );
+    $page_ids = array( 40,42,36,38,33,15,223 );
     if ( in_array( $post->ID, $page_ids ) ) {
 		remove_post_type_support( 'page', 'editor' ); // remove page editor then only keep the title
         return false;
@@ -200,11 +218,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 // Change the excerpt more text
-function fwd_excerpt_more () {
-	$more = '...<a class="read-more" href="'.esc_url( get_permalink() ).'">繼續閱讀</a>';
-	return $more;
+function ji_excerpt_more () {
+    
+	$current_post = get_post(); // 替代 global $post
+    if ($current_post && $current_post->post_type === 'ji-testimonials') {
+        return '...';
+    
+    }else{
+		// 其他文章类型显示"繼續閱讀"链接
+		return '...<a class="read-more" href="'.esc_url(get_permalink()).'">繼續閱讀</a>';
+
+	}
+    
 }
-add_filter('excerpt_more', 'fwd_excerpt_more');
+add_filter('excerpt_more', 'ji_excerpt_more');
 
 /**
 * Custom Post Types & Taxonomies.

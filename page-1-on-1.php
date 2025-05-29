@@ -54,9 +54,10 @@ endif;
 
     if ( $query->have_posts() ) {
         while ( $query->have_posts() ) {
-            $query->the_post(); ?>
+            $query->the_post(); 
+            $post_id = get_the_ID(); //get the post id to get to certain page section ?>
 
-            <div class="one-on-one-item">
+            <div class="one-on-one-item" id="1-on-1-<?php echo $post_id; ?>">
                 <h3><?php the_title(); ?></h3>
 
                 <?php if ( get_field('class_description') ): ?>

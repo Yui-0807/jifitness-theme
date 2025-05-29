@@ -97,7 +97,7 @@ get_template_part( 'template-parts/content', 'manifesto' );
             $query->the_post(); 
             $post_id = get_the_ID(); //get the post id to get to certain page section ?>
 
-            <article class="home-one-on-one-item">
+            <article id="home-post-<?php the_ID(); ?>" <?php post_class();?>>
               <a href="<?php echo esc_url(home_url('/1-on-1#1-on-1-' . $post_id)); ?>">
                   <h3><?php the_title(); ?></h3>
                   <?php if ( get_field('class_description') ): ?>
@@ -186,7 +186,7 @@ get_template_part( 'template-parts/content', 'manifesto' );
 				while( $blog_query -> have_posts() ){
 					$blog_query -> the_post();
 					?>
-					<article>
+					<article id="home-post-<?php the_ID(); ?>" <?php post_class();?> >
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'landscape-blog' ); ?>
 							<h3><?php the_title(); ?></h3>

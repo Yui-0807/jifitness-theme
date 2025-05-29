@@ -4,7 +4,6 @@ if ($team_members):
 ?>
 <section class="coaches" id="coaches">
 
-  <!-- 導覽縮圖區 -->
   <div class="coach-nav">
     <?php foreach ($team_members as $member): ?>
       <a href="#<?php echo esc_attr($member['coach_id']); ?>" class="coach-nav-item">
@@ -16,7 +15,6 @@ if ($team_members):
     <?php endforeach; ?>
   </div>
 
-  <!-- 教練內容區 -->
   <?php foreach ($team_members as $member): ?>
     <div class="coach-profile" id="<?php echo esc_attr($member['coach_id']); ?>">
       <h3><?php echo esc_html($member['coach_title'] . ' ' . $member['coach_name']); ?></h3>
@@ -36,12 +34,25 @@ if ($team_members):
       <?php endif; ?>
 
       <?php if (!empty($member['coach_certificates']) && $member['coach_id'] === 'irene'): ?>
-        <div class="coach-cert-carousel">
-          <?php foreach ($member['coach_certificates'] as $cert): ?>
-            <div class="cert-slide">
-              <img src="<?php echo esc_url($cert['url']); ?>" alt="<?php echo esc_attr($cert['alt']); ?>">
-            </div>
-          <?php endforeach; ?>
+        <div class="coach-cert-swiper swiper">
+          <div class="swiper-wrapper">
+            <?php foreach ($member['coach_certificates'] as $cert): ?>
+              <div class="swiper-slide cert-slide">
+                <div class="cert-content">
+                  <div class="cert-image">
+                    <img src="<?php echo esc_url($cert['cert_image']['url']); ?>" alt="<?php echo esc_attr($cert['cert_image']['alt']); ?>">
+                  </div>
+                  <div class="cert-text">
+                    <h4 class="cert-title"><?php echo esc_html($cert['cert_title']); ?></h4>
+                    <p class="cert-desc"><?php echo esc_html($cert['cert_desc']); ?></p>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+
+          <div class="swiper-button-prev cert-prev"></div>
+          <div class="swiper-button-next cert-next"></div>
         </div>
       <?php endif; ?>
     </div>

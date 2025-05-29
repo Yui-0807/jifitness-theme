@@ -1,0 +1,16 @@
+
+$breakpoints: (
+  mobile-sm: 20em,        // 320px - 小手機直向
+  mobile: 30em,           // 480px - 手機橫向
+  tablet-sm: 48em,        // 768px - 平板直向
+  tablet: 64em,           // 1024px - 平板橫向
+  laptop: 80em,           // 1280px - 筆電
+  desktop: 90em           // 1440px - 桌機
+);
+
+
+// 用法筆記:
+// @include mq(tablet-sm) {
+//   column-count: 2;
+// }
+

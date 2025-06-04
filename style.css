@@ -1143,7 +1143,7 @@ header {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 	line-height: 1.4;
-	color: red;
+	color: pink;
 }
 .manifesto-section p {
 	max-width: 720px;
@@ -1391,6 +1391,75 @@ header {
 	text-align: center;
 	z-index: 2;
 	line-height: 1.4;
+}
+
+.facility-features {
+	padding: 4rem 1rem;
+	background-color: #f9f9f9;
+}
+.facility-features .container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+.facility-features .section-heading {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 2.5rem;
+}
+.facility-features .features-grid {
+	list-style: none;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin: 0;
+}
+@media (min-width: 30em) {
+	.facility-features .features-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 64em) {
+	.facility-features .features-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (min-width: 80em) {
+	.facility-features .features-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+.facility-features .feature-item {
+	background-color: #fff;
+	padding: 2rem 1rem;
+	text-align: center;
+	border-radius: 8px;
+	transition: background 0.3s ease;
+	cursor: default;
+}
+.facility-features .feature-item .icon {
+	height: 40px;
+	margin-bottom: 1rem;
+}
+.facility-features .feature-item .icon img {
+	max-height: 100%;
+	filter: grayscale(1);
+	opacity: 0.6;
+	transition: all 0.3s ease;
+}
+.facility-features .feature-item p {
+	font-size: 1rem;
+	color: #444;
+	transition: color 0.3s ease;
+}
+.facility-features .feature-item:hover {
+	background-color: #333;
+}
+.facility-features .feature-item:hover .icon img {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg);
+	opacity: 1;
+}
+.facility-features .feature-item:hover p {
+	color: #fff;
 }
 
 /* 課程推薦系統樣式 */

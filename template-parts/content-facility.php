@@ -1,7 +1,7 @@
 <?php
 
 
-$heading = get_field('facilities_and_rental_info_heading');
+$heading = get_field('facilities_and_rental_info');
 $features = get_field('facility_features');
 
 if ($features) :

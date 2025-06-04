@@ -26,8 +26,6 @@
 
 .option-card {
     display: block;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
     padding: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -118,4 +116,96 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/* 按钮状态 */
+.next-step {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.next-step:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #ccc !important;
+}
+
+/* 加载动画 */
+.spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 选项卡片 */
+.option-card {
+    display: block;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.option-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.option-content {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.option-card input:checked + .option-content {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+/* 错误提示 */
+.error {
+    color: #dc2626;
+    padding: 15px;
+    background: #fee2e2;
+    border-radius: 8px;
+}
+
+/* 加载状态样式 */
+.loading-spinner, 
+.loading-placeholder {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+}
+
+.loading-spinner:after {
+    content: "↻";
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 步骤容器 */
+.step {
+    display: none;
+    padding: 2rem 0;
+}
+
+.step.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

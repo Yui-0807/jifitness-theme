@@ -646,34 +646,30 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-.site {
+.blog .site {
 	display: grid;
 	grid-template-columns: auto 25%;
-	grid-template-areas: "header header" "main sidebar" "footer footer";
+	grid-template-areas: "header" "main" "sidebar" "footer";
 }
-@media (max-width: 47.9375em) {
-	.site {
+@media (min-width: 20em) {
+	.blog .site {
 		display: grid;
 		grid-template-columns: auto;
-		grid-template-areas: "header" "main" "sidebar" "footer";
+		grid-template-areas: "header header" "main sidebar" "footer footer";
 	}
 }
-
-.site-header {
+.blog .site-header {
 	grid-area: header;
 }
-
-.site-main {
+.blog .site-main {
 	grid-area: main;
 	overflow: hidden;
 	/* Resolves issue with <pre> elements forcing full width. */
 }
-
-.widget-area {
+.blog .widget-area {
 	grid-area: sidebar;
 }
-
-.site-footer {
+.blog .site-footer {
 	grid-area: footer;
 }
 
@@ -1143,33 +1139,17 @@ header {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-@media (min-width: 20em) {
-	.manifesto-section {
-		padding: 2rem 1rem;
-	}
-}
 .manifesto-section h3 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 	line-height: 1.4;
 	color: red;
 }
-@media (min-width: 30em) {
-	.manifesto-section h3 {
-		font-size: 1.5rem;
-	}
-}
 .manifesto-section p {
 	max-width: 720px;
 	margin: 2rem auto 0;
 	font-size: 1.125rem;
 	line-height: 1.8;
-}
-@media (min-width: 20em) {
-	.manifesto-section p {
-		font-size: 1rem;
-		padding: 0 1rem;
-	}
 }
 .manifesto-section .acf-gallery {
 	display: flex;
@@ -1183,12 +1163,6 @@ header {
 	height: 200px;
 	overflow: hidden;
 }
-@media (min-width: 30em) {
-	.manifesto-section .acf-gallery .gallery-item {
-		width: 100%;
-		height: auto;
-	}
-}
 .manifesto-section .acf-gallery .gallery-item img {
 	width: 100%;
 	height: 100%;
@@ -1196,11 +1170,6 @@ header {
 	   object-fit: cover;
 	display: block;
 	transition: transform 0.3s ease;
-}
-@media (min-width: 30em) {
-	.manifesto-section .acf-gallery .gallery-item img {
-		height: auto;
-	}
 }
 .manifesto-section .acf-gallery .gallery-item:hover img {
 	transform: scale(1.05);
@@ -1241,13 +1210,6 @@ header {
 	overflow: hidden;
 	text-align: left;
 }
-@media (min-width: 30em) {
-	.core-value-item {
-		width: 100%;
-		height: auto;
-		padding: 3rem 1.5rem;
-	}
-}
 .core-value-item::before {
 	content: "";
 	position: absolute;
@@ -1272,20 +1234,10 @@ header {
 	font-weight: bold;
 	margin: 0;
 }
-@media (min-width: 20em) {
-	.core-value-title {
-		font-size: 1.4rem;
-	}
-}
 
 .core-value-text {
 	font-size: 1rem;
 	line-height: 1.6;
-}
-@media (min-width: 20em) {
-	.core-value-text {
-		font-size: 0.9rem;
-	}
 }
 
 .coaches {
@@ -1333,12 +1285,6 @@ header {
 	margin: 0 auto 4rem;
 	text-align: center;
 }
-@media (min-width: 30em) {
-	.coach-profile {
-		padding: 0 1rem;
-		max-width: 95%;
-	}
-}
 .coach-profile h3 {
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
@@ -1383,13 +1329,9 @@ header {
 }
 
 .studio-environment-gallery {
-<<<<<<< HEAD
-	padding: 4rem;
-=======
 	padding: 4rem 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
->>>>>>> origin/main
 }
 .studio-environment-gallery .section-heading {
 	text-align: center;
@@ -1408,11 +1350,7 @@ header {
 		     column-count: 2;
 	}
 }
-<<<<<<< HEAD
-@media (min-width: 30em) {
-=======
 @media (min-width: 64em) {
->>>>>>> origin/main
 	.studio-environment-gallery .gallery-grid {
 		-moz-column-count: 3;
 		     column-count: 3;
@@ -1483,8 +1421,6 @@ header {
 
 .option-card {
 	display: block;
-	border: 2px solid #e0e0e0;
-	border-radius: 8px;
 	padding: 1.5rem;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -1577,6 +1513,109 @@ header {
 	border-width: 0;
 }
 
+/* 按钮状态 */
+.next-step {
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.next-step:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+	background-color: #ccc !important;
+}
+
+/* 加载动画 */
+.spinner {
+	display: inline-block;
+	animation: spin 1s linear infinite;
+	margin-right: 8px;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* 选项卡片 */
+.option-card {
+	display: block;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+.option-card input[type=radio] {
+	position: absolute;
+	opacity: 0;
+}
+
+.option-content {
+	padding: 15px;
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	transition: all 0.3s;
+}
+
+.option-card input:checked + .option-content {
+	border-color: #3b82f6;
+	background-color: #eff6ff;
+}
+
+/* 错误提示 */
+.error {
+	color: #dc2626;
+	padding: 15px;
+	background: #fee2e2;
+	border-radius: 8px;
+}
+
+/* 加载状态样式 */
+.loading-spinner,
+.loading-placeholder {
+	padding: 2rem;
+	text-align: center;
+	color: #666;
+}
+
+.loading-spinner:after {
+	content: "↻";
+	display: inline-block;
+	animation: spin 1s linear infinite;
+	margin-left: 8px;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* 步骤容器 */
+.step {
+	display: none;
+	padding: 2rem 0;
+}
+
+.step.active {
+	display: block;
+	animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 .blog a {
 	color: #4f4f4f;
 }
@@ -1584,11 +1623,11 @@ header {
 	padding-bottom: 1rem;
 	margin: 1rem;
 	margin-bottom: 2rem;
-	background-color: #D2D2D2;
-	display: flex;
-	flex-direction: column;
+	background-color: #f5f5f5;
 }
-.blog .site-main article .date, .blog .site-main article h2, .blog .site-main article .entry-content {
+.blog .site-main article .date,
+.blog .site-main article h2,
+.blog .site-main article .entry-content {
 	padding: 0 1rem;
 }
 .blog .site-main article .date {
@@ -1600,6 +1639,8 @@ header {
 }
 .blog .site-main article a {
 	text-decoration: none;
+	display: flex;
+	flex-direction: column;
 }
 .blog .site-main article img {
 	width: 100%;
@@ -1612,6 +1653,11 @@ header {
 @media (min-width: 30em) {
 	.blog .site-main article img {
 		height: 20rem;
+	}
+}
+@media (min-width: 48em) {
+	.blog .site-main article {
+		flex-direction: row;
 	}
 }
 .blog .read_post_link {

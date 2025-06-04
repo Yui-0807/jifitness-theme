@@ -56,6 +56,8 @@ get_header();
     <?php get_template_part( 'template-parts/content', 'team' ); ?>
 
     <?php get_template_part( 'template-parts/content', 'studio-environment' ); ?>
+
+    <?php get_template_part( 'template-parts/content', 'facility' ); ?>
    
     <?php get_template_part( 'template-parts/content', 'contact' ); ?>
 
@@ -92,4 +94,5 @@ get_header();
     </main>
 
 <?php
+
 get_footer();

@@ -8,6 +8,13 @@ if ( ! function_exists( 'get_field' ) ) {
 <section class="rental-pricing-section">
   <div class="container">
 
+     <?php
+    $heading = get_field('rental_pricing_table_heading');
+    ?>
+    <?php if ( $heading ) : ?>
+    <h2 class="section-heading"><?php echo esc_html( $heading ); ?></h2>
+    <?php endif; ?>
+
     <?php if (have_rows('pricing_sections')) : ?>
       <div class="pricing-table">
         <?php while (have_rows('pricing_sections')) : the_row(); ?>
@@ -22,8 +29,8 @@ if ( ! function_exists( 'get_field' ) ) {
               <table class="rental-fee-table">
                 <thead>
                   <tr>
-                    <th>租借時數</th>
-                    <th>價格</th>
+                    <th>時數</th>
+                    <th>費用</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -31,24 +31,42 @@ $query = new WP_Query( $args );
 
 if ( $query->have_posts() ) {
     while( $query->have_posts() ) {
-        $query->the_post(); 
-        $modal_id = 'testimonial-modal-' . get_the_ID(); // 唯一 Modal ID
-        
-         // 设置模板需要的变量
-         $template_args = array(
-            'modal_id' => $modal_id,
-            'post_title' => get_the_title(),
-            'post_content' => get_the_content(),
-            'post_thumbnail' => get_the_post_thumbnail(null, 'medium')
-        );
-        get_template_part( 'template-parts/content', 'modal', $template_args );
-        
+        $query->the_post(); ?>
+
+        <div class="testimonial-card">
+            <!-- Model btn -->
+            <label for="modal-<?php echo get_the_ID(); ?>" >
+            <?php if (has_post_thumbnail()) : ?>
+                <div class="testimonial-card__image">
+                <?php the_post_thumbnail('medium', ['class' => 'w-full h-auto']); ?>
+                </div>
+            <?php endif; ?>
+            <div class="testimonial-card__content">
+                <h2><?php the_title(); ?></h2>
+                <?php the_excerpt(); ?>
+            </div>
+            </label>
+        </div>
+
+        <!-- Modal content -->
+        <input type="checkbox" id="modal-<?php echo get_the_ID(); ?>" class="modal-state">
+        <div class="modal">
+            <label for="modal-<?php echo get_the_ID(); ?>" class="modal__bg"></label>
+            <div class="modal__inner">
+                <label class="modal__close" for="modal-<?php echo get_the_ID(); ?>"></label>
+                <h2><?php the_title(); ?></h2>
+                <div class="modal__content">
+                    <?php the_post_thumbnail('large'); ?>
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
+
+    <?php            
     }
     wp_reset_postdata();
 } 
 ?>
-
-
 
 </main>
 <?php

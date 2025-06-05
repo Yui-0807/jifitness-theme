@@ -177,23 +177,23 @@ function jifitness_scripts() {
 	);
 
 
-	// Enqueue Modal on the Homepage and Testimonials
-	if ( is_front_page() || is_page(223) ) {
-		wp_enqueue_style( 
-			'ji-modal-style', 
-			'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', 
-			array(), 
-			_S_VERSION
-		);
-		wp_enqueue_script( 
-			'ji-modal-scripts', 
-			'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js', 
-			array(), 
-			_S_VERSION, 
-			array( 'strategy' => 'defer' )  
-		);
+	// // Enqueue Modal on the Homepage and Testimonials
+	// if ( is_front_page() || is_page(223) ) {
+	// 	wp_enqueue_style( 
+	// 		'ji-modal-style', 
+	// 		'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', 
+	// 		array(), 
+	// 		_S_VERSION
+	// 	);
+	// 	wp_enqueue_script( 
+	// 		'ji-modal-scripts', 
+	// 		'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js', 
+	// 		array(), 
+	// 		_S_VERSION, 
+	// 		array( 'strategy' => 'defer' )  
+	// 	);
 		
-	}
+	// }
 	// Enqueue class-recommendation file and rest api
 	if ( is_page(36) ) {
 		

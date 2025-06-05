@@ -2213,6 +2213,18 @@ header {
 	display: block;
 }
 
+.banner-wave {
+	position: relative;
+	width: 100%;
+	margin-top: -2vw;
+	z-index: 5;
+}
+.banner-wave img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {

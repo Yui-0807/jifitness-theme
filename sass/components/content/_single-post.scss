@@ -1,0 +1,10 @@
+.wp-singular .site-main {
+    margin: 1rem;
+
+    .post-thumbnail img {
+        height: 368px;
+        display: block;
+        object-fit: cover;
+        object-position: center 25%;
+    }
+}

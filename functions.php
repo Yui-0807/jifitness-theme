@@ -282,15 +282,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 // Change the excerpt more text
 function ji_excerpt_more () {
     
-	$current_post = get_post(); // 替代 global $post
-    if ($current_post && $current_post->post_type === 'ji-testimonials') {
-        return '...';
-    
-    }else{
-		// 其他文章类型显示"繼續閱讀"链接
-		return '...<a class="read-more" href="'.esc_url(get_permalink()).'">繼續閱讀</a>';
-
-	}
+	$more = '...';
+	return $more;
     
 }
 add_filter('excerpt_more', 'ji_excerpt_more');

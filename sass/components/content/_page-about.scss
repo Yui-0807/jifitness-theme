@@ -13,7 +13,7 @@
     font-size: 2rem;
     margin-bottom: 1rem;
     line-height: 1.4;
-    color: red;
+    color: pink;
 
 
   }
@@ -293,6 +293,161 @@
       text-align: center;
       z-index: 2;
       line-height: 1.4;
+    }
+  }
+}
+
+
+//-------------------------------facility
+.facility-features {
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .features-grid {
+    list-style: none; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin:0;
+
+    @include mq(mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mq(laptop) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .feature-item {
+    background-color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    cursor: default;
+
+    .icon {
+      height: 40px;
+      margin-bottom: 1rem;
+
+      img {
+        max-height: 100%;
+        filter: grayscale(1);
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      background-color: #333;
+
+      .icon img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(180deg);
+        opacity: 1;
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+//-------------------Rental pricing 
+
+.rental-pricing-section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+
+    .pricing-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include mq(laptop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .venue-block {
+      flex: 1;
+      border: 1px solid #ddd;
+      padding: 2rem;
+      border-radius: 10px;
+      background-color: #fff;
+
+      @include mq(laptop) {
+        max-width: 48%;
+      }
+
+      .venue-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #0077b6;
+      }
+
+      .rental-fee-table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+        th, td {
+          font-size: 0.95rem;
+          text-align: left;
+        }
+      }
+
+      .equipment-description {
+        .equipment-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+
+          @include mq(tablet) {
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+
+          .equipment-floor {
+            flex: 1 1 45%;
+
+            h5 {
+              font-size: 1rem;
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .floor-items {
+              font-size: 0.95rem;
+              line-height: 1.6;
+              text-align: left;
+            }
+          }
+        }
+      }
     }
   }
 }

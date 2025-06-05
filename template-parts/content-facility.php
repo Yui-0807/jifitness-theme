@@ -1,7 +1,7 @@
 <?php
 
 
-$heading = get_field('facilities_and_rental_info_heading');
+$heading = get_field('facilities_and_rental_info');
 $features = get_field('facility_features');
 
 if ($features) :
@@ -13,12 +13,12 @@ if ($features) :
       <h2 class="section-heading"><?php echo esc_html($heading); ?></h2>
     <?php endif; ?>
 
-    <div class="features-grid">
+    <ul class="features-grid">
       <?php foreach ($features as $feature):
         $icon = $feature['facility_icon'];
         $label = $feature['facility_label'];
       ?>
-        <div class="feature-item">
+        <li class="feature-item">
           <?php if ($icon): ?>
             <div class="icon">
               <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($label); ?>" />
@@ -27,9 +27,10 @@ if ($features) :
           <?php if ($label): ?>
             <p><?php echo esc_html($label); ?></p>
           <?php endif; ?>
-        </div>
+        </li>
       <?php endforeach; ?>
-    </div>
+    </ul>
+
   </div>
 </section>
 

@@ -1912,14 +1912,25 @@ header {
 	background: #fff;
 	border-radius: 5px;
 	padding: 1em 2em;
-	height: 70%;
+	height: 65%;
 	box-sizing: border-box;
 }
 @media (min-width: 48em) {
 	.modal__inner {
 		width: 75%;
-		height: 50%;
+		height: 60%;
 	}
+}
+.modal__inner h2 {
+	font-size: 2rem;
+}
+.modal__inner .modal__content img {
+	width: 100%;
+	height: 360px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	-o-object-position: center top;
+	   object-position: center top;
 }
 
 .modal__close {
@@ -1954,19 +1965,47 @@ header {
 	transform: rotate(-45deg);
 }
 
+/* testimonial card 
+ * =============================== */
 .testimonial-card {
-	margin-top: 3rem;
+	margin: 3rem auto;
+	max-width: 1000px;
+}
+@media (min-width: 48em) {
+	.testimonial-card label {
+		display: flex;
+		gap: 2rem;
+	}
 }
 
+@media (min-width: 48em) {
+	.testimonial-card__image {
+		max-width: 360px;
+		max-height: 180px;
+		overflow: hidden;
+	}
+}
 .testimonial-card__image img {
 	width: 100%;
 	height: 15rem;
 	-o-object-fit: cover;
 	   object-fit: cover;
+	-o-object-position: center top;
+	   object-position: center top;
+}
+@media (min-width: 48em) {
+	.testimonial-card__image img {
+		height: 100%;
+	}
 }
 
 .testimonial-card__content {
 	margin-top: 1rem;
+}
+@media (min-width: 48em) {
+	.testimonial-card__content {
+		margin-top: 0;
+	}
 }
 
 .banner {

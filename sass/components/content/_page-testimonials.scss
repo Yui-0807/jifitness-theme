@@ -48,12 +48,30 @@
     background: #fff;
     border-radius: 5px;
     padding: 1em 2em;
-    height: 70%;
+    height: 65%;
     box-sizing: border-box;
+
+    @include mq(600px) {
+        height: 50%;
+    }
 
     @include mq(tablet-sm) {
         width: 75%;
-        height: 50%;
+        height: 60%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .modal__content {
+
+        img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            object-position: center top;
+        }
     }
 }
 
@@ -89,22 +107,44 @@
     transform: rotate(-45deg);
 }
 
-//  testimonial card 
+/* testimonial card 
+ * =============================== */
 .testimonial-card {
-    margin-top: 3rem;
-    
+    margin: 3rem auto;
+    max-width: 1000px;
+
+    @include mq(tablet-sm) {
+        label {
+            display: flex;
+            gap: 2rem;
+        }
+    }
 }
 
 .testimonial-card__image {
-    // max-height: 180px;
-    img{
+
+    @include mq(tablet-sm) {
+        max-width: 360px;
+        max-height: 180px;
+        overflow: hidden;
+    }
+
+    img {
         width: 100%;
         height: 15rem;
         object-fit: cover;
+        object-position: center top;
+
+        @include mq(tablet-sm) {
+            height: 100%;
+        }
     }
 }
 
 .testimonial-card__content {
-margin-top: 1rem;
+    margin-top: 1rem;
 
+    @include mq(tablet-sm) {
+        margin-top: 0;
+    }
 }

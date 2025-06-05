@@ -133,60 +133,60 @@ get_template_part( 'template-parts/content', 'manifesto' );
 <section>
 <h2>學員推薦</h2>
 <p>Get inspired by our members</p>
+  <div class="home-modals">
+    <?php
+        $args = array(
+            'post_type'      => 'ji-testimonials',
+            'posts_per_page' => 3,
+            'tax_query' 		=> array(
+              array(
+                'taxonomy' => 'ji-featured',
+                'field' => 'slug',
+                'terms' => 'front-page',
+              )
+              )
+        );
 
-<?php
-    $args = array(
-        'post_type'      => 'ji-testimonials',
-        'posts_per_page' => 3,
-        'tax_query' 		=> array(
-          array(
-            'taxonomy' => 'ji-featured',
-            'field' => 'slug',
-            'terms' => 'front-page',
-          )
-          )
-    );
+        $query = new WP_Query( $args );
 
-    $query = new WP_Query( $args );
+        if ( $query->have_posts() ) {
+            while ( $query->have_posts() ) {
+                $query->the_post(); ?>
 
-    if ( $query->have_posts() ) {
-        while ( $query->have_posts() ) {
-            $query->the_post(); ?>
-
-        <!-- Model btn -->
-        <label for="modal-<?php echo get_the_ID(); ?>" class="testimonial-card">
-        <?php if (has_post_thumbnail()) : ?>
-            <div class="testimonial-card__image">
-            <?php the_post_thumbnail('medium', ['class' => 'w-full h-auto']); ?>
+            <!-- Model btn -->
+            <label for="modal-<?php echo get_the_ID(); ?>" class="testimonial-card">
+            <?php if (has_post_thumbnail()) : ?>
+                <div class="testimonial-card__image">
+                <?php the_post_thumbnail('medium', ['class' => 'w-full h-auto']); ?>
+                </div>
+            <?php endif; ?>
+            <div class="testimonial-card__content">
+                <h3><?php the_title(); ?></h3>
+                <?php the_excerpt(); ?>
             </div>
-        <?php endif; ?>
-        <div class="testimonial-card__content">
-            <h3><?php the_title(); ?></h3>
-            <?php the_excerpt(); ?>
-        </div>
-        </label>
+            </label>
 
-        <!-- Modal content -->
-        <input type="checkbox" id="modal-<?php echo get_the_ID(); ?>" class="modal-state">
-        <div class="modal">
-        <label for="modal-<?php echo get_the_ID(); ?>" class="modal__bg"></label>
-        <div class="modal__inner">
-            <label class="modal__close" for="modal-<?php echo get_the_ID(); ?>"></label>
-            <h3><?php the_title(); ?></h3>
-            <div class="modal__content">
-            <?php the_post_thumbnail('large'); ?>
-            <?php the_content(); ?>
+            <!-- Modal content -->
+            <input type="checkbox" id="modal-<?php echo get_the_ID(); ?>" class="modal-state">
+            <div class="modal">
+            <label for="modal-<?php echo get_the_ID(); ?>" class="modal__bg"></label>
+            <div class="modal__inner">
+                <label class="modal__close" for="modal-<?php echo get_the_ID(); ?>"></label>
+                <h3><?php the_title(); ?></h3>
+                <div class="modal__content">
+                <?php the_post_thumbnail('large'); ?>
+                <?php the_content(); ?>
+                </div>
             </div>
-        </div>
-        </div>
+            </div>
 
-    <?php            
+        <?php            
+            }
+            wp_reset_postdata();
         }
-        wp_reset_postdata();
-    }
-?>
+    ?>
 
-
+  </div>
 </section>
 
 <!-- Blog -->

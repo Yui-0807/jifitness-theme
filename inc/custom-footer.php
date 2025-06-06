@@ -74,10 +74,14 @@ function my_wp_nav_menu_items( $items, $args ) {
         if ($phone) {
             $social_items .= '<li class="menu-item-phone">電話： ' . esc_html($phone) . '</li>';
         }
-
-        if ($email) {
-            $social_items .= '<li class="menu-item-email">電子郵件： ' . esc_html($email) . '</li>';
-        }
+		
+		if ($line_id && isset($line_id['user_line_id'])) {
+			$social_items .= '<li class="menu-item-lineid">Line ID： '. esc_html($line_id['user_line_id'] ?? ''). '</li>';
+		}
+		
+		if ($email) {
+			$social_items .= '<li class="menu-item-email">電子郵件： ' . esc_html($email) . '</li>';
+		}
 		
 		$social_items .= '</ul>';
 

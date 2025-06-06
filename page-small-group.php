@@ -54,9 +54,11 @@ endif;
 
     if ( $query->have_posts() ) {
         while ( $query->have_posts() ) {
-            $query->the_post(); ?>
+            $query->the_post(); 
+            $post_id = get_the_ID();
+            ?>
 
-            <div class="one-on-one-item">
+            <div class="small-group-item" id="small-group-<?php echo esc_attr( $post_id ); ?>">
                 <h3><?php the_title(); ?></h3>
 
                 <?php if ( get_field('class_description') ): ?>

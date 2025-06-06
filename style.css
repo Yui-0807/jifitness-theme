@@ -1536,6 +1536,129 @@ header {
 	text-align: left;
 }
 
+.contact-section {
+	padding: 3rem 1rem;
+	background-color: #fff;
+}
+.contact-section .contact-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.contact-section .contact-left {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.contact-section .contact-left .contact-item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	line-height: 1.5;
+}
+.contact-section .contact-left .contact-item .icon-wrapper {
+	width: 40px;
+	height: 40px;
+	min-width: 40px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.contact-section .contact-left .contact-item .icon-wrapper img,
+.contact-section .contact-left .contact-item .icon-wrapper svg {
+	width: 20px;
+	height: 20px;
+}
+.contact-section .contact-left .contact-item .contact-text {
+	flex: 1;
+}
+.contact-section .contact-left .contact-item .contact-text span {
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.2rem;
+}
+.contact-section .contact-left .contact-item .contact-text p,
+.contact-section .contact-left .contact-item .contact-text a {
+	margin: 0;
+	font-size: 1rem;
+	color: #333;
+}
+.contact-section .contact-left .contact-item.line-item {
+	align-items: flex-start;
+}
+.contact-section .contact-left .contact-item.line-item .contact-text {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+.contact-section .contact-left .contact-item.line-item .contact-text .line-id {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.contact-section .contact-left .contact-item.line-item .contact-text .line-id img {
+	width: 64px;
+	height: auto;
+	border-radius: 4px;
+}
+.contact-section .contact-right .contact-image-wrapper {
+	position: relative;
+}
+.contact-section .contact-right .contact-image-wrapper .responsive-contact-image {
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+	display: block;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+.contact-section .contact-right .contact-image-wrapper .contact-words {
+	margin-top: 1.5rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #004990;
+	text-align: center;
+	line-height: 1.4;
+}
+@media (min-width: 30em) {
+	.contact-section .contact-right .contact-image-wrapper .contact-words {
+		font-size: 2rem;
+	}
+}
+@media (min-width: 48em) {
+	.contact-section .contact-wrapper {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	.contact-section .contact-left {
+		flex: 1 1 45%;
+	}
+	.contact-section .contact-right {
+		flex: 1 1 50%;
+	}
+	.contact-section .contact-right .contact-image-wrapper .contact-words {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		background: rgba(255, 255, 255, 0.8);
+		padding: 1rem 1.5rem;
+		border-radius: 8px;
+		font-size: 2rem;
+		font-weight: bold;
+		color: #004990;
+		text-align: right;
+		line-height: 1.4;
+	}
+}
+.contact-section img[alt~=Line][alt~=QR][alt~=Code] {
+	display: none !important;
+}
+
 /* 課程推薦系統樣式 */
 .course-recommendation-container {
 	max-width: 800px;
@@ -2088,6 +2211,80 @@ header {
 	aspect-ratio: 1440/200;
 	z-index: 100;
 	display: block;
+}
+
+.banner-wave {
+	position: relative;
+	width: 100%;
+	margin-top: -2vw;
+	z-index: 5;
+}
+.banner-wave img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.page-1-on-1 section {
+	padding: 3rem 1rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.page-1-on-1 section:first-of-type h2 {
+	color: #0072bc;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	font-weight: 700;
+}
+.page-1-on-1 section:first-of-type .intro-text {
+	font-size: 1.0625rem;
+	line-height: 1.8;
+	margin-bottom: 2rem;
+}
+@media (min-width: 48em) {
+	.page-1-on-1 section:first-of-type h2 {
+		font-size: 1.75rem;
+	}
+	.page-1-on-1 section:first-of-type .intro-text {
+		font-size: 1.125rem;
+	}
+}
+.page-1-on-1 .one-on-one-item {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-bottom: 3rem;
+}
+.page-1-on-1 .one-on-one-item img {
+	width: 100%;
+	border-radius: 0.5rem;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+.page-1-on-1 .one-on-one-item .text-block h3 {
+	color: #07699e;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+.page-1-on-1 .one-on-one-item .text-block .class-description {
+	font-size: 1.125rem;
+	line-height: 1.8;
+}
+@media (min-width: 48em) {
+	.page-1-on-1 .one-on-one-item {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	.page-1-on-1 .one-on-one-item.reverse {
+		flex-direction: row-reverse;
+	}
+	.page-1-on-1 .one-on-one-item img {
+		flex: 1;
+		max-width: 360px;
+	}
+	.page-1-on-1 .one-on-one-item .text-block {
+		flex: 2;
+	}
 }
 
 /* Comments

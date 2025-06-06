@@ -128,28 +128,29 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-  }
-  
-  @media (min-width: 640px) {
+}
+
+@media (min-width: 640px) {
 	.site-header {
-	  flex-direction: column;
+		flex-direction: column;
 	}
-  }
-  .site-branding {
+}
+
+.site-branding {
 	display: flex;
 	align-items: center;
-  }
-	
-  .main-navigation {
+}
+
+.main-navigation {
 	align-content: center;
-  }
-  
-  @media (min-width: 640px) {
+}
+
+@media (min-width: 640px) {
 	.main-navigation {
-	  background-color: #4b5563; /* Tailwind's gray-600 */
+		background-color: #4b5563;
 	}
-  }
-  
+}
+
 
 .main-navigation .menu-header-container {
 	position: absolute;
@@ -198,8 +199,6 @@ header {
 	max-height: 12.5rem;
 }
 
-
-
 @media screen and (min-width: 37.5em) {
 
 	body {
@@ -229,9 +228,7 @@ header {
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 1rem;
-	/* equivalent to p-4 */
 	padding-bottom: 0;
-	/* equivalent to pb-0 */
 }
 
 @media (min-width: 37.5rem) {
@@ -257,34 +254,36 @@ header {
 	width: auto;
 }
 
-.menu-footer-social-media-container {
-	margin: 2rem 0;
-}
-
 .menu-item-social svg {
 	filter: invert(1) brightness(1.2);
 	width: 2.5rem;
 	height: 2.5rem;
 }
 
-.menu-footer-social-media-container #menu-footer-social-media {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	align-items: center;
+.menu-footer-social-media-container {
+	margin: 2rem 0;
+
+	#menu-footer-social-media {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		align-items: center;
+	}
+
+	img {
+		height: 5rem;
+		margin: 1.5rem 0;
+	}
 }
 
-.menu-footer-social-media-container img {
-	height: 5rem;
-	margin: 1.5rem 0;
-}
 
 .menu-item-social.menu-item-google-form a {
 	padding: 0.5rem 1.5rem;
 	border: 1px solid #ffffff;
 	border-radius: 2rem;
 	background-color: #fff;
-
+	text-decoration: none;
+	color: #333;
 }
 
 .contact-info {
@@ -298,22 +297,26 @@ header {
 	padding: 0;
 }
 
-.menu-footer-sitemap-container a {
-	display: block;
-	width: 100%;
-	padding: 0.5rem;
-}
+.menu-footer-sitemap-container {
 
-.menu-footer-sitemap-container a:visited {
-	color: white;
-}
+	a {
+		display: block;
+		width: 100%;
+		padding: 0.5rem;
+	}
 
-.menu-footer-sitemap-container ul>li>ul>li a:visited {
-	color: gray;
-}
+	a:visited {
+		color: white;
+	}
 
-.menu-footer-sitemap-container a:hover {
-	text-decoration: underline;
+	ul>li>ul>li a:visited {
+		color: gray;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
 }
 
 .menu-footer-sitemap-container>ul>li {
@@ -384,15 +387,18 @@ header {
 	}
 
 
-	.menu-footer-sitemap-container ul {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
+	.menu-footer-sitemap-container {
 
-	.menu-footer-sitemap-container li {
-		display: block;
-		width: 50%;
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		li {
+			display: block;
+			width: 50%;
+		}
 	}
 
 	.menu-footer-sitemap-container>ul>li:not(:last-child) {
@@ -418,41 +424,46 @@ header {
 		padding-top: 0;
 	}
 
-	.menu-footer-sitemap-container ul {
-		height: max-content;
-		justify-content: space-between;
-	}
+	.menu-footer-sitemap-container {
+		ul {
+			height: max-content;
+			justify-content: space-between;
+		}
 
-	.menu-footer-sitemap-container li {
-		width: 200px;
+		li {
+			width: 200px;
+		}
 	}
 
 }
 
-.site-footer{
-	background-color:#333;
+.site-footer {
+	background-color: #333;
 }
 
 .site-footer hr {
-	margin-top: 1rem; /* mt-4 */
-  
-	border-color: #e5e7eb; /* border-gray-200 */
-  }
-  
-  @media (min-width: 640px) {
+	margin-top: 1rem;
+	/* mt-4 */
+
+	border-color: #e5e7eb;
+	/* border-gray-200 */
+}
+
+@media (min-width: 640px) {
 	.site-footer hr {
-	  margin-left: auto;
-	  margin-right: auto;
+		margin-left: auto;
+		margin-right: auto;
 	}
-  }
-  
-  @media (min-width: 1024px) {
+}
+
+@media (min-width: 1024px) {
 	.site-footer hr {
-	  margin-top: 2rem;
-	  margin-bottom: 2rem; /* lg:my-8 */
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		/* lg:my-8 */
 	}
-  }
-  
+}
+
 
 /* 三角形箭頭樣式 */
 .sub-menu-toggle {
@@ -463,7 +474,11 @@ header {
 	background: transparent;
 	cursor: pointer;
 	padding: 0;
-	margin-left: 8px;
+	margin: 0.5rem;
+
+	@media (min-width: 600px) {
+		display: none;
+	}
 }
 
 .sub-menu-toggle .toggle-icon {
@@ -476,6 +491,9 @@ header {
 	/* 向下三角形 */
 	transition: transform 0.3s ease;
 	margin: 0 auto;
+	color: red;
+
+
 }
 
 /* 展開狀態 - 箭頭轉向上 */
@@ -491,4 +509,10 @@ header {
 /* 繼承文字顏色 */
 .sub-menu-toggle {
 	color: inherit;
+}
+
+.menu-item-has-children{
+	display:grid;
+	grid-template-columns: 90% 1fr;
+	grid-row: auto;
 }

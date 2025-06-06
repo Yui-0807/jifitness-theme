@@ -802,7 +802,7 @@ header {
 
 @media (min-width: 640px) {
 	.main-navigation {
-		background-color: #4b5563; /* Tailwind's gray-600 */
+		background-color: #4b5563;
 	}
 }
 .main-navigation .menu-header-container {
@@ -874,9 +874,7 @@ header {
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 1rem;
-	/* equivalent to p-4 */
 	padding-bottom: 0;
-	/* equivalent to pb-0 */
 }
 
 @media (min-width: 37.5rem) {
@@ -898,23 +896,21 @@ header {
 	width: auto;
 }
 
-.menu-footer-social-media-container {
-	margin: 2rem 0;
-}
-
 .menu-item-social svg {
 	filter: invert(1) brightness(1.2);
 	width: 2.5rem;
 	height: 2.5rem;
 }
 
+.menu-footer-social-media-container {
+	margin: 2rem 0;
+}
 .menu-footer-social-media-container #menu-footer-social-media {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
 	align-items: center;
 }
-
 .menu-footer-social-media-container img {
 	height: 5rem;
 	margin: 1.5rem 0;
@@ -925,6 +921,8 @@ header {
 	border: 1px solid #ffffff;
 	border-radius: 2rem;
 	background-color: #fff;
+	text-decoration: none;
+	color: #333;
 }
 
 .contact-info {
@@ -943,15 +941,12 @@ header {
 	width: 100%;
 	padding: 0.5rem;
 }
-
 .menu-footer-sitemap-container a:visited {
 	color: white;
 }
-
 .menu-footer-sitemap-container ul > li > ul > li a:visited {
 	color: gray;
 }
-
 .menu-footer-sitemap-container a:hover {
 	text-decoration: underline;
 }
@@ -1059,8 +1054,10 @@ header {
 }
 
 .site-footer hr {
-	margin-top: 1rem; /* mt-4 */
-	border-color: #e5e7eb; /* border-gray-200 */
+	margin-top: 1rem;
+	/* mt-4 */
+	border-color: #e5e7eb;
+	/* border-gray-200 */
 }
 
 @media (min-width: 640px) {
@@ -1072,7 +1069,8 @@ header {
 @media (min-width: 1024px) {
 	.site-footer hr {
 		margin-top: 2rem;
-		margin-bottom: 2rem; /* lg:my-8 */
+		margin-bottom: 2rem;
+		/* lg:my-8 */
 	}
 }
 /* 三角形箭頭樣式 */
@@ -1084,7 +1082,12 @@ header {
 	background: transparent;
 	cursor: pointer;
 	padding: 0;
-	margin-left: 8px;
+	margin: 0.5rem;
+}
+@media (min-width: 600px) {
+	.sub-menu-toggle {
+		display: none;
+	}
 }
 
 .sub-menu-toggle .toggle-icon {
@@ -1097,6 +1100,7 @@ header {
 	/* 向下三角形 */
 	transition: transform 0.3s ease;
 	margin: 0 auto;
+	color: red;
 }
 
 /* 展開狀態 - 箭頭轉向上 */
@@ -1112,6 +1116,12 @@ header {
 /* 繼承文字顏色 */
 .sub-menu-toggle {
 	color: inherit;
+}
+
+.menu-item-has-children {
+	display: grid;
+	grid-template-columns: 90% 1fr;
+	grid-row: auto;
 }
 
 /* Posts and pages

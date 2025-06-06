@@ -75,11 +75,11 @@ jQuery(document).ready(function($) {
                     }
 
                     const html = courses.map(course => `
-                        <div class="recommendation-card">
-                            <h4>${course.title}</h4>
-                            <p>${course.description || ''}</p>
-                        </div>
+                    <div class="recommendation-card">
+                        <h4>${course.title}</h4>
+                    </div>
                     `).join('');
+
                     $('#recommendation-results').html(html);
                 },
                 error: function () {

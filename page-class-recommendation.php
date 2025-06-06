@@ -29,6 +29,13 @@ get_header();
                         <p>小组学习，享受团体动力与较低费用</p>
                     </div>
                 </label>
+                <label class="option-card">
+                    <input type="radio" name="course_type" value="ji-online" required class="sr-only">
+                    <div class="option-content">
+                        <h3>線上</h3>
+                        <p>xxxxxxx</p>
+                    </div>
+                </label>
             </div>
             <button type="button" class="btn next-step" data-next-step="step-2" disabled>下一步</button>
         </div>

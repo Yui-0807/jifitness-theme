@@ -139,7 +139,7 @@ function ji_register_taxonomies() {
     );
 
     $args = array(
-        'hierarchical'      => true,
+        'hierarchical'      => false,
         'labels'            => $labels,
         'show_ui'           => true,
         'show_admin_column' => true,
@@ -167,7 +167,7 @@ function ji_register_taxonomies() {
         'menu_name'         => __( 'Training Goal' ),
     );
     $args = array(
-        'hierarchical'      => true,
+        'hierarchical'      => false,
         'labels'            => $labels,
         'show_ui'           => true,
         'show_admin_column' => true,
@@ -176,6 +176,32 @@ function ji_register_taxonomies() {
         'rewrite'           => array( 'slug' => 'training-goal' ),
     );
     register_taxonomy( 'ji-training-goal', array( 'ji-1-on-1','ji-small-group',), $args );
+
+    // Add Delivery Method to 1-on-1 and small-group taxonomy.
+    $labels = array(
+        'name'              => _x( 'Delivery Method', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Delivery Method', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Delivery Method' ),
+        'all_items'         => __( 'All Delivery Methods' ),
+        'parent_item'       => __( 'Delivery Method Featured' ),
+        'parent_item_colon' => __( 'Delivery Method Featured:' ),
+        'edit_item'         => __( 'Edit Delivery Method' ),
+        'update_item'       => __( 'Update Delivery Method' ),
+        'add_new_item'      => __( 'Add New Delivery Method' ),
+        'new_item_name'     => __( 'New Work Delivery Method' ),
+        'menu_name'         => __( 'Delivery Method' ),
+    );
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'delivery-method' ),
+    );
+    register_taxonomy( 'ji-delivery-method', array( 'ji-1-on-1','ji-small-group',), $args );
+
 
 }
 add_action( 'init', 'ji_register_taxonomies');

@@ -220,6 +220,11 @@ function jifitness_scripts() {
 				)
             );
 	}
+
+	// Enqueue Google Maps API and map script
+	
+
+
 }
 add_action( 'wp_enqueue_scripts', 'jifitness_scripts' );
 

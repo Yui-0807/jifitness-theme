@@ -119,4 +119,12 @@ $contact_heading = get_field('contact_heading');
     </div>
 
   </div>
+    
+
+  <div class="contact-map-container">
+    <div id="map" style="width: 100%; height: 400px; margin-top: 2rem;"></div>
+  </div>
+  
 </section>
+
+

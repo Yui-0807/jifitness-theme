@@ -3,12 +3,12 @@ jQuery(document).ready(function($) {
 
     updateNextButtonState();
 
-    // 步驟一：選擇課程類型
-    $('input[name="course_type"]').on('change', function() {
+    // 步骤一选择课程类型
+    $('input[name="course_selection"]').on('change', function() {
         updateNextButtonState();
     });
 
-    // 下一步按鈕點擊
+    // 下一步按鈕
     $(document).on('click', '.next-step:not(:disabled)', function(e) {
         e.preventDefault();
         const $button = $(this);
@@ -18,18 +18,22 @@ jQuery(document).ready(function($) {
 
         if (!nextStepId) return;
 
-        // 第一步 → 第二步：加載目標
+        // 步骤 1 → 步骤 2
         if (currentStep.hasClass('step-1') && nextStep.hasClass('step-2')) {
-            const courseType = $('input[name="course_type"]:checked').val();
+            const selectedValue = $('input[name="course_selection"]:checked').val();
 
-            if (!courseType) {
+            if (!selectedValue) {
                 alert(translations.selectCourseType);
                 return;
             }
 
+            const [courseType, deliveryMethod] = selectedValue.split('|');
+            window.selectedCourseType = courseType;
+            window.selectedDeliveryMethod = deliveryMethod;
+
             $button.prop('disabled', true).html('<span class="spinner">↻</span> 加载中...');
 
-            loadTrainingGoals(courseType)
+            loadTrainingGoals()
                 .then(() => {
                     toggleSteps(currentStep, nextStep);
                     $('input[name="primary_goal"]').on('change', function () {
@@ -46,11 +50,10 @@ jQuery(document).ready(function($) {
                 });
         }
 
-        // 第二步 → 第三步：取得推薦
+        // 步骤 2 → 步骤 3
         else if (currentStep.hasClass('step-2') && nextStep.hasClass('step-3')) {
             const primaryGoal = $('input[name="primary_goal"]:checked').val();
             const secondaryGoal = $('input[name="secondary_goal"]:checked').val();
-            const courseType = $('input[name="course_type"]:checked').val();
 
             if (!primaryGoal) {
                 alert('请选择主要目标');
@@ -64,7 +67,8 @@ jQuery(document).ready(function($) {
                 method: 'GET',
                 headers: { 'X-WP-Nonce': nonce },
                 data: {
-                    course_type: courseType,
+                    course_type: window.selectedCourseType,
+                    delivery_method: window.selectedDeliveryMethod,
                     primary_goal: primaryGoal,
                     secondary_goal: secondaryGoal || ''
                 },
@@ -74,12 +78,18 @@ jQuery(document).ready(function($) {
                         return;
                     }
 
-                    const html = courses.map(course => `
-                    <div class="recommendation-card">
-                        <h4>${course.title}</h4>
-                    </div>
-                    `).join('');
-
+                    const html = courses.map(course => {
+                        const typeSlug = course.type === 'ji-1-on-1' ? '1-on-1' : 'small-group';
+                        const anchorLink = `${course.category_link}#${typeSlug}-${course.id}`;
+                        return `
+                            <div class="recommendation-card">
+                                <h4>${course.title}</h4>
+                                <p>${course.description || ''}</p>
+                                <a href="${anchorLink}" target="_blank">查看詳情</a>
+                            </div>
+                        `;
+                    }).join('');
+                    
                     $('#recommendation-results').html(html);
                 },
                 error: function () {
@@ -90,7 +100,7 @@ jQuery(document).ready(function($) {
             toggleSteps(currentStep, nextStep);
         }
 
-        // 其他一般步驟切換
+        // 其他步驟切換
         else {
             toggleSteps(currentStep, nextStep);
         }
@@ -120,23 +130,30 @@ jQuery(document).ready(function($) {
         $('html, body').animate({ scrollTop: 0 }, 300);
     });
 
-    // 判斷是否啟用下一步（step 1）
+    // 更新下一步按鈕狀態
     function updateNextButtonState() {
-        const courseTypeSelected = $('input[name="course_type"]:checked').length > 0;
-        $('.step-1 .next-step').prop('disabled', !courseTypeSelected);
+        const selected = $('input[name="course_selection"]:checked').length > 0;
+        $('.step-1 .next-step').prop('disabled', !selected);
     }
 
     // 加載主目標
-    function loadTrainingGoals(courseType) {
+    function loadTrainingGoals() {
         return new Promise((resolve, reject) => {
             $.ajax({
                 url: `${apiBaseUrl}/training-goals`,
                 method: 'GET',
                 headers: { 'X-WP-Nonce': nonce },
-                data: { course_type: courseType },
                 success: function(goals) {
                     if (goals && goals.length > 0) {
-                        renderGoalOptions(goals);
+    
+                        // 這裡加過濾邏輯👇
+                        let filteredGoals = goals;
+                        if (window.selectedCourseType === 'ji-small-group') {
+                            const excludedForSmallGroup = ['癌後體適能運動', '防身技巧'];
+                            filteredGoals = goals.filter(goal => !excludedForSmallGroup.includes(goal.name));
+                        }
+    
+                        renderGoalOptions(filteredGoals);
                         resolve();
                     } else {
                         reject(new Error('没有可用的训练目标'));
@@ -148,23 +165,48 @@ jQuery(document).ready(function($) {
             });
         });
     }
+    
 
-    // 加載次目標（排除主目標）
+    // 定義互斥規則：primaryId => 不要出現哪些 secondaryId
+    const exclusionRules = {
+        '防身技巧': ['癌後體適能運動'],
+        '癌後體適能運動': ['防身技巧']
+    };
+
+    // 加載次要目標
     function loadSecondaryGoals(primaryId) {
         $.ajax({
             url: `${apiBaseUrl}/training-goals`,
             method: 'GET',
             headers: { 'X-WP-Nonce': nonce },
             success: function(goals) {
-                const secondary = goals.filter(g => g.id != primaryId);
                 const $secondary = $('#secondary-goals');
                 $secondary.empty();
-
+    
+                // 找出 primary name
+                const primaryGoal = goals.find(g => g.id == primaryId);
+                const primaryName = primaryGoal ? primaryGoal.name : '';
+    
+                // 互斥邏輯
+                const excludedNamesFromPrimary = exclusionRules[primaryName] || [];
+    
+                // 小團課固定要排除的目標
+                const excludedForSmallGroup = (window.selectedCourseType === 'ji-small-group')
+                    ? ['癌後體適能運動', '防身技巧']
+                    : [];
+    
+                // 過濾次要目標
+                const secondary = goals.filter(g => 
+                    g.id != primaryId &&
+                    !excludedNamesFromPrimary.includes(g.name) &&
+                    !excludedForSmallGroup.includes(g.name)
+                );
+    
                 if (secondary.length === 0) {
                     $secondary.html('<p>无可选的次要目标</p>');
                     return;
                 }
-
+    
                 secondary.forEach(goal => {
                     $secondary.append(`
                         <label class="option-card goal-option">
@@ -178,8 +220,9 @@ jQuery(document).ready(function($) {
             }
         });
     }
+    
 
-    // 渲染主要目標選項
+    // 渲染主目標
     function renderGoalOptions(goals) {
         const $container = $('#primary-goals');
         $container.empty();

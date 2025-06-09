@@ -58,6 +58,10 @@ get_header();
     <?php get_template_part( 'template-parts/content', 'facility' ); ?>
     <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
 
+    <?php get_template_part( 'template-parts/content', 'contact' ); ?>
+
+    <?php
+    /*
     <section class="contact-section">
         <div class="contact-wrapper">
             <div class="contact-left">
@@ -84,9 +88,13 @@ get_header();
             </div>
         </div>
     </section>
+    */
+    ?>
 
     <!-- Studio Icon -->
-    <?php if ( have_rows( 'studio_description' ) ) : ?>
+    <?php 
+    /*
+    if ( have_rows( 'studio_description' ) ) : ?>
         <?php while ( have_rows( 'studio_description' ) ) : the_row(); ?>
             <?php
             $icon = get_sub_field( 'studio_icon' );
@@ -98,6 +106,8 @@ get_header();
             ?>
         <?php endwhile; ?>
     <?php endif; ?>
+    */
+    ?>
 
 </main>
 

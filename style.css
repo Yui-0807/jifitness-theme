@@ -1160,7 +1160,7 @@ header {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 	line-height: 1.4;
-	color: pink;
+	color: rosybrown;
 }
 .manifesto-section p {
 	max-width: 720px;
@@ -1548,7 +1548,6 @@ header {
 
 .contact-section {
 	padding: 3rem 1rem;
-	background-color: #fff;
 }
 .contact-section .contact-wrapper {
 	display: flex;
@@ -1557,116 +1556,130 @@ header {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-.contact-section .contact-left {
+.contact-section .contact-heading {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #07699E;
+	text-align: center;
+	margin: 0 auto 2rem;
+}
+@media (min-width: 48em) {
+	.contact-section .contact-heading {
+		text-align: left;
+		font-size: 2.25rem;
+		margin-bottom: 2.5rem;
+		max-width: 1200px;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+.contact-section .contact-left .contact-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 }
-.contact-section .contact-left .contact-item {
+.contact-section .contact-left .contact-list .contact-item {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 1rem;
-	line-height: 1.5;
 }
-.contact-section .contact-left .contact-item .icon-wrapper {
-	width: 40px;
-	height: 40px;
-	min-width: 40px;
-	border: 1px solid #ccc;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.contact-section .contact-left .contact-list .contact-item .icon {
+	width: 1.5rem;
+	flex-shrink: 0;
 }
-.contact-section .contact-left .contact-item .icon-wrapper img,
-.contact-section .contact-left .contact-item .icon-wrapper svg {
-	width: 20px;
-	height: 20px;
+.contact-section .contact-left .contact-list .contact-item .icon svg {
+	display: block;
+	width: 100%;
+	height: auto;
 }
-.contact-section .contact-left .contact-item .contact-text {
-	flex: 1;
-}
-.contact-section .contact-left .contact-item .contact-text span {
-	font-weight: bold;
+.contact-section .contact-left .contact-list .contact-item .info span {
+	font-weight: 700;
+	font-size: 1rem;
 	display: block;
 	margin-bottom: 0.2rem;
 }
-.contact-section .contact-left .contact-item .contact-text p,
-.contact-section .contact-left .contact-item .contact-text a {
+.contact-section .contact-left .contact-list .contact-item .info p,
+.contact-section .contact-left .contact-list .contact-item .info a {
+	font-size: 0.9rem;
 	margin: 0;
-	font-size: 1rem;
-	color: #333;
+	line-height: 1.5;
+	color: #000;
+	text-decoration: none;
 }
-.contact-section .contact-left .contact-item.line-item {
-	align-items: flex-start;
-}
-.contact-section .contact-left .contact-item.line-item .contact-text {
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-}
-.contact-section .contact-left .contact-item.line-item .contact-text .line-id {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-.contact-section .contact-left .contact-item.line-item .contact-text .line-id img {
-	width: 64px;
-	height: auto;
-	border-radius: 4px;
+.contact-section .contact-left .contact-list .contact-item .info .line-qrcode {
+	width: 5rem;
+	margin-top: 0.5rem;
 }
 .contact-section .contact-right .contact-image-wrapper {
 	position: relative;
 }
-.contact-section .contact-right .contact-image-wrapper .responsive-contact-image {
+.contact-section .contact-right .contact-image-wrapper img {
 	width: 100%;
-	height: auto;
-	border-radius: 12px;
+	border-radius: 0.5rem;
 	display: block;
-	-o-object-fit: cover;
-	   object-fit: cover;
 }
-.contact-section .contact-right .contact-image-wrapper .contact-words {
-	margin-top: 1.5rem;
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #004990;
-	text-align: center;
-	line-height: 1.4;
+.contact-section .contact-right .contact-image-wrapper .contact-slogan {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	text-align: right;
+	color: #0072bc;
+	font-weight: 800;
+	font-size: 2rem;
+	line-height: 1.3;
+	z-index: 2;
+	padding: 0.75rem 1.25rem;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 0.5rem;
 }
-@media (min-width: 30em) {
-	.contact-section .contact-right .contact-image-wrapper .contact-words {
-		font-size: 2rem;
+@media (min-width: 48em) {
+	.contact-section .contact-right .contact-image-wrapper .contact-slogan {
+		font-size: 2.25rem;
 	}
+}
+@media (min-width: 80em) {
+	.contact-section .contact-right .contact-image-wrapper .contact-slogan {
+		font-size: 3rem;
+	}
+}
+.contact-section .contact-right .contact-image-wrapper .contact-slogan p {
+	margin: 0;
 }
 @media (min-width: 48em) {
 	.contact-section .contact-wrapper {
 		flex-direction: row;
-		justify-content: space-between;
 		align-items: flex-start;
 	}
 	.contact-section .contact-left {
 		flex: 1 1 45%;
 	}
 	.contact-section .contact-right {
-		flex: 1 1 50%;
+		flex: 1 1 55%;
 	}
-	.contact-section .contact-right .contact-image-wrapper .contact-words {
+	.contact-section .contact-right .contact-image-wrapper .contact-slogan {
 		position: absolute;
-		bottom: 1rem;
-		right: 1rem;
-		background: rgba(255, 255, 255, 0.8);
-		padding: 1rem 1.5rem;
-		border-radius: 8px;
-		font-size: 2rem;
-		font-weight: bold;
-		color: #004990;
-		text-align: right;
-		line-height: 1.4;
+		bottom: 0;
+		right: 0;
+		padding: 1rem 2rem 1rem 1rem;
+		margin-top: 0;
+		font-size: 2.25rem;
 	}
 }
-.contact-section img[alt~=Line][alt~=QR][alt~=Code] {
-	display: none !important;
+@media (min-width: 80em) {
+	.contact-section .contact-left .contact-list .contact-item .info span {
+		font-size: 1.125rem;
+	}
+	.contact-section .contact-right .contact-image-wrapper .contact-slogan {
+		font-size: 2.75rem;
+	}
+}
+@media (min-width: 90em) {
+	.contact-section .contact-right .contact-image-wrapper .contact-slogan {
+		font-size: 3.25rem;
+	}
 }
 
 /* 課程推薦系統樣式 */

@@ -28,7 +28,7 @@
 		<div class="site-branding">
 			
 			<!-- header logo -->
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<a class="custom-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<?php get_template_part('images/logo'); ?>
 			</a>
 			<?php 

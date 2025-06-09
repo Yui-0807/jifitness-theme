@@ -220,27 +220,6 @@ function jifitness_scripts() {
 				)
             );
 	}
-
-	// Enqueue Google Maps API and map script
-	if (is_page(38)){
-		wp_enqueue_script(
-			'google-maps-api',
-			'https://maps.googleapis.com/maps/api/js?key=AIzaSyDz_PFBpNRhlfQSyTpH5bicX5r-EWfkFAU&language=zh-TW',
-			array(),
-			null,
-			true
-		);
-
-		wp_enqueue_script(
-			'jifitness-contact-map',
-			get_template_directory_uri() . '/js/contact-map.js',
-			array('google-maps-api'),
-			null,
-			true
-		);
-	}
-
-
 }
 add_action( 'wp_enqueue_scripts', 'jifitness_scripts' );
 

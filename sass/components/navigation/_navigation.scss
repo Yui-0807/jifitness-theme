@@ -9,15 +9,15 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 3px 3px rgba(197, 118, 118, 0.2);
 			float: left;
 			position: absolute;
 			top: 100%;
-			left: -999em;
+			// left: -999em;
 			z-index: 99999;
 
 			ul {
-				left: -999em;
+				// left: -999em;
 				top: 0;
 			}
 
@@ -79,6 +79,7 @@
 
 	.main-navigation ul {
 		display: flex;
+		align-items: center;
 	}
 }
 
@@ -108,12 +109,18 @@
 
 .custom-logo {
 	height: 60px;
-	width: auto;
+	margin: 0.5rem;
+
+	svg {
+		height: 100%;
+		width: fit-content;
+	}
 }
 
 body {
-	position: relative;
-	top: 60px;
+	// position: relative;
+	// top: 60px;
+	padding-top: 60px;
 }
 
 header {
@@ -164,11 +171,22 @@ header {
 
 .main-navigation {
 	width: auto;
+
+	li {
+		height: fit-content;
+	}
+
+	ul:first-child>li:first-child {
+		display: none;
+	}
 }
 
 .main-navigation li a {
 	padding: 0.5rem 1rem;
 
+	svg {
+		fill: white;
+	}
 }
 
 .main-navigation a:visited {
@@ -182,20 +200,15 @@ header {
 	background-color: gray;
 }
 
+/* 預設收起 */
 .main-navigation ul ul {
-	float: none;
-	position: unset;
-	overflow: hidden;
 	max-height: 0;
+	overflow: hidden;
 	transition: max-height 0.5s ease-in-out;
 }
 
-.main-navigation ul li:hover ul,
-.main-navigation ul li:focus-within ul,
-.main-navigation ul li:focus-visible ul,
-.main-navigation ul li:focus ul,
-.main-navigation ul li:active ul,
-.main-navigation ul li:target ul {
+/* 按鈕 aria-expanded true 時展開 */
+.menu-item-has-children .sub-menu-toggle[aria-expanded="true"]+ul {
 	max-height: 12.5rem;
 }
 
@@ -209,14 +222,53 @@ header {
 		text-align: left;
 	}
 
+	.main-navigation ul:first-child>li:first-child {
+		display: initial;
+	}
+
+	.main-navigation ul .menu-item-has-children {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-row: 1fr 1fr;
+	}
+
+	.menu-item-has-children ul {
+		flex-wrap: wrap;
+	}
+
+	.menu-item-has-children ul a {
+		height: fit-content;
+	}
+
+}
+
+@media screen and (min-width: 80em) {
+	.main-navigation .menu-item-has-children {
+		display: inline-block;
+
+		.sub-menu-toggle {
+			display: none !important;
+		}
+	}
+
 	.main-navigation ul ul {
-		float: left;
-		position: absolute;
 		display: flex;
 		flex-direction: column;
-		text-align: left;
+		position: absolute;
+		top: 100%;
+		left: 0;
 		width: max-content;
+		// max-height: 0;
+		// overflow: hidden;
+		// transition: max-height 0.5s ease-in-out;
+		z-index: 9999;
+		background-color: gray;
+	}
 
+	/* Hover 打開 */
+	.main-navigation li:hover>ul,
+	.main-navigation li:focus-within>ul {
+		max-height: 12.5rem;
 	}
 }
 
@@ -331,20 +383,15 @@ header {
 	font-weight: 400;
 }
 
+/* 預設收起 */
 .menu-footer-sitemap-container ul ul {
-	float: none;
-	position: unset;
-	overflow: hidden;
 	max-height: 0;
+	overflow: hidden;
 	transition: max-height 0.5s ease-in-out;
 }
 
-.menu-footer-sitemap-container ul li:hover ul,
-.menu-footer-sitemap-container ul li:focus-within ul,
-.menu-footer-sitemap-container ul li:focus-visible ul,
-.menu-footer-sitemap-container ul li:focus ul,
-.menu-footer-sitemap-container ul li:active ul,
-.menu-footer-sitemap-container ul li:target ul {
+/* 按鈕 aria-expanded true 時展開 */
+.menu-item-has-children .sub-menu-toggle[aria-expanded="true"]+ul {
 	max-height: 12.5rem;
 }
 
@@ -475,10 +522,6 @@ header {
 	cursor: pointer;
 	padding: 0;
 	margin: 0.5rem;
-
-	@media (min-width: 600px) {
-		display: none;
-	}
 }
 
 .sub-menu-toggle .toggle-icon {
@@ -492,8 +535,6 @@ header {
 	transition: transform 0.3s ease;
 	margin: 0 auto;
 	color: red;
-
-
 }
 
 /* 展開狀態 - 箭頭轉向上 */
@@ -511,8 +552,21 @@ header {
 	color: inherit;
 }
 
-.menu-item-has-children{
-	display:grid;
+.footer-sitemap .menu-item-has-children {
+	display: grid;
 	grid-template-columns: 90% 1fr;
 	grid-row: auto;
+}
+
+@media (min-width: 600px) {
+	.footer-sitemap {
+		.sub-menu-toggle {
+			display: none;
+		}
+
+		.menu-item-has-children {
+			display: block;
+		}
+	}
+
 }

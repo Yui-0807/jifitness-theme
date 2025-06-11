@@ -15,7 +15,7 @@ $contact_image = get_field('contact_image'); // 圖片 from ACF
 $contact_heading = get_field('contact_heading');
 ?>
 
-<section class="contact-section">
+<section class="contact-section" id="contact">
 
     <?php if ($contact_heading): ?>
     <h2 class="contact-heading"><?php echo esc_html($contact_heading); ?></h2>

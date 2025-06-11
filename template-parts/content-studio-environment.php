@@ -7,7 +7,7 @@
 
 $images = get_field('studio_environment_gallery');
 if ($images) : ?>
-  <section class="studio-environment-gallery">
+  <section class="studio-environment-gallery" id="studio-environment-gallery">
     <div class="container">
       <?php if (get_field('studio_environment_heading')) : ?>
         <h2 class="section-heading"><?php the_field('studio_environment_heading'); ?></h2>

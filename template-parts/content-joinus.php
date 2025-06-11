@@ -6,7 +6,7 @@ if ( $join_us_group ) :
   $join_image   = $join_us_group['join_image'] ?? '';
   $join_text    = $join_us_group['join_text'] ?? '';
 ?>
-<section class="join-us-section">
+<section class="join-us-section" id="join-us">
   <div class="container">
     <div class="join-us-heading">
       <h2><?php echo esc_html($join_heading); ?></h2>

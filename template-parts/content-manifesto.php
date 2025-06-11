@@ -16,7 +16,7 @@ $text      = get_field( 'manifesto_text', $page_id );
 $images    = get_field( 'manifesto_images', $page_id );
 ?>
 
-<section class="manifesto-section">
+<section class="manifesto-section" id="manifesto">
 
     <?php if ( $heading ) : ?>
         <h3><?php echo esc_html( $heading ); ?></h3>

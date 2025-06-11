@@ -261,7 +261,6 @@ function ji_get_recommended_courses(WP_REST_Request $request) {
                 'goals' => $goal_names,
                 'description' => $short_description,
                 'type' => $post_type,
-                'permalink' => get_permalink(),
                 'delivery_methods' => $delivery_names,
                 'category_link' => $post_type === 'ji-1-on-1' ? home_url('/1-on-1') : home_url('/small-group'),
             ];

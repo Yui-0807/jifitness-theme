@@ -253,6 +253,7 @@ body {
 
 .site-footer hr {
 	margin-top: 1rem;
+	margin-bottom: 1rem;
 	border-color: #e5e7eb;
 }
 
@@ -396,7 +397,7 @@ body {
 /* ---------------------------------------.site-info */
 
 .site-info {
-	margin: 0.75rem;
+	padding-bottom: 1rem;
 
 	p {
 		color: #fff;
@@ -556,7 +557,7 @@ body {
 
 	.site-footer hr {
 		margin-top: 0;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 
 }

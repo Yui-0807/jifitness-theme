@@ -573,26 +573,115 @@ input[type=submit]:focus {
 
 .floating-btn {
 	position: fixed;
-	right: 1rem;
-	top: 13rem;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+	width: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+}
+.floating-btn .scroll-top {
+	background: #fff;
+	border: 1px solid #06547E;
+	cursor: pointer;
+	transition: all ease 0.3s;
+	opacity: 0;
+	padding: 0;
+	color: #06547E;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+}
+.floating-btn .toggle-btn {
+	background: #06547E;
+	color: #fff;
+	padding: 0;
+	border-radius: 50%;
+	width: 3rem;
+	height: 3rem;
+	font-size: 1.5rem;
+	border: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: relative;
+}
+.floating-btn .toggle-btn .bar {
+	position: absolute;
+	width: 1rem;
+	height: 2px;
+	background-color: white;
+	transition: all 0.3s ease;
+}
+.floating-btn .toggle-btn .bar1 {
+	transform: rotate(0deg);
+}
+.floating-btn .toggle-btn .bar2 {
+	transform: rotate(90deg);
+}
+.floating-btn .floating-menu {
 	display: flex;
 	flex-direction: column-reverse;
-	gap: 1rem;
+	align-items: center;
+	gap: 0.75rem;
+	margin-top: 1rem;
+	overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
 }
-.floating-btn a:last-child {
+.floating-btn .floating-menu.active {
+	max-height: 500px;
+	opacity: 1;
+	visibility: visible;
+}
+.floating-btn .floating-menu a:last-child {
 	writing-mode: vertical-rl;
-	text-orientation: upright;
-	color: white;
-	padding: 1.5rem 0.5rem;
-	background-color: green;
+	color: #06547E;
+	padding: 1rem 0.5rem;
+	background-color: #fff;
 	text-decoration: none;
-	border-radius: 2rem;
+	border: 1px solid #06547E;
+	border-radius: 24px;
+	letter-spacing: 0.2rem;
 }
-.floating-btn svg {
-	width: 2.5rem;
-	height: -moz-max-content;
-	height: max-content;
-	fill: green;
+.floating-btn .floating-menu a {
+	height: -moz-fit-content;
+	height: fit-content;
+}
+.floating-btn .floating-menu svg {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 24px;
+	cursor: pointer;
+}
+@media (min-width: 80em) {
+	.floating-btn {
+		top: 15rem;
+	}
+	.floating-btn .toggle-btn {
+		display: none;
+	}
+	.floating-btn .floating-menu {
+		display: flex;
+		max-height: initial;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+/* 點開的狀態 */
+.floating-btn.active .toggle-btn .bar1 {
+	transform: rotate(45deg);
+}
+
+.floating-btn.active .toggle-btn .bar2 {
+	transform: rotate(-45deg);
 }
 
 input[type=text],
@@ -907,6 +996,7 @@ textarea {
 
 .site-footer hr {
 	margin-top: 1rem;
+	margin-bottom: 1rem;
 	border-color: #e5e7eb;
 }
 
@@ -1036,7 +1126,7 @@ textarea {
 
 /* ---------------------------------------.site-info */
 .site-info {
-	margin: 0.75rem;
+	padding-bottom: 1rem;
 }
 .site-info p {
 	color: #fff;
@@ -1164,7 +1254,7 @@ textarea {
 	}
 	.site-footer hr {
 		margin-top: 0;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 }
 .site-main .comment-navigation,
@@ -1193,11 +1283,6 @@ textarea {
 --------------------------------------------- */
 .sticky {
 	display: block;
-}
-
-.post,
-.page {
-	margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {

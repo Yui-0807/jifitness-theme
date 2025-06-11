@@ -26,25 +26,127 @@ input[type="submit"] {
 
 .floating-btn {
 	position: fixed;
-	right: 1rem;
-	top: 13rem;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+	width: 3rem;
+
 	display: flex;
-	flex-direction: column-reverse;
-	gap: 1rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
 
-	a:last-child {
-		writing-mode: vertical-rl;
-		text-orientation: upright;
-		color: white;
-		padding: 1.5rem 0.5rem;
-		background-color: green;
-		text-decoration: none;
-		border-radius: 2rem;
+	.scroll-top {
+		background: #fff;
+		border: 1px solid #06547E;
+		cursor: pointer;
+		transition: all ease 0.3s;
+		opacity: 0;
+		padding: 0;
+		color: #06547E;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
 	}
 
-	svg {
-		width: 2.5rem;
-		height: max-content;
-		fill: green;
+	.toggle-btn {
+		background: #06547E;
+		color: #fff;
+		padding: 0;
+		border-radius: 50%;
+		width: 3rem;
+		height: 3rem;
+		font-size: 1.5rem;
+		border: none;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		position: relative;
+
+		.bar {
+			position: absolute;
+			width: 1rem;
+			height: 2px;
+			background-color: white;
+			transition: all 0.3s ease;
+		}
+
+		.bar1 {
+			transform: rotate(0deg);
+		}
+
+		.bar2 {
+			transform: rotate(90deg);
+		}
 	}
+
+	.floating-menu {
+		display: flex;
+
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 0.75rem;
+		margin-top: 1rem;
+
+		overflow: hidden;
+		max-height: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+
+		&.active {
+			max-height: 500px;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		a:last-child {
+			writing-mode: vertical-rl;
+			color: #06547E;
+			padding: 1rem 0.5rem;
+			background-color: #fff;
+			text-decoration: none;
+			border: 1px solid #06547E;
+			border-radius: 24px;
+			letter-spacing: 0.2rem;
+		}
+
+		a {
+			height: fit-content;
+		}
+
+		svg {
+			width: 3rem;
+			height: 3rem;
+			border-radius: 24px;
+			cursor: pointer;
+		}
+	}
+
+	@include mq(laptop) {
+		top: 15rem;
+
+		.toggle-btn {
+			display: none;
+		}
+
+		.floating-menu {
+			display: flex;
+			max-height: initial;
+			opacity: 1;
+			visibility: visible
+		}
+	}
+}
+
+/* 點開的狀態 */
+.floating-btn.active .toggle-btn .bar1 {
+	transform: rotate(45deg);
+}
+
+.floating-btn.active .toggle-btn .bar2 {
+	transform: rotate(-45deg);
 }

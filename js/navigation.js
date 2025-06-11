@@ -77,4 +77,50 @@
             }
         });
     });
+
+    /**
+	 * Scroll to top button links to header navigation 
+	 */
+	
+	document.addEventListener('DOMContentLoaded', function () {
+        // 滾動到上方
+        const scrollTopButton = document.querySelector('#scroll-top');
+        if (scrollTopButton) {
+            scrollTopButton.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+    
+            window.addEventListener('scroll', function () {
+                scrollTopButton.style.opacity = window.scrollY === 0 ? "0" : "1";
+                scrollTopButton.style.pointerEvents = window.scrollY === 0 ? "none" : "auto";
+            });
+        }
+    
+        // Floating Button 隱藏在 footer
+        const floatingBtn = document.querySelector('.toggle-btn');
+        const footer = document.querySelector('.site-footer');
+        if (floatingBtn && footer) {
+            window.addEventListener('scroll', function () {
+                const footerTop = footer.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                const nearFooter = footerTop < windowHeight;
+    
+                floatingBtn.style.opacity = nearFooter ? '0' : '1';
+                floatingBtn.style.pointerEvents = nearFooter ? 'none' : 'auto';
+            });
+        }
+    
+        // Floating Menu 開關
+        const toggleBtn = document.querySelector('.floating-btn .toggle-btn');
+        const floatingMenu = document.querySelector('.floating-btn .floating-menu');
+        const floatingBtnWrapper = document.querySelector('.floating-btn');
+
+        if (toggleBtn && floatingMenu) {
+            toggleBtn.addEventListener('click', function () {
+                floatingMenu.classList.toggle('active');
+                floatingBtnWrapper.classList.toggle('active');
+            });
+        }
+    });
+    
 })();

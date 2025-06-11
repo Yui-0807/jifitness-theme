@@ -1,5 +1,5 @@
 (function() {
-    const siteNavigations = document.querySelectorAll('#site-navigation, .footer-sitemap');
+    const siteNavigations = document.querySelectorAll('#site-navigation, .menu-footer-sitemap-container');
 
     siteNavigations.forEach((siteNavigation) => {
         if (!siteNavigation) return;

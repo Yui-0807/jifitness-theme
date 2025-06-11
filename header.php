@@ -26,23 +26,35 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			
 			<!-- header logo -->
-			<a class="custom-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<a class="header-custom-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<?php get_template_part('images/logo'); ?>
 			</a>
 			<?php 
-			
-			// get tag line
-			$jifitness_description = get_bloginfo( 'description', 'display' );
-			if ( $jifitness_description || is_customize_preview() ) :
-				?>
-				<p class="site-description text-white mb-0"><?php echo $jifitness_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+				if ( function_exists( 'get_field' ) ) :
+					$menu = wp_get_nav_menu_object('footer-logo');
+
+					// 先取得 ACF 欄位
+					$manderin_slogon = get_field( 'mandarin_tagline',$menu );
+					$eng_slogon  = get_field( 'english_tagline' ,$menu);
+
+					// 正常輸出
+					if ( $manderin_slogon ) {
+						echo '<ul class="site-description"><li>' . esc_html( $manderin_slogon ) . '</li>';
+					}
+
+					if ( $eng_slogon ) {
+						echo '<li>' . esc_html( $eng_slogon ) . '</li></ul>';
+					}
+
+				endif;
+			?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'jifitness' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<svg aria-label="Header Menu" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(

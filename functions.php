@@ -50,6 +50,7 @@ function jifitness_setup() {
 	register_nav_menus(
 		array(
 			'header' => esc_html__( 'Header Menu', 'jifitness' ),
+			'footer-logo' => esc_html__( 'Footer Logo', 'jifitness' ),
 			'footer-social-media' => esc_html__( 'Footer Social Media', 'jifitness' ),
 			'footer-sitemap' => esc_html__( 'Footer Sitemap', 'jifitness' ),
 		)

@@ -14,57 +14,66 @@
 	<footer id="colophon" class="site-footer bg-black">
 
 		<div class="footer-menus">
-			<nav class="footer-logo">
+			<div class="footer-logo">
 				
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<?php get_template_part('images/logo'); ?>
+				<a class="footer-custom-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php get_template_part('images/logo'); ?>
 				</a>
 				<?php 
+				if ( function_exists( 'get_field' ) ) :
+					$menu = wp_get_nav_menu_object('footer-logo');
 
-				// get tag line
-				$jifitness_description = get_bloginfo( 'description', 'display' );
-				if ( $jifitness_description || is_customize_preview() ) :?>
-	
-				<p class="site-description text-white p-2"><?php echo $jifitness_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-				<?php endif;
+					// 先取得 ACF 欄位
+					$manderin_slogon = get_field( 'mandarin_tagline',$menu );
+					$eng_slogon  = get_field( 'english_tagline' ,$menu);
+
+					// 正常輸出
+					if ( $manderin_slogon ) {
+						echo '<ul class="site-description"><li>' . esc_html( $manderin_slogon ) . '</li>';
+					}
+
+					if ( $eng_slogon ) {
+						echo '<li>' . esc_html( $eng_slogon ) . '</li></ul>';
+					}
+
+				endif;
 				?>
-			</nav>
+			</div>
 
-			<nav class="footer-social-media">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'footer-social-media',
+				)
+			);
+			wp_nav_menu(
+				array(
+					'theme_location' => 'footer-sitemap'
+				)
+			);
+			?>
+
+			<div class="footer-certificate">
 				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'footer-social-media'
-					)
-				);
-				?>
-			</nav>
 
-			<nav class="footer-sitemap">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'footer-sitemap'
-					)
-				);
-				?>
-			</nav>
+				$certificates  = get_field( 'certificate_logo' ,$menu);
+
+				if( $certificates ): ?>
+					<ul>
+						<?php foreach( $certificates as $certificate ): ?>
+							<li>
+								<img src="<?php echo $certificate['sizes']['thumbnail']; ?>" alt="<?php echo $certificate['alt']; ?>" />
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+			</div>
 		</div><!-- .footer-menus -->
 
 		<hr />
 		
-		<div class="site-info pb-6 text-center">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jifitness' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'jifitness' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'jifitness' ), 'jifitness', '<a href="https://jifitness-studio.com/">Jean, Marie</a>' );
-				?>
+		<div class="site-info">
+			<p>©2025 Jifitness_Theme</p>
 			<?php wp_footer(); ?>
 		</div><!-- .site-info -->
 

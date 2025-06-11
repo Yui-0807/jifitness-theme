@@ -57,8 +57,9 @@ get_header();
     <?php get_template_part( 'template-parts/content', 'studio-environment' ); ?>
     <?php get_template_part( 'template-parts/content', 'facility' ); ?>
     <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
-
     <?php get_template_part( 'template-parts/content', 'contact' ); ?>
+    <?php get_template_part( 'template-parts/content', 'joinus' ); ?>
+
 
     <?php
     /*

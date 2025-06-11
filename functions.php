@@ -223,7 +223,26 @@ function jifitness_scripts() {
 	}
 
 	// Enqueue Google Maps API and map script
-	
+	if ( is_page('38') ) { // Page About ID
+    $google_map_api_key = $_ENV['GOOGLE_MAP_API_KEY'] ?? '';
+    if ( $google_map_api_key ) {
+        wp_enqueue_script(
+            'google-maps',
+            'https://maps.googleapis.com/maps/api/js?key=' . esc_attr($google_map_api_key) . '&callback=initMap',
+            array(),
+            null,
+            true
+        );
+        wp_enqueue_script(
+            'ji-contact-map',
+            get_template_directory_uri() . '/js/contact-map.js',
+            array('google-maps'),
+            null,
+            true
+        );
+    }
+}
+
 
 
 }

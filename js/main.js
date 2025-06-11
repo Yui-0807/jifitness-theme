@@ -25,10 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // 教練證照輪播初始化
-  if (document.querySelector('.coach-cert-swiper')) {
-    new Swiper('.coach-cert-swiper', {
-        loop: true,
-        speed: 1000, // 切換速度加長，滑順一些
+    if (document.querySelector('.coach-cert-swiper')) {
+        new Swiper('.coach-cert-swiper', {
+        loop: false,
+        speed: 800,
+        spaceBetween: 16,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -37,6 +38,18 @@ document.addEventListener('DOMContentLoaded', function () {
             nextEl: '.cert-next',
             prevEl: '.cert-prev',
         },
-        });
+        breakpoints: {
+            0: {
+            slidesPerView: 1,
+            },
+            768: {
+            slidesPerView: 1,
+            },
+            1024: {
+            slidesPerView: 1,
+            }
+        },
+    });
     }
+
 });

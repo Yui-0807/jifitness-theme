@@ -1363,24 +1363,115 @@ header {
 	margin: 1.5rem 0;
 	text-align: left;
 }
+.coach-profile .coach-cert-swiper {
+	margin-top: 2rem;
+}
 
-.coach-cert-carousel {
+.coach-cert-swiper {
+	position: relative;
+	overflow: hidden;
+	padding: 2rem 0;
+}
+.coach-cert-swiper .cert-slide {
+	width: 100% !important;
+	max-width: 100%;
+	flex: 0 0 100%;
+	box-sizing: border-box;
+	min-width: 0;
+}
+.coach-cert-swiper .cert-slide .cert-content {
 	display: flex;
-	overflow-x: auto;
+	flex-direction: column;
 	gap: 1rem;
-	padding: 1rem 0;
-	scroll-snap-type: x mandatory;
+	background: #fff;
+	border-radius: 0.75rem;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	padding: 1rem;
 }
-.coach-cert-carousel .cert-slide {
-	flex: 0 0 auto;
+@media (min-width: 48em) {
+	.coach-cert-swiper .cert-slide .cert-content {
+		flex-direction: row;
+		align-items: center;
+		padding: 2rem;
+	}
+}
+.coach-cert-swiper .cert-slide .cert-content .cert-image {
+	flex-shrink: 0;
 	width: 160px;
-	scroll-snap-align: start;
+	text-align: center;
 }
-.coach-cert-carousel .cert-slide img {
+.coach-cert-swiper .cert-slide .cert-content .cert-image img {
 	width: 100%;
-	border-radius: 0.5rem;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+.coach-cert-swiper .cert-slide .cert-content .cert-image .swiper-nav {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+.coach-cert-swiper .cert-slide .cert-content .cert-image .swiper-nav .swiper-button-prev,
+.coach-cert-swiper .cert-slide .cert-content .cert-image .swiper-nav .swiper-button-next {
+	width: 40px;
+	height: 40px;
+	background: #333;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+.coach-cert-swiper .cert-slide .cert-content .cert-text {
+	flex: 1;
+	min-width: 0;
+	text-align: left;
+	overflow-wrap: break-word;
+}
+.coach-cert-swiper .cert-slide .cert-content .cert-text .cert-title {
+	font-size: 1.125rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	color: #0072bc;
+}
+.coach-cert-swiper .cert-slide .cert-content .cert-text .cert-desc {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: #333;
 }
 
+@media (min-width: 48em) {
+	.coach-profile {
+		text-align: left;
+	}
+	.coach-profile h3 {
+		text-align: left;
+		margin-bottom: 1rem;
+	}
+	.coach-profile .coach-profile-main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		align-items: start;
+	}
+	.coach-profile .coach-profile-main img {
+		grid-column: 1/2;
+		margin: 0;
+		max-width: 100%;
+		border-radius: 0.5rem;
+	}
+	.coach-profile .coach-profile-main .coach-info {
+		grid-column: 2/3;
+		margin: 0;
+	}
+	.coach-profile blockquote {
+		margin-top: 2rem;
+	}
+}
 .studio-environment-gallery {
 	padding: 4rem 1rem;
 	max-width: 1200px;

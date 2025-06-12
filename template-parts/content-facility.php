@@ -1,7 +1,5 @@
 <?php
 
-
-$heading = get_field('facilities_and_rental_info');
 $features = get_field('facility_features');
 
 if ($features) :
@@ -9,9 +7,6 @@ if ($features) :
 
 <section class="facility-features">
   <div class="container">
-    <?php if ($heading): ?>
-      <h2 class="section-heading"><?php echo esc_html($heading); ?></h2>
-    <?php endif; ?>
 
     <ul class="features-grid">
       <?php foreach ($features as $feature):

@@ -1044,7 +1044,7 @@ textarea {
 }
 
 .menu-item-social.menu-item-google-form a {
-	padding: 0.5rem 1.5rem;
+	padding: 0.5rem 1.25rem;
 	border: 1px solid #ffffff;
 	border-radius: 2rem;
 	background-color: transparent;
@@ -2372,7 +2372,7 @@ textarea {
 	bottom: 0;
 	left: 0;
 	text-align: left;
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.646);
 	transition: opacity 0.25s ease;
 }
 
@@ -2414,22 +2414,24 @@ textarea {
 	height: 65%;
 	box-sizing: border-box;
 }
-@media (min-width: 48em) {
-	.modal__inner {
-		width: 75%;
-		height: 60%;
-	}
-}
 .modal__inner h2 {
 	font-size: 2rem;
 }
-.modal__inner .modal__content img {
+.modal__inner img {
+	margin-top: 2rem;
 	width: 100%;
-	height: 360px;
+	max-height: 360px;
 	-o-object-fit: cover;
 	   object-fit: cover;
 	-o-object-position: center top;
 	   object-position: center top;
+	border-radius: 5px;
+}
+@media (min-width: 48em) {
+	.modal__inner {
+		width: 70%;
+		height: 60%;
+	}
 }
 
 .modal__close {

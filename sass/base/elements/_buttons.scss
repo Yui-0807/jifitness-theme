@@ -20,6 +20,22 @@ input[type="submit"] {
 	}
 }
 
+.default-btn{
+	background-color: #fff;
+	border-radius: 20px;
+	border: solid 1px #06547E;
+	color: #06547E;
+	margin-bottom: 1rem;
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	svg{
+		fill: #06547E;
+	}
+}
+
 .site-footer {
 	position: relative;
 }

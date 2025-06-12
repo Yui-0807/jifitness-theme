@@ -120,10 +120,10 @@ if (have_rows('registration_process')) :
             $category = get_sub_field('category');
            
             if ($category === 'google-form') {
-                echo '<a href="' . esc_url($social_media_links) . '" target="_blank" rel="noopener noreferrer">表單填寫</a>';
+                echo '<a class="default-btn" href="' . esc_url($social_media_links) . '" target="_blank" rel="noopener noreferrer">表單填寫</a>';
             }
             if ($category === 'line') {
-                echo '<a href="' . esc_url($social_media_links) . '" target="_blank" rel="noopener noreferrer">官方LINE@</a>';
+                echo '<a class="default-btn" href="' . esc_url($social_media_links) . '" target="_blank" rel="noopener noreferrer">官方LINE@</a>';
             }
         }
     }

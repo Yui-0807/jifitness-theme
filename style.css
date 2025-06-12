@@ -567,6 +567,21 @@ input[type=submit]:focus {
 	border-color: #aaa #bbb #bbb;
 }
 
+.default-btn {
+	background-color: #fff;
+	border-radius: 20px;
+	border: solid 1px #06547E;
+	color: #06547E;
+	margin-bottom: 1rem;
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.default-btn svg {
+	fill: #06547E;
+}
+
 .site-footer {
 	position: relative;
 }
@@ -2338,6 +2353,11 @@ body {
 		transform: translateY(0);
 	}
 }
+.registration-steps svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
 .blog a {
 	color: #4f4f4f;
 }
@@ -2392,20 +2412,6 @@ body {
 	.blog .site-main article img {
 		height: 100%;
 	}
-}
-.blog .read-post-link {
-	background-color: #fff;
-	border-radius: 20px;
-	border: solid 1px #06547E;
-	color: #06547E;
-	margin-bottom: 1rem;
-	padding: 0.5rem 1rem;
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-.blog .read-post-link svg {
-	fill: #06547E;
 }
 
 .widget-area {

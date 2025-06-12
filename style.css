@@ -773,6 +773,15 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+body {
+	padding-top: 32px;
+}
+@media (min-width: 80em) {
+	body {
+		padding-top: 72px;
+	}
+}
+
 /* Hamburger. */
 .menu-toggle {
 	background-color: transparent;
@@ -1242,7 +1251,8 @@ textarea {
 		height: max-content;
 	}
 	.menu-footer-sitemap-container li {
-		width: 200px;
+		width: -moz-max-content;
+		width: max-content;
 	}
 	.footer-certificate {
 		padding-left: 1rem;

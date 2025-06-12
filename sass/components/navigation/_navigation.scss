@@ -1,5 +1,9 @@
 body {
-	// padding-top: 60px;
+	padding-top: 32px;
+	
+	@include mq(laptop) {
+		padding-top: 72px;
+	}
 }
 
 /* Hamburger. */
@@ -541,7 +545,7 @@ body {
 		}
 
 		li {
-			width: 200px;
+			width: max-content;
 		}
 	}
 

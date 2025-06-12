@@ -576,6 +576,7 @@ input[type=submit]:focus {
 	padding: 0.5rem 1rem;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.5rem;
 }
 .default-btn svg {
@@ -2356,6 +2357,11 @@ body {
 .registration-steps svg {
 	width: 1.5rem;
 	height: 1.5rem;
+}
+.registration-steps a {
+	width: 200px;
+	text-align: center;
+	text-decoration: none;
 }
 
 .blog a {

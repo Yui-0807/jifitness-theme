@@ -54,9 +54,10 @@ if ( $query->have_posts() ) {
             <label for="modal-<?php echo get_the_ID(); ?>" class="modal__bg"></label>
             <div class="modal__inner">
                 <label class="modal__close" for="modal-<?php echo get_the_ID(); ?>"></label>
-                <h2><?php the_title(); ?></h2>
+                <?php the_post_thumbnail('large'); ?>
+                
                 <div class="modal__content">
-                    <?php the_post_thumbnail('large'); ?>
+                    <h2><?php the_title(); ?></h2>
                     <?php the_content(); ?>
                 </div>
             </div>

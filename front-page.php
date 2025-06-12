@@ -172,10 +172,10 @@ get_template_part( 'template-parts/content', 'manifesto' );
             <label for="modal-<?php echo get_the_ID(); ?>" class="modal__bg"></label>
             <div class="modal__inner">
                 <label class="modal__close" for="modal-<?php echo get_the_ID(); ?>"></label>
-                <h3><?php the_title(); ?></h3>
                 <div class="modal__content">
-                <?php the_post_thumbnail('large'); ?>
-                <?php the_content(); ?>
+                  <?php the_post_thumbnail('large'); ?>
+                  <h3><?php the_title(); ?></h3>
+                  <?php the_content(); ?>
                 </div>
             </div>
             </div>

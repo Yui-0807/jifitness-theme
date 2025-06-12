@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main page-small-group">
 
 <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
@@ -42,43 +42,46 @@ endif;
 
 
 <section>
-<?php
+    <?php
     $args = array(
-        'post_type'      => 'ji-small-group',
-        'posts_per_page' => -1,
-        'orderby'        => 'menu_order',
-        'order'          => 'ASC',
+    'post_type'      => 'ji-small-group',
+    'posts_per_page' => -1,
+    'orderby'        => 'menu_order',
+    'order'          => 'ASC',
     );
 
     $query = new WP_Query( $args );
 
     if ( $query->have_posts() ) {
-        while ( $query->have_posts() ) {
-            $query->the_post(); 
-            $post_id = get_the_ID();
-            ?>
+    while ( $query->have_posts() ) {
+        $query->the_post(); 
+        $post_id = get_the_ID();
+        $image   = get_field('class_image');
 
-            <div class="small-group-item" id="small-group-<?php echo esc_attr( $post_id ); ?>">
-                <h3><?php the_title(); ?></h3>
+        // 圖文交錯
+        $class = ( $query->current_post % 2 === 1 ) ? 'small-group-item reverse' : 'small-group-item';
+        ?>
+        <div class="<?php echo esc_attr( $class ); ?>" id="small-group-<?php echo esc_attr( $post_id ); ?>">
+        <?php if ( $image ) : ?>
+            <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+        <?php endif; ?>
 
-                <?php if ( get_field('class_description') ): ?>
-                    <div class="class-description">
-                        <?php echo wp_kses_post( get_field('class_description') ); ?>
-                    </div>
-                <?php endif; ?>
-
-                <?php
-                $image = get_field('class_image');
-                if ( $image ): ?>
-                    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" style="max-width:300px;" />
-                <?php endif; ?>
+        <div class="text-block">
+            <h3><?php the_title(); ?></h3>
+            <?php if ( get_field('class_description') ) : ?>
+            <div class="class-description">
+                <?php echo wp_kses_post( get_field('class_description') ); ?>
             </div>
-
-        <?php }
-        wp_reset_postdata();
+            <?php endif; ?>
+        </div>
+        </div>
+        <?php
     }
-?>
+    wp_reset_postdata();
+    }
+    ?>
 </section>
+
 
 <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
 

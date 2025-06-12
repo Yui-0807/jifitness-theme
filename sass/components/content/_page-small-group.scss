@@ -1,4 +1,4 @@
-.page-1-on-1 {
+.page-small-group {
   section {
     padding: 3rem 1rem;
     max-width: 1200px;
@@ -30,7 +30,7 @@
     }
   }
 
-  .one-on-one-item {
+  .small-group-item {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -65,7 +65,7 @@
 
       img {
         flex: 1;
-        max-width: 360px;
+        max-width: 300px;
       }
 
       .text-block {

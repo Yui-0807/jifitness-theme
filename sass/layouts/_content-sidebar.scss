@@ -11,17 +11,6 @@
 			"main"
 			"sidebar"
 			"footer";
-
-		// @include mq(tablet-sm) {
-		// 	display: grid;
-		// 	grid-template-columns: auto ($size__site-sidebar);
-		// 	grid-template-areas:
-		// 		"header header"
-		// 		"banner banner"
-		// 		"main sidebar"
-		// 		"footer footer";
-		// }
-
 	}
 
 	.banner {
@@ -32,12 +21,59 @@
 		grid-area: header;
 	}
 
-	.blog-cotent-container{
+	.blog-cotent-container,
+	.single-post-cotent-container {
 		grid-area: main;
 		overflow: hidden;
 		/* Resolves issue with <pre> elements forcing full width. */
-		
+
+		width: 100%;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include mq(mobile) {
+			max-width: 480px;
+			padding-left: 1.25rem;
+			padding-right: 1.25rem;
+		}
+
+		@include mq(tablet-sm) {
+			max-width: 768px;
+			padding-left: 2rem;
+			padding-right: 2rem;
+
+			display: flex;
+			gap: 1rem;
+
+			.widget-area{
+				max-width: 240px;
+			}
+		}
+
+		@include mq(tablet) {
+			max-width: 1024px;
+			gap: 1.5rem;
+		}
+
+		@include mq(laptop) {
+			max-width: 1280px;
+			
+			.widget-area{
+				max-width: 280px;
+			}
+		}
+
+		@include mq(desktop) {
+			max-width: 1440px;
+			gap: 2.5rem;
+			.widget-area{
+				max-width: 300px;
+			}
+		}
 	}
+
 	.site-footer {
 		grid-area: footer;
 	}

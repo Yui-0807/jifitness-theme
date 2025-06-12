@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-
+<div class="single-post-cotent-container">
 	<main id="primary" class="site-main">
 
 		<?php
@@ -37,4 +37,5 @@ get_header();
 
 <?php
 get_sidebar();
+echo'</div>';
 get_footer();

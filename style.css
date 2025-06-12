@@ -750,10 +750,83 @@ textarea {
 	grid-area: header;
 }
 .blog .blog-cotent-container,
-.single-post .blog-cotent-container {
+.blog .single-post-cotent-container,
+.single-post .blog-cotent-container,
+.single-post .single-post-cotent-container {
 	grid-area: main;
 	overflow: hidden;
 	/* Resolves issue with <pre> elements forcing full width. */
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media (min-width: 30em) {
+	.blog .blog-cotent-container,
+	.blog .single-post-cotent-container,
+	.single-post .blog-cotent-container,
+	.single-post .single-post-cotent-container {
+		max-width: 480px;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
+	}
+}
+@media (min-width: 48em) {
+	.blog .blog-cotent-container,
+	.blog .single-post-cotent-container,
+	.single-post .blog-cotent-container,
+	.single-post .single-post-cotent-container {
+		max-width: 768px;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		display: flex;
+		gap: 1rem;
+	}
+	.blog .blog-cotent-container .widget-area,
+	.blog .single-post-cotent-container .widget-area,
+	.single-post .blog-cotent-container .widget-area,
+	.single-post .single-post-cotent-container .widget-area {
+		max-width: 240px;
+	}
+}
+@media (min-width: 64em) {
+	.blog .blog-cotent-container,
+	.blog .single-post-cotent-container,
+	.single-post .blog-cotent-container,
+	.single-post .single-post-cotent-container {
+		max-width: 1024px;
+		gap: 1.5rem;
+	}
+}
+@media (min-width: 80em) {
+	.blog .blog-cotent-container,
+	.blog .single-post-cotent-container,
+	.single-post .blog-cotent-container,
+	.single-post .single-post-cotent-container {
+		max-width: 1280px;
+	}
+	.blog .blog-cotent-container .widget-area,
+	.blog .single-post-cotent-container .widget-area,
+	.single-post .blog-cotent-container .widget-area,
+	.single-post .single-post-cotent-container .widget-area {
+		max-width: 280px;
+	}
+}
+@media (min-width: 90em) {
+	.blog .blog-cotent-container,
+	.blog .single-post-cotent-container,
+	.single-post .blog-cotent-container,
+	.single-post .single-post-cotent-container {
+		max-width: 1440px;
+		gap: 2.5rem;
+	}
+	.blog .blog-cotent-container .widget-area,
+	.blog .single-post-cotent-container .widget-area,
+	.single-post .blog-cotent-container .widget-area,
+	.single-post .single-post-cotent-container .widget-area {
+		max-width: 300px;
+	}
 }
 .blog .site-footer,
 .single-post .site-footer {

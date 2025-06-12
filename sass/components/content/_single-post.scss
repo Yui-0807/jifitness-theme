@@ -1,5 +1,4 @@
 .wp-singular .site-main {
-    margin: 1rem;
 
     .post-thumbnail img {
         height: 368px;
@@ -7,4 +6,36 @@
         object-fit: cover;
         object-position: center 25%;
     }
+
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(mobile) {
+        max-width: 480px;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    @include mq(tablet-sm) {
+        max-width: 768px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include mq(tablet) {
+        max-width: 1024px;
+    }
+
+    @include mq(laptop) {
+        max-width: 1280px;
+    }
+
+    @include mq(desktop) {
+        max-width: 1440px;
+    }
+
+
 }

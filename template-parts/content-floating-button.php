@@ -24,7 +24,6 @@
         while (have_rows('social_media', $menu)) {
             the_row();
 
-            $title = get_sub_field('title');
             $social_media_links = get_sub_field('social_media_links');
             $category = get_sub_field('category');
             $line_svg = file_get_contents(get_template_directory() . '/images/line.php');

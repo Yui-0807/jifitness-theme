@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer bg-black">
+	<footer id="colophon" class="site-footer">
 
 		<div class="footer-menus">
 			<div class="footer-logo">

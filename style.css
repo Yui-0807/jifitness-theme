@@ -739,29 +739,21 @@ textarea {
 .single-post .site {
 	display: grid;
 	grid-template-columns: auto;
-	grid-template-areas: "header" "main" "sidebar" "footer";
+	grid-template-areas: "header" "banner" "main" "sidebar" "footer";
 }
-@media (min-width: 48em) {
-	.blog .site,
-	.single-post .site {
-		display: grid;
-		grid-template-columns: auto 25%;
-		grid-template-areas: "header header" "main sidebar" "footer footer";
-	}
+.blog .banner,
+.single-post .banner {
+	grid-area: banner;
 }
 .blog .site-header,
 .single-post .site-header {
 	grid-area: header;
 }
-.blog .site-main,
-.single-post .site-main {
+.blog .blog-cotent-container,
+.single-post .blog-cotent-container {
 	grid-area: main;
 	overflow: hidden;
 	/* Resolves issue with <pre> elements forcing full width. */
-}
-.blog .widget-area,
-.single-post .widget-area {
-	grid-area: sidebar;
 }
 .blog .site-footer,
 .single-post .site-footer {
@@ -774,7 +766,12 @@ textarea {
 /* Navigation
 --------------------------------------------- */
 body {
-	padding-top: 32px;
+	padding-top: 16px;
+}
+@media screen and (min-width: 783px) {
+	body {
+		padding-top: 32px;
+	}
 }
 @media (min-width: 80em) {
 	body {
@@ -850,7 +847,7 @@ body {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 1920px;
+	max-width: 1440px;
 }
 .site-branding .site-description {
 	margin: 0.25rem;
@@ -903,7 +900,7 @@ body {
 }
 .main-navigation .menu-header-container > ul {
 	padding: 0.5rem 1rem;
-	max-width: 1920px;
+	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -993,7 +990,7 @@ body {
 		pointer-events: auto;
 	}
 }
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1440px) {
 	.menu-header-container > ul {
 		padding: 0;
 	}
@@ -1217,7 +1214,7 @@ body {
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		grid-template-rows: auto 1fr;
-		max-width: 1920px;
+		max-width: 1440px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -2360,7 +2357,11 @@ body {
 }
 
 .wp-singular .site-main {
-	margin: 1rem;
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 .wp-singular .site-main .post-thumbnail img {
 	height: 368px;
@@ -2369,6 +2370,35 @@ body {
 	   object-fit: cover;
 	-o-object-position: center 25%;
 	   object-position: center 25%;
+}
+@media (min-width: 30em) {
+	.wp-singular .site-main {
+		max-width: 480px;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
+	}
+}
+@media (min-width: 48em) {
+	.wp-singular .site-main {
+		max-width: 768px;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+@media (min-width: 64em) {
+	.wp-singular .site-main {
+		max-width: 1024px;
+	}
+}
+@media (min-width: 80em) {
+	.wp-singular .site-main {
+		max-width: 1280px;
+	}
+}
+@media (min-width: 90em) {
+	.wp-singular .site-main {
+		max-width: 1440px;
+	}
 }
 
 /* [Object] Modal

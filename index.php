@@ -13,9 +13,17 @@
  */
 
 get_header();
+
+// <!-- index.php - Banner -->
+
+$banner_page_id = 33; // id of index.php
+set_query_var('banner_page_id', $banner_page_id); // sent var
+get_template_part('template-parts/content', 'banner'); // loaded into template
 ?>
 
+<div class="blog-cotent-container">
 	<main id="primary" class="site-main">
+	<div class="container">
 		
 		<?php if ( is_home() && ! is_front_page() ) :?>
 			<header>
@@ -23,12 +31,6 @@ get_header();
 			</header>
 		<?php endif; ?>
 
-		<!-- index.php - Banner -->
-		<?php
-		$banner_page_id = 33; // id of index.php
-		set_query_var('banner_page_id', $banner_page_id); // sent var
-		get_template_part('template-parts/content', 'banner'); // loaded into template
-		?>
 
 		<?php			
 			/* Start the Loop */
@@ -65,9 +67,10 @@ get_header();
 
 		endif;
 		?>
-
+	</div>
 	</main><!-- #main -->
 
 <?php
 get_sidebar();
+echo'</div>';
 get_footer();

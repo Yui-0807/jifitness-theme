@@ -82,6 +82,58 @@ get_header();
         </div>
     </form>
 </div>
+
+<section class="registration-process">
+
+<?php
+if (have_rows('registration_process')) :
+
+    echo '<div class="registration-steps">';
+    echo '<h2>報名流程</h2>';
+
+    $steps = get_field('registration_process'); // 取得整個 repeater 的陣列
+    $total_steps = count($steps);
+
+    foreach ($steps as $index => $step) {
+        $step_num = $index + 1;
+        $step_description = $step['step_description'];
+
+        echo '<div class="registration-step">';
+        echo '<h3 class="step-number">Step ' . $step_num . '</h3>';
+        echo '<p class="step-description">' . esc_html($step_description) . '</p>';
+        echo '</div>';
+
+        // 只有在不是最後一筆時顯示箭頭
+        if ($step_num < $total_steps) {
+            echo '<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"/></svg>';
+        }
+    }
+
+    // 顯示表單與 LINE 按鈕
+    $menu = wp_get_nav_menu_object('footer-social-media');
+
+    if (have_rows('social_media', $menu)) {
+        while (have_rows('social_media', $menu)) {
+            the_row();
+
+            $social_media_links = get_sub_field('social_media_links');
+            $category = get_sub_field('category');
+           
+            if ($category === 'google-form') {
+                echo '<a href="' . esc_url($social_media_links) . '" target="_blank" rel="noopener noreferrer">表單填寫</a>';
+            }
+            if ($category === 'line') {
+                echo '<a href="' . esc_url($social_media_links) . '" target="_blank" rel="noopener noreferrer">官方LINE@</a>';
+            }
+        }
+    }
+
+    echo '</div>';
+
+endif;
+?>
+
+</section>
 </main>
 
 <?php

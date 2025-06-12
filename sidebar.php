@@ -27,11 +27,18 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			if ( $sticky_query->have_posts() ) :
 				?>
 				<section class="widget widget_sticky_posts">
-					<h2 class="widget-title">精選文章</h2>
+					<h3 class="widget-title">精選文章</h3>
 					<ul>
 						<?php while ( $sticky_query->have_posts() ) : $sticky_query->the_post(); ?>
 							<li>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<a href="<?php the_permalink(); ?>">
+									<?php if ( has_post_thumbnail() ) {
+										the_post_thumbnail( 'thumbnail' );
+									} ?>
+									<h4><?php the_title(); ?></h4>
+									<span><?php echo get_the_date(); ?></span>
+									<?php the_excerpt(); ?>
+								</a>
 							</li>
 						<?php endwhile; ?>
 					</ul>

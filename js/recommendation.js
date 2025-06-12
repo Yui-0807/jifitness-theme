@@ -212,7 +212,7 @@ jQuery(document).ready(function($) {
                         <label class="option-card goal-option">
                             <input type="radio" name="secondary_goal" value="${goal.id}">
                             <div class="option-content">
-                                <h4>${goal.name}</h4>
+                                <p>${goal.name}</p>
                             </div>
                         </label>
                     `);
@@ -232,7 +232,7 @@ jQuery(document).ready(function($) {
                 <label class="option-card goal-option">
                     <input type="radio" name="primary_goal" value="${goal.id}" required>
                     <div class="option-content">
-                        <h4>${goal.name}</h4>
+                        <p>${goal.name}</p>
                         ${goal.description ? `<p>${goal.description}</p>` : ''}
                     </div>
                 </label>

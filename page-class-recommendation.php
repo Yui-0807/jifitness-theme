@@ -38,7 +38,7 @@ get_header();
                     </div>
                 </label>
             </div>
-            <button type="button" class="btn next-step" data-next-step="step-2" disabled>下一步</button>
+            <button type="button" class="default-btn next-step" data-next-step="step-2" disabled>下一步</button>
         </div>
 
         <!-- 步驟 2: 選擇訓練目標 -->
@@ -62,8 +62,8 @@ get_header();
             </div>
             
             <div class="step-actions">
-                <button type="button" class="btn prev-step" data-prev-step="step-1">上一步</button>
-                <button type="button" class="btn next-step" data-next-step="step-3" disabled>查看推薦課程</button>
+                <button type="button" class="default-btn prev-step" data-prev-step="step-1">上一步</button>
+                <button type="button" class="default-btn next-step" data-next-step="step-3" disabled>查看推薦課程</button>
             </div>
         </div>
         
@@ -76,8 +76,8 @@ get_header();
             </div>
             
             <div class="step-actions">
-                <button type="button" class="btn prev-step" data-prev-step="step-2">重新選擇</button>
-                <button type="button" class="btn restart-btn">重新開始</button>
+                <button type="button" class="default-btn prev-step" data-prev-step="step-2">重新選擇</button>
+                <button type="button" class="default-btn restart-btn">重新開始</button>
             </div>
         </div>
     </form>
@@ -88,8 +88,8 @@ get_header();
 <?php
 if (have_rows('registration_process')) :
 
-    echo '<div class="registration-steps">';
     echo '<h2>報名流程</h2>';
+    echo '<div class="registration-steps">';
 
     $steps = get_field('registration_process'); // 取得整個 repeater 的陣列
     $total_steps = count($steps);
@@ -99,7 +99,7 @@ if (have_rows('registration_process')) :
         $step_description = $step['step_description'];
 
         echo '<div class="registration-step">';
-        echo '<h3 class="step-number">Step ' . $step_num . '</h3>';
+        echo '<h3 class="step-number"><span>Step ' . $step_num . '</span></h3>';
         echo '<p class="step-description">' . esc_html($step_description) . '</p>';
         echo '</div>';
 
@@ -108,6 +108,8 @@ if (have_rows('registration_process')) :
             echo '<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"/></svg>';
         }
     }
+
+    echo '</div>';
 
     // 顯示表單與 LINE 按鈕
     $menu = wp_get_nav_menu_object('footer-social-media');
@@ -128,7 +130,7 @@ if (have_rows('registration_process')) :
         }
     }
 
-    echo '</div>';
+    
 
 endif;
 ?>

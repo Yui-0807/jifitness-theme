@@ -31,9 +31,31 @@ input[type="submit"] {
 	align-items: center;
 	justify-content: center;
 	gap: 0.5rem;
+	cursor: pointer;
 
 	svg{
 		fill: #06547E;
+	}
+}
+
+.default-btn:hover{
+	background: #06547E;
+    color: #fff;
+	transition: all 0.3s ease-in-out;
+
+	svg{
+		fill: #fff;
+	}
+}
+
+.default-btn:disabled{
+	background: #D2D2D2;
+	color: #fff;
+	border: none;
+    cursor: not-allowed;
+
+	svg{
+		fill: #fff;
 	}
 }
 

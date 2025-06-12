@@ -1,80 +1,23 @@
 /* 課程推薦系統樣式 */
 .course-recommendation-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+    max-width: 1000px;
+    margin: 2.5rem auto;
 
-.step {
-    display: none;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+    button {
+        width: 200px;
+        padding: 0.75rem 1rem;
 
-.step.active {
-    display: block;
-}
+    }
 
-.options {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.option-card {
-    display: block;
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.option-card:hover {
-    border-color: #ccc;
-}
-
-.option-card .option-content h3,
-.option-card .option-content h4 {
-    margin-top: 0;
-    color: #333;
-}
-
-.option-card input:checked + .option-content {
-    border-color: var(--primary-color, #0073aa);
-    background-color: rgba(0, 115, 170, 0.05);
-}
-
-.btn {
-    padding: 0.75rem 1.5rem;
-    background: var(--primary-color, #0073aa);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #005a87;
-}
-
-.btn:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-}
-
-.step-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
+    .step-1>button {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .goal-selection {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 2rem;
 }
 
@@ -138,20 +81,33 @@
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* 选项卡片 */
-.option-card {
-    display: block;
-    margin-bottom: 15px;
-    cursor: pointer;
+// Step 1 card
+.step-1 .options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    @include mq(tablet-sm) {
+        flex-direction: row;
+    }
 }
 
-.option-card input[type="radio"] {
-    position: absolute;
-    opacity: 0;
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
 }
 
 .option-content {
@@ -159,9 +115,30 @@
     border: 2px solid #ddd;
     border-radius: 8px;
     transition: all 0.3s;
+    text-align: center;
+    width: 100%;
 }
 
-.option-card input:checked + .option-content {
+.option-card.goal-option {
+
+    p {
+        margin: 0;
+    }
+}
+
+.option-card {
+    display: block;
+    margin-bottom: 15px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.option-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.option-card input:checked+.option-content {
     border-color: #3b82f6;
     background-color: #eff6ff;
 }
@@ -175,7 +152,7 @@
 }
 
 /* 加载状态样式 */
-.loading-spinner, 
+.loading-spinner,
 .loading-placeholder {
     padding: 2rem;
     text-align: center;
@@ -190,14 +167,36 @@
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* 步骤容器 */
 .step {
     display: none;
-    padding: 2rem 0;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step-actions {
+    width: fit-content;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(tablet-sm) {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+        width: 100%;
+    }
 }
 
 .step.active {
@@ -206,23 +205,103 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 // registration-process
-
-.registration-steps{
-    svg{
-        width: 1.5rem;
-        height: 1.5rem;
-    }
+.registration-process {
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     a {
         width: 200px;
         text-align: center;
         text-decoration: none;
     }
+    @include mq(tablet-sm) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3 1fr);
+        gap: 1.5rem;
+
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
 
 
+        h2{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+        }
+
+        .registration-steps{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        a{
+            width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+
+}
+
+.registration-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .step-number {
+        height: 5rem;
+        width: 5rem;
+        background-color: #005a87;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+
+        span {
+            height: fit-content;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    @include mq(tablet-sm) {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+
+        .registration-step{
+            width: 220px;
+            text-align: center;
+        }
+
+        svg{
+            rotate: -90deg;
+        }
+    }
 }

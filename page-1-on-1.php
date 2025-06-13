@@ -58,7 +58,11 @@ get_header();
         // 根據順序交錯左右圖文
         $class = ( $query->current_post % 2 === 0 ) ? 'one-on-one-item reverse' : 'one-on-one-item';
         ?>
-        <div class="<?php echo esc_attr( $class ); ?>" id="1-on-1-<?php echo esc_attr( $post_id ); ?>">
+        <div 
+          class="<?php echo esc_attr( $class ); ?>" 
+          id="1-on-1-<?php echo esc_attr( $post_id ); ?>"
+          data-aos="fade-up"
+          data-aos-duration="1500">
 
           <?php if ( $image ) : ?>
             <img 

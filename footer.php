@@ -83,7 +83,8 @@
 	
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
-
+	<script>
+	AOS.init();
+	</script>
 </body>
 </html>

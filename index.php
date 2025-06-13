@@ -35,7 +35,12 @@ get_template_part('template-parts/content', 'banner'); // loaded into template
 			if ( have_posts() ) :
 			while ( have_posts() ) : the_post();?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article 
+				id="post-<?php the_ID(); ?>" 
+				<?php post_class(); ?>
+				data-aos="fade-up"
+          		data-aos-duration="1500">
+
 					<a href="<?php the_permalink(); ?>">
 						<div class="entry-header">
 							<?php the_post_thumbnail( 'landscape-blog' ); ?>

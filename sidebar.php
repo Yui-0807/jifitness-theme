@@ -12,7 +12,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area">
+<aside  id="secondary" class="widget-area"
+		data-aos="fade-left"
+		data-aos-duration="1500">
 	<?php
 		$sticky = get_option( 'sticky_posts' );
 

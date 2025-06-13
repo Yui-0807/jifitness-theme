@@ -61,7 +61,12 @@ endif;
         // 圖文交錯
         $class = ( $query->current_post % 2 === 1 ) ? 'small-group-item reverse' : 'small-group-item';
         ?>
-        <div class="<?php echo esc_attr( $class ); ?>" id="small-group-<?php echo esc_attr( $post_id ); ?>">
+        <div 
+        class="<?php echo esc_attr( $class ); ?>" 
+        id="small-group-<?php echo esc_attr( $post_id ); ?>"
+        data-aos="fade-up"
+        data-aos-duration="1500">
+
         <?php if ( $image ) : ?>
             <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
         <?php endif; ?>

@@ -177,24 +177,22 @@ function jifitness_scripts() {
 		true 
 	);
 
+	// Enqueue AOS Animation
+	wp_enqueue_style( 
+		'aos-style', 
+		'https://unpkg.com/aos@2.3.1/dist/aos.css', 
+		array(), 
+		null 
+	);
 
-	// // Enqueue Modal on the Homepage and Testimonials
-	// if ( is_front_page() || is_page(223) ) {
-	// 	wp_enqueue_style( 
-	// 		'ji-modal-style', 
-	// 		'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', 
-	// 		array(), 
-	// 		_S_VERSION
-	// 	);
-	// 	wp_enqueue_script( 
-	// 		'ji-modal-scripts', 
-	// 		'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js', 
-	// 		array(), 
-	// 		_S_VERSION, 
-	// 		array( 'strategy' => 'defer' )  
-	// 	);
-		
-	// }
+	wp_enqueue_script( 
+		'aos-script', 
+		'https://unpkg.com/aos@2.3.1/dist/aos.js', 
+		array(), 
+		null, 
+		true 
+	);
+
 	// Enqueue class-recommendation file and rest api
 	if ( is_page(36) ) {
 		
@@ -202,7 +200,7 @@ function jifitness_scripts() {
 			 wp_enqueue_script(
                 'ji-recommendation-js',
                 get_template_directory_uri() . '/js/recommendation.js',
-                array('jquery'), // 明确声明jQuery依赖
+                array('jquery'), // clare dependency on jquery
                 filemtime(get_template_directory() . '/js/recommendation.js'),
                 true
             );
@@ -215,8 +213,8 @@ function jifitness_scripts() {
 					'apiBaseUrl' => rest_url('ji/v1'),
 					'nonce' => wp_create_nonce('wp_rest'),
 					'translations' => [
-						'selectCourseType' => '请选择课程类型',
-						'loadingError' => '加载失败，请稍后再试',
+						'selectCourseType' => '請選擇課程類型',
+						'loadingError' => '加載失敗，請稍後再試',
 					],
 				)
             );

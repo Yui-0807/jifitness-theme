@@ -194,31 +194,67 @@ get_template_part( 'template-parts/content', 'manifesto' );
 <h2>Irene 教練小教室</h2>
 <p>Blog for fitness tips</p>
 
-			<?php $args = array(
-				'post_type' 	 => 'post',
-				'posts_per_page' => 3
-			); 
-			
-			$blog_query = new WP_Query( $args );
-			if ($blog_query -> have_posts() ){
-				while( $blog_query -> have_posts() ){
-					$blog_query -> the_post();
-					?>
-					<article id="home-post-<?php the_ID(); ?>" <?php post_class();?> >
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'landscape-blog' ); ?>
-							<h3><?php the_title(); ?></h3>
-              <?php the_excerpt(); ?>
-							<!-- Output the Published Date -->
-							<?php echo get_the_date(); ?>
-						</a>
-					</article>
-					<?php
-				}
-				wp_reset_postdata();
-			}
-			?>
+<?php
+$sticky = get_option( 'sticky_posts' );
+$displayed_ids = array(); // get the sticky_posts ids
 
+// get max:2 && random sticky_posts 
+$sticky_args = array(
+	'post__in' => $sticky,
+	'orderby'  => 'rand',
+	'posts_per_page' => 2,
+	'ignore_sticky_posts' => 1,
+);
+
+$sticky_query = new WP_Query( $sticky_args );
+
+if ( $sticky_query->have_posts() ) :
+	while ( $sticky_query->have_posts() ) : $sticky_query->the_post();
+		$displayed_ids[] = get_the_ID(); // put the sticky_posts ids in a array
+		?>
+		<article id="home-post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'landscape-blog' ); ?>
+				<h3><?php the_title(); ?></h3>
+				<?php the_excerpt(); ?>
+				<?php echo get_the_date(); ?>
+			</a>
+		</article>
+		<?php
+	endwhile;
+	wp_reset_postdata();
+endif;
+
+// count how many space left
+$remaining = 3 - count( $displayed_ids );
+// get the lastest post to fitin 3 tatal posts
+if ( $remaining > 0 ) {
+	$latest_args = array(
+		'post_type' => 'post',
+		'posts_per_page' => $remaining,
+		'post__not_in' => $displayed_ids,
+		'ignore_sticky_posts' => 1,
+	);
+
+	$latest_query = new WP_Query( $latest_args );
+
+	if ( $latest_query->have_posts() ) :
+		while ( $latest_query->have_posts() ) : $latest_query->the_post();
+			?>
+			<article id="home-post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'landscape-blog' ); ?>
+					<h3><?php the_title(); ?></h3>
+					<?php the_excerpt(); ?>
+					<?php echo get_the_date(); ?>
+				</a>
+			</article>
+			<?php
+		endwhile;
+		wp_reset_postdata();
+	endif;
+}
+?>
 </section>
 
 

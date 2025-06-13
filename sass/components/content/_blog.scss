@@ -1,11 +1,11 @@
 .blog {
     .site-main {
         margin-top: 2rem;
+        a {
+            color: #4f4f4f;
+        }
     }
 
-    a {
-        color: #4f4f4f;
-    }
 
     .site-main article {
         margin: 1rem;
@@ -18,7 +18,8 @@
         }
 
         .date {
-            margin: 1rem 0;
+            padding: 1rem 0;
+            margin: 0;
             font-size: smaller;
         }
 
@@ -77,8 +78,7 @@
     }
 
     a {
-        text-decoration: none;
-        color: #4f4f4f;
+        // text-decoration: none;
     }
 
     ul {
@@ -112,10 +112,15 @@
             margin-bottom: 24px;
         }
 
-        h4 {
+        h3 {
             margin: 0;
         }
 
+    }
+    .widget_recent_entries{
+        a:hover{
+            text-decoration: underline;
+        }
     }
 }
 

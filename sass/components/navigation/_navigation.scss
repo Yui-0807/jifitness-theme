@@ -1,11 +1,8 @@
 body {
-	padding-top: 16px;
+	padding-top: 64px;
 	
-	@media screen and (min-width: 783px) {
-			padding-top: 32px;
-	}
 	@include mq(laptop) {
-		padding-top: 72px;
+		padding-top: 104px;
 	}
 }
 
@@ -67,11 +64,12 @@ body {
 
 .header-custom-logo {
 	height: 48px;
+	width: 48px;
 	margin: 0.5rem;
 
 	svg {
 		height: 100%;
-		width: fit-content;
+		width: 100%;
 	}
 }
 
@@ -117,6 +115,7 @@ body {
 	a {
 		display: block;
 		text-decoration: none;
+		color: white;
 		
 		&:visited {
 			color: white;

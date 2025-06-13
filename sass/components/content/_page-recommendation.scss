@@ -142,24 +142,26 @@
     border-color: #3b82f6;
     background-color: #eff6ff;
 }
-#recommendation-results{
+
+#recommendation-results {
     @include mq(tablet-sm) {
         display: flex;
         gap: 1rem;
     }
 }
-.recommendation-card{
+
+.recommendation-card {
     width: 100%;
     border: 2px solid #ddd;
     border-radius: 8px;
     padding: 0 1rem;
     margin-bottom: 1.75rem;
 
-    h4{
+    h4 {
         font-size: 1.2rem;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 
@@ -253,6 +255,7 @@
         text-align: center;
         text-decoration: none;
     }
+
     @include mq(tablet-sm) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -264,20 +267,20 @@
         margin-right: auto;
 
 
-        h2{
+        h2 {
             grid-column-start: 1;
             grid-column-end: 3;
             text-align: center;
         }
 
-        .registration-steps{
+        .registration-steps {
             grid-column-start: 1;
             grid-column-end: 3;
             grid-row-start: 2;
             grid-row-end: 3;
         }
 
-        a{
+        a {
             width: 350px;
             margin-left: auto;
             margin-right: auto;
@@ -293,7 +296,7 @@
     align-items: center;
     margin-bottom: 2rem;
 
-    .step-description{
+    .step-description {
         text-align: center;
     }
 
@@ -304,8 +307,9 @@
         color: #fff;
         border-radius: 50%;
         display: flex;
-        justify-self: center;
         justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
 
         span {
             height: fit-content;
@@ -324,12 +328,12 @@
         width: 100%;
         justify-content: space-around;
 
-        .registration-step{
+        .registration-step {
             width: 220px;
             text-align: center;
         }
 
-        svg{
+        svg {
             rotate: -90deg;
         }
     }

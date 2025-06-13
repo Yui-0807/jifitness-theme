@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
                             <div class="recommendation-card">
                                 <h4>${course.title}</h4>
                                 <p>${course.description || ''}</p>
-                                <a href="${anchorLink}" target="_blank">查看詳情</a>
+                                <a class="default-btn" href="${anchorLink}" target="_blank">查看詳情</a>
                             </div>
                         `;
                     }).join('');

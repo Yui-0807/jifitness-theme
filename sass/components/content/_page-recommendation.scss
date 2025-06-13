@@ -142,6 +142,31 @@
     border-color: #3b82f6;
     background-color: #eff6ff;
 }
+#recommendation-results{
+    @include mq(tablet-sm) {
+        display: flex;
+        gap: 1rem;
+    }
+}
+.recommendation-card{
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0 1rem;
+    margin-bottom: 1.75rem;
+
+    h4{
+        font-size: 1.2rem;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    @include mq(tablet-sm) {
+        max-width: 360px;
+    }
+}
 
 /* 错误提示 */
 .error {
@@ -216,7 +241,7 @@
     }
 }
 
-// registration-process
+//---------------------------------------------- registration-process
 .registration-process {
     margin-bottom: 2.5rem;
     display: flex;
@@ -267,6 +292,10 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 2rem;
+
+    .step-description{
+        text-align: center;
+    }
 
     .step-number {
         height: 5rem;

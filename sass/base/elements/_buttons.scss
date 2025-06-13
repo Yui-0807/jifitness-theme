@@ -37,7 +37,9 @@ input[type="submit"] {
 		fill: #06547E;
 	}
 }
-
+.default-btn:visited{
+	color: #06547E;
+}
 .default-btn:hover{
 	background: #06547E;
     color: #fff;

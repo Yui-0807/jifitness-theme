@@ -14,6 +14,7 @@ get_header();
 
 <h1 class="bg-red-500">Tailwind Works!!</h1>
 
+<!-- Carousel Banners -->
 <?php get_template_part('template-parts/content', 'banner'); ?>
 
 <!-- manifesto -->
@@ -80,6 +81,7 @@ get_template_part( 'template-parts/content', 'manifesto' );
 
 </section>
 
+<!-- Mood Section -->
 <?php get_template_part('template-parts/content', 'mood'); ?>
 
 <!-- Testimonials -->

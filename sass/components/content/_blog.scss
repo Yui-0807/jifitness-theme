@@ -1,6 +1,8 @@
-.blog {
+.blog,
+.archive.category {
     .site-main {
         margin-top: 2rem;
+
         a {
             color: #4f4f4f;
         }
@@ -117,8 +119,9 @@
         }
 
     }
-    .widget_recent_entries{
-        a:hover{
+
+    .widget_recent_entries {
+        a:hover {
             text-decoration: underline;
         }
     }
@@ -148,12 +151,17 @@
 .single-post-cotent-container {
     .entry-meta {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
     }
 
     .nav-links {
         margin-top: 2rem;
         gap: 1.5rem;
+    }
+
+    .wp-block-list {
+        margin: 0;
     }
 
     .form-submit {
@@ -171,10 +179,19 @@
             gap: 0.5rem;
             cursor: pointer;
         }
+
         input:hover {
             background: #06547E;
             color: #fff;
             transition: all 0.3s ease-in-out;
         }
+    }
+}
+
+.archive.category .site-main {
+    margin-top: 0;
+
+    .page-title{
+        margin-left: 1rem;
     }
 }

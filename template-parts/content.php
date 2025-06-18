@@ -23,7 +23,10 @@
 			<div class="entry-meta">
 				<?php
 				jifitness_posted_on();
+				echo "｜";
 				jifitness_posted_by();
+				echo "｜";
+				jifitness_entry_footer();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -56,8 +59,4 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php jifitness_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

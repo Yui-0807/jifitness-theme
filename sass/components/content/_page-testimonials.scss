@@ -145,5 +145,10 @@
 
     @include mq(tablet-sm) {
         margin-top: 0;
+        width: 450px;
+    }
+
+    @include mq(laptop) {
+        width: 550px;
     }
 }

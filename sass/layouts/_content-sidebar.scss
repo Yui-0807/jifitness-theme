@@ -1,5 +1,6 @@
 .blog,
-.single-post {
+.single-post,
+.archive.category {
 
 	.site {
 		
@@ -21,8 +22,7 @@
 		grid-area: header;
 	}
 
-	.blog-cotent-container,
-	.single-post-cotent-container {
+	.cotent-container{
 		grid-area: main;
 		overflow: hidden;
 		/* Resolves issue with <pre> elements forcing full width. */

@@ -43,6 +43,32 @@ if ( $query->have_posts() ) {
             <?php endif; ?>
             <div class="testimonial-card__content">
                 <h2><?php the_title(); ?></h2>
+
+                <!-- output haastag -->
+                <?php
+                // Check rows exists.
+                if( have_rows('testimoniales_hashtag') ):
+
+                    // Loop through rows.
+                    while( have_rows('testimoniales_hashtag') ) : the_row();
+
+                        // Load sub field value.
+                        $hashtag = get_sub_field('hashtag');
+                        if( $hashtag ): 
+                            $link_url = $hashtag['url'];
+                            $link_title = $hashtag['title'];?>
+                            <a 
+                            class="hashtag" 
+                            href="<?php echo esc_url( $link_url ); ?>
+                            ">
+                                <?php echo esc_html( $link_title ); ?>
+                            </a>
+                        <?php endif;
+
+                    // End loop.
+                    endwhile;
+                endif;?>
+
                 <?php the_excerpt(); ?>
             </div>
             </label>
@@ -58,6 +84,31 @@ if ( $query->have_posts() ) {
                 
                 <div class="modal__content">
                     <h2><?php the_title(); ?></h2>
+                    <!-- output haastag -->
+                        <?php
+                        // Check rows exists.
+                        if( have_rows('testimoniales_hashtag') ):
+
+                            // Loop through rows.
+                            while( have_rows('testimoniales_hashtag') ) : the_row();
+
+                                // Load sub field value.
+                                $hashtag = get_sub_field('hashtag');
+                                if( $hashtag ): 
+                                    $link_url = $hashtag['url'];
+                                    $link_title = $hashtag['title'];?>
+                                    <a 
+                                    class="hashtag" 
+                                    href="<?php echo esc_url( $link_url ); ?>
+                                    ">
+                                        <?php echo esc_html( $link_title ); ?>
+                                    </a>
+                                <?php endif;
+
+                            // End loop.
+                            endwhile;
+                        endif;?>
+
                     <?php the_content(); ?>
                 </div>
             </div>

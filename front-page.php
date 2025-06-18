@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-
+<div class="cotent-container">
 <main id="primary" class="site-main">
 
 <h1 class="bg-red-500">Tailwind Works!!</h1>
@@ -76,190 +76,289 @@ get_template_part( 'template-parts/content', 'manifesto' );
 <section>
 <h2>課程介紹</h2>
 <p>Fitness Classes</p>
-<?php
-    $args = array(
-        'post_type'      => 'ji-1-on-1',
-        'posts_per_page' => 3,
-        'tax_query' 		=> array(
-          array(
-            'taxonomy' => 'ji-featured',
-            'field' => 'slug',
-            'terms' => 'front-page',
-          )
-          ),
-          'order'      =>'ASC'
-    );
 
-    $query = new WP_Query( $args );
+<?php if( have_rows('home_page_class_info_1') ): ?>
+  <?php while( have_rows('home_page_class_info_1') ): the_row(); 
 
-    if ( $query->have_posts() ) {
-        while ( $query->have_posts() ) {
-            $query->the_post(); 
-            $post_id = get_the_ID(); //get the post id to get to certain page section ?>
+    $one_on_one_class_description = get_sub_field('1_on_1_class_description');
+    $small_group_link = get_sub_field('small_group_link');
+    
+    // 一對一課程
+    if( $one_on_one_class_description instanceof WP_Post ):
+      $post = $one_on_one_class_description; // 直接指定
+      setup_postdata($post);
+      $post_id = get_the_ID();
+      ?>
+      <article id="home-post-<?php the_ID(); ?>" <?php post_class();?>>
+        <!-- class card image -->
+        <?php
+        $image = get_field('class_image');
+        if ( $image ): ?>
+            <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" style="max-width:300px;" />
+        <?php endif; ?>
 
-            <article id="home-post-<?php the_ID(); ?>" <?php post_class();?>>
-              <a href="<?php echo esc_url(home_url('/1-on-1#1-on-1-' . $post_id)); ?>">
-                  <h3><?php the_title(); ?></h3>
-                  <?php if ( get_field('class_description') ): ?>
-                    <p class="home-class-description">
-                      <?php
-                        $class_description = get_field('class_description');
-                        if ($class_description) {
-                            // remove html tag then trim the text
-                            $text_only = strip_tags($class_description);
-                            $short_description = wp_trim_words($text_only, 60, '...繼續閱讀');
-                            echo '<div class="class-description">' . $short_description . '</div>';
-                        }
-                      ?>
-                    </p>
-                  <?php endif; ?>
-               </a>
+        <!-- class card content -->
+        <h3><?php the_title(); ?></h3>
+        <?php if ( get_field('class_description') ): ?>
+          <p class="home-class-description">
+            <?php
+              $class_description = get_field('class_description');
+              $text_only = strip_tags($class_description);
+              $short_description = wp_trim_words($text_only, 60, '...');
+              echo '<div class="class-description">' . $short_description . '</div>';
+            ?>
+          </p>
+        <?php endif; ?>
 
-                <?php
-                $image = get_field('class_image');
-                if ( $image ): ?>
-                    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" style="max-width:300px;" />
-                <?php endif; ?>
-            </article>
+        <a class="default-btn" href="<?php echo esc_url(home_url('/1-on-1#1-on-1-' . $post_id)); ?>">
+          一對一課程
+        </a>
+      </article>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 
-        <?php }
-        wp_reset_postdata();
-    }
-?>
+    <!-- 團體課程按鈕 -->
+    <?php if( $small_group_link instanceof WP_Post ): ?>
+      <?php
+        $post = $small_group_link;
+        setup_postdata($post);
+        $post_id = get_the_ID();
+      ?>
+      <a class="default-btn" href="<?php echo esc_url(home_url('/small-group#small-group-' . $post_id)); ?>">
+        團體課程
+      </a>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 
+  <?php endwhile; ?>
+<?php endif; ?>
+
+<?php if( have_rows('home_page_class_info_2') ): ?>
+  <?php while( have_rows('home_page_class_info_2') ): the_row(); 
+
+    $one_on_one_class_description = get_sub_field('1_on_1_class_description');
+    $small_group_link = get_sub_field('small_group_link');
+    
+    // 一對一課程
+    if( $one_on_one_class_description instanceof WP_Post ):
+      $post = $one_on_one_class_description; // 直接指定
+      setup_postdata($post);
+      $post_id = get_the_ID();
+      ?>
+      <article id="home-post-<?php the_ID(); ?>" <?php post_class();?>>
+        <!-- class card image -->
+        <?php
+        $image = get_field('class_image');
+        if ( $image ): ?>
+            <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" style="max-width:300px;" />
+        <?php endif; ?>
+
+        <!-- class card content -->
+        <h3><?php the_title(); ?></h3>
+        <?php if ( get_field('class_description') ): ?>
+          <p class="home-class-description">
+            <?php
+              $class_description = get_field('class_description');
+              $text_only = strip_tags($class_description);
+              $short_description = wp_trim_words($text_only, 60, '...');
+              echo '<div class="class-description">' . $short_description . '</div>';
+            ?>
+          </p>
+        <?php endif; ?>
+
+        <a class="default-btn" href="<?php echo esc_url(home_url('/1-on-1#1-on-1-' . $post_id)); ?>">
+          一對一課程
+        </a>
+      </article>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+
+    <!-- 團體課程按鈕 -->
+    <?php if( $small_group_link instanceof WP_Post ): ?>
+      <?php
+        $post = $small_group_link;
+        setup_postdata($post);
+        $post_id = get_the_ID();
+      ?>
+      <a class="default-btn" href="<?php echo esc_url(home_url('/small-group#small-group-' . $post_id)); ?>">
+        團體課程
+      </a>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+    
+  <?php endwhile; ?>
+<?php endif; ?>
+
+<?php if( have_rows('home_page_class_info_3') ): ?>
+  <?php while( have_rows('home_page_class_info_3') ): the_row(); 
+
+    $one_on_one_class_description = get_sub_field('1_on_1_class_description');
+    $small_group_link = get_sub_field('small_group_link');
+    
+    // 一對一課程
+    if( $one_on_one_class_description instanceof WP_Post ):
+      $post = $one_on_one_class_description; // 直接指定
+      setup_postdata($post);
+      $post_id = get_the_ID();
+      ?>
+      <article id="home-post-<?php the_ID(); ?>" <?php post_class();?>>
+        <!-- class card image -->
+        <?php
+        $image = get_field('class_image');
+        if ( $image ): ?>
+            <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" style="max-width:300px;" />
+        <?php endif; ?>
+
+        <!-- class card content -->
+        <h3><?php the_title(); ?></h3>
+        <?php if ( get_field('class_description') ): ?>
+          <p class="home-class-description">
+            <?php
+              $class_description = get_field('class_description');
+              $text_only = strip_tags($class_description);
+              $short_description = wp_trim_words($text_only, 60, '...');
+              echo '<div class="class-description">' . $short_description . '</div>';
+            ?>
+          </p>
+        <?php endif; ?>
+
+        <a class="default-btn" href="<?php echo esc_url(home_url('/1-on-1#1-on-1-' . $post_id)); ?>">
+          一對一課程
+        </a>
+      </article>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+
+    <!-- 團體課程按鈕 -->
+    <?php if( $small_group_link instanceof WP_Post ): ?>
+      <?php
+        $post = $small_group_link;
+        setup_postdata($post);
+        $post_id = get_the_ID();
+      ?>
+      <a class="default-btn" href="<?php echo esc_url(home_url('/small-group#small-group-' . $post_id)); ?>">
+        團體課程
+      </a>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+    
+  <?php endwhile; ?>
+<?php endif; ?>
+  <a class="default-btn" href="<?php echo esc_url(home_url('/1-on-1')); ?>">了解更多課程</a>
+  <a class="default-btn" href="<?php echo esc_url(home_url('/class-recommendation')); ?>">找尋適合我的課程</a>
 </section>
 
 <!-- Testimonials -->
 <section>
-<h2>學員推薦</h2>
-<p>Get inspired by our members</p>
+  <h2>學員推薦</h2>
+  <p>Get inspired by our members</p>
   <div class="home-modals">
     <?php
-        $args = array(
-            'post_type'      => 'ji-testimonials',
-            'posts_per_page' => 3,
-            'tax_query' 		=> array(
-              array(
-                'taxonomy' => 'ji-featured',
-                'field' => 'slug',
-                'terms' => 'front-page',
-              )
-              )
-        );
+    $testimonials = get_field('home_page_testimonials'); // ACF relationship
 
-        $query = new WP_Query( $args );
+    if ( $testimonials ):
+      foreach ( $testimonials as $post ):
+        setup_postdata($post);
+        $post_id = get_the_ID(); ?>
 
-        if ( $query->have_posts() ) {
-            while ( $query->have_posts() ) {
-                $query->the_post(); ?>
-
-            <!-- Model btn -->
-            <label for="modal-<?php echo get_the_ID(); ?>" class="testimonial-card">
-            <?php if (has_post_thumbnail()) : ?>
-                <div class="testimonial-card__image">
-                <?php the_post_thumbnail('medium', ['class' => 'w-full h-auto']); ?>
-                </div>
-            <?php endif; ?>
-            <div class="testimonial-card__content">
-                <h3><?php the_title(); ?></h3>
-                <?php the_excerpt(); ?>
+        <!-- Modal Button -->
+        <label for="modal-<?php echo $post_id; ?>" class="testimonial-card">
+          <?php if (has_post_thumbnail()): ?>
+            <div class="testimonial-card__image">
+              <?php the_post_thumbnail('medium', ['class' => 'w-full h-auto']); ?>
             </div>
-            </label>
+          <?php endif; ?>
+          <div class="testimonial-card__content">
+            <h3><?php the_title(); ?></h3>
 
-            <!-- Modal content -->
-            <input type="checkbox" id="modal-<?php echo get_the_ID(); ?>" class="modal-state">
-            <div class="modal">
-            <label for="modal-<?php echo get_the_ID(); ?>" class="modal__bg"></label>
-            <div class="modal__inner">
-                <label class="modal__close" for="modal-<?php echo get_the_ID(); ?>"></label>
-                <div class="modal__content">
-                  <?php the_post_thumbnail('large'); ?>
-                  <h3><?php the_title(); ?></h3>
-                  <?php the_content(); ?>
-                </div>
+            <?php if( have_rows('testimoniales_hashtag') ):
+              while( have_rows('testimoniales_hashtag') ) : the_row();
+                $hashtag = get_sub_field('hashtag');
+                if( $hashtag ): ?>
+                  <a class="hashtag" href="<?php echo esc_url($hashtag['url']); ?>">
+                    <?php echo esc_html($hashtag['title']); ?>
+                  </a>
+                <?php endif;
+              endwhile;
+            endif; ?>
+
+            <?php the_excerpt(); ?>
+          </div>
+        </label>
+
+        <!-- Modal Content -->
+        <input type="checkbox" id="modal-<?php echo $post_id; ?>" class="modal-state">
+        <div class="modal">
+          <label for="modal-<?php echo $post_id; ?>" class="modal__bg"></label>
+          <div class="modal__inner">
+            <label class="modal__close" for="modal-<?php echo $post_id; ?>"></label>
+            <div class="modal__content">
+              <?php the_post_thumbnail('large'); ?>
+              <h3><?php the_title(); ?></h3>
+
+              <?php if( have_rows('testimoniales_hashtag') ):
+                while( have_rows('testimoniales_hashtag') ) : the_row();
+                  $hashtag = get_sub_field('hashtag');
+                  if( $hashtag ): ?>
+                    <a class="hashtag" href="<?php echo esc_url($hashtag['url']); ?>">
+                      <?php echo esc_html($hashtag['title']); ?>
+                    </a>
+                  <?php endif;
+                endwhile;
+              endif; ?>
+
+              <?php the_content(); ?>
             </div>
-            </div>
-
-        <?php            
-            }
-            wp_reset_postdata();
-        }
-    ?>
-
+          </div>
+        </div>
+    <?php
+      endforeach;
+      wp_reset_postdata();?>
+    <?php endif; ?>
   </div>
+  <a class="default-btn" href="<?php echo esc_url(home_url('/testimonials')); ?>">
+  更多關於 JI Fitness 學員推薦
+  </a>
 </section>
+
 
 <!-- Blog -->
 <section class="home-blog">
-<h2>Irene 教練小教室</h2>
-<p>Blog for fitness tips</p>
+  <h2>Irene 教練小教室</h2>
+  <p>Blog for fitness tips</p>
 
-<?php
-$sticky = get_option( 'sticky_posts' );
-$displayed_ids = array(); // get the sticky_posts ids
+  <a class="default-btn" href="<?php echo esc_url(home_url('/blog')); ?>">
+  更多關於 JI Fitness blog
+  </a>
 
-// get max:2 && random sticky_posts 
-$sticky_args = array(
-	'post__in' => $sticky,
-	'orderby'  => 'rand',
-	'posts_per_page' => 2,
-	'ignore_sticky_posts' => 1,
-);
+  <?php
+  $posts = get_field('home_page_blog_posts'); // ACF relationship field
+  
+  if( $posts ):
+    foreach( $posts as $post ):
+      setup_postdata($post); ?>
+      
+      <article id="home-post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <a href="<?php the_permalink(); ?>">
+          <?php 
+            if ( has_post_thumbnail() ) {
+              the_post_thumbnail('landscape-blog');
+            }
+          ?>
+          <h3><?php the_title(); ?></h3>
+          <?php the_excerpt(); ?>
+        </a>
+      </article>
+  
+    <?php endforeach;
+    wp_reset_postdata();?>
 
-$sticky_query = new WP_Query( $sticky_args );
-
-if ( $sticky_query->have_posts() ) :
-	while ( $sticky_query->have_posts() ) : $sticky_query->the_post();
-		$displayed_ids[] = get_the_ID(); // put the sticky_posts ids in a array
-		?>
-		<article id="home-post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'landscape-blog' ); ?>
-				<h3><?php the_title(); ?></h3>
-				<?php the_excerpt(); ?>
-				<?php echo get_the_date(); ?>
-			</a>
-		</article>
-		<?php
-	endwhile;
-	wp_reset_postdata();
-endif;
-
-// count how many space left
-$remaining = 3 - count( $displayed_ids );
-// get the lastest post to fitin 3 tatal posts
-if ( $remaining > 0 ) {
-	$latest_args = array(
-		'post_type' => 'post',
-		'posts_per_page' => $remaining,
-		'post__not_in' => $displayed_ids,
-		'ignore_sticky_posts' => 1,
-	);
-
-	$latest_query = new WP_Query( $latest_args );
-
-	if ( $latest_query->have_posts() ) :
-		while ( $latest_query->have_posts() ) : $latest_query->the_post();
-			?>
-			<article id="home-post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'landscape-blog' ); ?>
-					<h3><?php the_title(); ?></h3>
-					<?php the_excerpt(); ?>
-					<?php echo get_the_date(); ?>
-				</a>
-			</article>
-			<?php
-		endwhile;
-		wp_reset_postdata();
-	endif;
-}
-?>
+  <?php endif; ?>
 </section>
-
 
 </main>
 
 
 <?php
+echo "</div>";
 get_footer();

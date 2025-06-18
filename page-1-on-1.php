@@ -88,6 +88,10 @@ get_header();
     ?>
   </section>
 
+  <section class="mood-wrapper">
+  <?php get_template_part('template-parts/content', 'mood'); ?>
+  </section>
+
   <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
 
 </main>

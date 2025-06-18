@@ -127,7 +127,8 @@
     }
 }
 
-.blog-cotent-container .nav-links a {
+.cotent-container .nav-links a,
+.form-submit input {
     text-decoration: none;
     background-color: #fff;
     border-radius: 20px;
@@ -142,13 +143,14 @@
     cursor: pointer;
 }
 
-.blog-cotent-container .nav-links a:hover {
+.cotent-container .nav-links a:hover,
+.form-submit input:hover {
     background: #06547E;
     color: #fff;
     transition: all 0.3s ease-in-out;
 }
 
-.single-post-cotent-container {
+.cotent-container {
     .entry-meta {
         display: flex;
         flex-wrap: wrap;
@@ -164,28 +166,28 @@
         margin: 0;
     }
 
-    .form-submit {
-        input {
-            text-decoration: none;
-            background-color: #fff;
-            border-radius: 20px;
-            border: solid 1px #06547E;
-            color: #06547E;
-            margin-bottom: 1rem;
-            padding: 0.5rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            cursor: pointer;
-        }
+    // .form-submit {
+    //     input {
+    //         text-decoration: none;
+    //         background-color: #fff;
+    //         border-radius: 20px;
+    //         border: solid 1px #06547E;
+    //         color: #06547E;
+    //         margin-bottom: 1rem;
+    //         padding: 0.5rem 1rem;
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //         gap: 0.5rem;
+    //         cursor: pointer;
+    //     }
 
-        input:hover {
-            background: #06547E;
-            color: #fff;
-            transition: all 0.3s ease-in-out;
-        }
-    }
+    //     input:hover {
+    //         background: #06547E;
+    //         color: #fff;
+    //         transition: all 0.3s ease-in-out;
+    //     }
+    // }
 }
 
 .archive.category .site-main {

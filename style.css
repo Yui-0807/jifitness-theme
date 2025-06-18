@@ -2514,7 +2514,8 @@ body {
 	text-decoration: underline;
 }
 
-.blog-cotent-container .nav-links a {
+.cotent-container .nav-links a,
+.form-submit input {
 	text-decoration: none;
 	background-color: #fff;
 	border-radius: 20px;
@@ -2529,42 +2530,24 @@ body {
 	cursor: pointer;
 }
 
-.blog-cotent-container .nav-links a:hover {
+.cotent-container .nav-links a:hover,
+.form-submit input:hover {
 	background: #06547E;
 	color: #fff;
 	transition: all 0.3s ease-in-out;
 }
 
-.single-post-cotent-container .entry-meta {
+.cotent-container .entry-meta {
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 2rem;
 }
-.single-post-cotent-container .nav-links {
+.cotent-container .nav-links {
 	margin-top: 2rem;
 	gap: 1.5rem;
 }
-.single-post-cotent-container .wp-block-list {
+.cotent-container .wp-block-list {
 	margin: 0;
-}
-.single-post-cotent-container .form-submit input {
-	text-decoration: none;
-	background-color: #fff;
-	border-radius: 20px;
-	border: solid 1px #06547E;
-	color: #06547E;
-	margin-bottom: 1rem;
-	padding: 0.5rem 1rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
-	cursor: pointer;
-}
-.single-post-cotent-container .form-submit input:hover {
-	background: #06547E;
-	color: #fff;
-	transition: all 0.3s ease-in-out;
 }
 
 .archive.category .site-main {

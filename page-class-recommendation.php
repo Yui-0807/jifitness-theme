@@ -76,7 +76,7 @@ get_header();
             </div>
             
             <div class="step-actions">
-                <button type="button" class="default-btn prev-step" data-prev-step="step-2">重新選擇</button>
+                <button type="button" class="default-btn prev-step" data-prev-step="step-2">上一步</button>
                 <button type="button" class="default-btn restart-btn">重新開始</button>
             </div>
         </div>

@@ -59,18 +59,18 @@ foreach( $class_groups as $group_name ):
           <a class="default-btn" href="<?php echo esc_url(home_url('/1-on-1#1-on-1-' . $one_on_one->ID)); ?>">
             一對一課程
           </a>
+          <?php wp_reset_postdata(); ?>
+          <?php endif; ?>
+          
+          <!-- 團體課程按鈕 -->
+          <?php if( $small_group instanceof WP_Post ): ?>
+            <?php setup_postdata($small_group); ?>
+            <a class="default-btn" href="<?php echo esc_url(home_url('/small-group#small-group-' . $small_group->ID)); ?>">
+              團體課程
+            </a>
+            <?php wp_reset_postdata(); ?>
+          <?php endif; ?>
         </article>
-        <?php wp_reset_postdata(); ?>
-      <?php endif; ?>
-
-      <!-- 團體課程按鈕 -->
-      <?php if( $small_group instanceof WP_Post ): ?>
-        <?php setup_postdata($small_group); ?>
-        <a class="default-btn" href="<?php echo esc_url(home_url('/small-group#small-group-' . $small_group->ID)); ?>">
-          團體課程
-        </a>
-        <?php wp_reset_postdata(); ?>
-      <?php endif; ?>
     <?php endwhile; ?>
   <?php endif;
 endforeach;

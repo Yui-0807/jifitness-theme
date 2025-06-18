@@ -123,35 +123,7 @@ add_action( 'init', 'ji_register_custom_post_types' );
 
 function ji_register_taxonomies() {
 
-// Add Featured taxonomy
-    $labels = array(
-        'name'              => _x( 'Featured', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Featured', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Featured' ),
-        'all_items'         => __( 'All Featured' ),
-        'parent_item'       => __( 'Parent Featured' ),
-        'parent_item_colon' => __( 'Parent Featured:' ),
-        'edit_item'         => __( 'Edit Featured' ),
-        'update_item'       => __( 'Update Featured' ),
-        'add_new_item'      => __( 'Add New Featured' ),
-        'new_item_name'     => __( 'New Testimonial Featured' ),
-        'menu_name'         => __( 'Featured' ),
-    );
-
-    $args = array(
-        'hierarchical'      => false,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'show_in_rest'      => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'featured' ),
-    );
-
-    register_taxonomy( 'ji-featured', array( 'ji-testimonials','ji-1-on-1','post1' ), $args );
     //we can use taxonomy array above repeatly on different page. (post type key)
-
-
     // Add 1-on-1 Training Goal taxonomy.
     $labels = array(
         'name'              => _x( 'Training Goal', 'taxonomy general name' ),

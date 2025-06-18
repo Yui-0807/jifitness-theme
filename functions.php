@@ -171,7 +171,7 @@ function jifitness_scripts() {
 	// Enqueue your custom swiper config JS
 	wp_enqueue_script( 
 		'jifitness-main', 
-		get_template_directory_uri() . '/js/main.js', 
+		get_template_directory_uri() . '/js/swiper.js', 
 		array('swiper-script'), 
 		null, 
 		true 
@@ -238,8 +238,12 @@ function jifitness_scripts() {
             null,
             true
         );
-    }
-}
+    	}
+	}
+
+	// Enqueue FAQ Accordion
+	wp_enqueue_script( 'faq-script', get_template_directory_uri() . '/js/faq.js', array(), _S_VERSION, true );
+
 
 
 

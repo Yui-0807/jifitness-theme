@@ -193,6 +193,33 @@ endforeach;
   <?php endif; ?>
 </section>
 
+<!-- FAQ Section -->
+<?php if ( have_rows('faq_items') ) : ?>
+<section class="faq-section">
+  <div class="container">
+    <h2 class="faq-heading">常見問題<br><span>Frequently Asked Questions</span></h2>
+    <div class="faq-accordion">
+      <?php while ( have_rows('faq_items') ) : the_row(); ?>
+        <?php 
+          $question = get_sub_field('question');
+          $answer   = get_sub_field('answer');
+        ?>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-text"><?php echo esc_html($question); ?></span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <?php echo wp_kses_post($answer); ?>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
+
 </main>
 
 

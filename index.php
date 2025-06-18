@@ -21,7 +21,7 @@ set_query_var('banner_page_id', $banner_page_id); // sent var
 get_template_part('template-parts/content', 'banner'); // loaded into template
 ?>
 
-<div class="blog-cotent-container">
+<div class="cotent-container">
 	<main id="primary" class="site-main">
 		
 		<?php if ( is_home() && ! is_front_page() ) :?>

@@ -82,7 +82,9 @@ get_template_part( 'template-parts/content', 'manifesto' );
 </section>
 
 <!-- Mood Section -->
+<section class="mood-wrapper">
 <?php get_template_part('template-parts/content', 'mood'); ?>
+</section>
 
 <!-- Testimonials -->
 <section>

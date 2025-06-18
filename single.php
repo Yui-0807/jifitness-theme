@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<div class="single-post-cotent-container">
+<div class="cotent-container">
 	<main id="primary" class="site-main">
 
 		<?php

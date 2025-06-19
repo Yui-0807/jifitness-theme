@@ -9,13 +9,14 @@
 
 get_header();
 ?>
+
+<!-- Carousel Banners -->
+<?php get_template_part('template-parts/content', 'banner'); ?>
+
 <div class="cotent-container">
 <main id="primary" class="site-main">
 
 <h1 class="bg-red-500">Tailwind Works!!</h1>
-
-<!-- Carousel Banners -->
-<?php get_template_part('template-parts/content', 'banner'); ?>
 
 <!-- manifesto -->
 <?php

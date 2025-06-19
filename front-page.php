@@ -108,7 +108,7 @@ endforeach;
           <?php endif; ?>
           <div class="testimonial-card__content">
             <h3><?php the_title(); ?></h3>
-
+            <div class="testimonial-card_hashtag">
             <?php if( have_rows('testimoniales_hashtag') ):
               while( have_rows('testimoniales_hashtag') ) : the_row();
                 $hashtag = get_sub_field('hashtag');
@@ -119,7 +119,7 @@ endforeach;
                 <?php endif;
               endwhile;
             endif; ?>
-
+            </div>
             <?php the_excerpt(); ?>
           </div>
         </label>
@@ -133,7 +133,7 @@ endforeach;
             <div class="modal__content">
               <?php the_post_thumbnail('large'); ?>
               <h3><?php the_title(); ?></h3>
-
+              <div class="modal__hashtag">
               <?php if( have_rows('testimoniales_hashtag') ):
                 while( have_rows('testimoniales_hashtag') ) : the_row();
                   $hashtag = get_sub_field('hashtag');
@@ -144,7 +144,7 @@ endforeach;
                   <?php endif;
                 endwhile;
               endif; ?>
-
+              </div>
               <?php the_content(); ?>
             </div>
           </div>

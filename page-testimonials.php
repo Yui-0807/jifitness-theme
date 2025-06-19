@@ -44,6 +44,7 @@ if ( $query->have_posts() ) {
             <div class="testimonial-card__content">
                 <h2><?php the_title(); ?></h2>
 
+                <div class="testimonial-card_hashtag">
                 <!-- output haastag -->
                 <?php
                 // Check rows exists.
@@ -68,7 +69,7 @@ if ( $query->have_posts() ) {
                     // End loop.
                     endwhile;
                 endif;?>
-
+                </div>
                 <?php the_excerpt(); ?>
             </div>
             </label>
@@ -84,6 +85,7 @@ if ( $query->have_posts() ) {
                 
                 <div class="modal__content">
                     <h2><?php the_title(); ?></h2>
+                    <div class="modal__hashtag">
                     <!-- output haastag -->
                         <?php
                         // Check rows exists.
@@ -108,7 +110,7 @@ if ( $query->have_posts() ) {
                             // End loop.
                             endwhile;
                         endif;?>
-
+                    </div>
                     <?php the_content(); ?>
                 </div>
             </div>

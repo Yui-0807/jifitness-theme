@@ -18,8 +18,14 @@
                 <h2><?php echo esc_html( $heading ); ?></h2>
               <?php endif; ?>
 
-              <?php if ( $description ) : ?>
-                <p><?php echo esc_html( $description ); ?></p>
+              <?php if ( $description ) : 
+                $points = explode('｜', $description);
+              ?>
+                <ul class="banner-list">
+                  <?php foreach ( $points as $point ) : ?>
+                    <li><?php echo esc_html( trim( $point ) ); ?></li>
+                  <?php endforeach; ?>
+                </ul>
               <?php endif; ?>
 
               <?php if ( $view_all && is_array( $view_all ) && isset( $view_all['url'] ) ) : ?>

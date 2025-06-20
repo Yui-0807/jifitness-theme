@@ -33,7 +33,7 @@ if ( $query->have_posts() ) {
     while( $query->have_posts() ) {
         $query->the_post(); ?>
 
-        <div class="testimonial-card">
+        <div class="default-card testimonial-card">
             <!-- Model btn -->
             <label for="modal-<?php echo get_the_ID(); ?>" >
             <?php if (has_post_thumbnail()) : ?>

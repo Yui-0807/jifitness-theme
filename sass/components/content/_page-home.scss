@@ -1,3 +1,5 @@
+/* faq
+ * =============================== */
 .faq-section {
   padding: 4rem 1rem;
 
@@ -16,6 +18,7 @@
 
     @include mq(tablet-sm) {
       font-size: 2.25rem;
+
       span {
         font-size: 1.75rem;
       }
@@ -75,4 +78,74 @@
       }
     }
   }
+}
+
+/* home-class-section
+ * =============================== */
+.home-class-wrapper {
+
+  .home-class-btns {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+
+    a {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  @include mq(tablet-sm) {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .home-class-btns {
+      display: block;
+
+      a {
+        margin-bottom: 1rem;
+      }
+
+      @include mq(laptop) {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+      }
+    }
+  }
+
+}
+
+.home-class-section-btn {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+
+  @include mq(tablet) {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+
+    a {
+      width: 200px;
+    }
+
+  }
+}
+
+.home-post-wrapper {
+  @include mq(tablet-sm) {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+.home-testimonials-btn,
+.home-blog-btn{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }

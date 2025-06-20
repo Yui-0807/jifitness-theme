@@ -19,13 +19,19 @@ get_header();
 <h1 class="bg-red-500">Tailwind Works!!</h1>
 
 <!-- manifesto -->
+<div class="home-manifesto-bg">
 <?php
 $about_page = get_page_by_path('about'); // 假設關於頁面的 slug 是 'about'
 set_query_var('manifesto_page_id', $about_page->ID);
 get_template_part( 'template-parts/content', 'manifesto' );
 ?>
+</div>
 
 <!-- Fitness Classes -->
+<div class="home-class-bg">
+  <div class="bg-top"></div>
+  <div class="bg-mid"></div>
+  <div class="bg-bottom"></div>
 <section class="home-class">
 <h2>課程介紹</h2>
 <p>Fitness Classes</p>
@@ -84,13 +90,10 @@ endforeach;
   <a class="default-btn" href="<?php echo esc_url(home_url('/class-recommendation')); ?>">找尋適合我的課程</a>
 </div>
 </section>
-
-<!-- Mood Section -->
-<section class="mood-wrapper">
-<?php get_template_part('template-parts/content', 'mood'); ?>
-</section>
+</div>
 
 <!-- Testimonials -->
+<div class="home-testimonials-bg">
 <section class="home-testimonials-wrapper">
   <h2>學員推薦</h2>
   <p>Get inspired by our members</p>
@@ -161,6 +164,12 @@ endforeach;
   <a class="default-btn home-testimonials-btn" href="<?php echo esc_url(home_url('/testimonials')); ?>">
   更多關於 JI Fitness 學員推薦
   </a>
+</section>
+    </div>
+
+<!-- Mood Section -->
+<section class="mood-wrapper">
+<?php get_template_part('template-parts/content', 'mood'); ?>
 </section>
 
 

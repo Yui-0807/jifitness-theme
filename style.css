@@ -3098,6 +3098,33 @@ body {
 	opacity: 1;
 }
 
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.banner .swiper-slide .content-background h2,
+.banner .swiper-slide .content-background .banner-paragraph,
+.banner .swiper-slide .content-background .banner-list {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.banner .swiper-slide.swiper-slide-active .content-background h2 {
+	animation: fadeInUp 0.6s ease-out 0.1s forwards;
+}
+.banner .swiper-slide.swiper-slide-active .content-background .banner-paragraph {
+	animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+.banner .swiper-slide.swiper-slide-active .content-background .banner-list {
+	animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
 .page-1-on-1 section {
 	padding: 3rem 1rem;
 	max-width: 1200px;

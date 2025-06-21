@@ -4,15 +4,10 @@
   max-width: 1200px;
   margin: 0 auto;
 
-  // @include mq(mobile-sm) {
-  //   padding: 2rem 1rem;
-  // }
-
   h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
     line-height: 1.4;
-
   }
 
   p {
@@ -20,8 +15,6 @@
     margin: 2rem auto 0;
     font-size: 1.125rem;
     line-height: 1.8;
-
-
   }
 
   .acf-gallery {
@@ -181,8 +174,6 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-
-
 }
 
 .core-value-item {
@@ -196,8 +187,6 @@
   position: relative;
   overflow: hidden;
   text-align: left;
-
-
 
   &::before {
     content: '';
@@ -222,16 +211,13 @@
 
 .core-value-title {
   font-size: 1.8rem;
-  font-weight: bold;
   margin: 0;
-
-
+  color: white;
 }
 
 .core-value-text {
   font-size: 1rem;
   line-height: 1.6;
-
 }
 
 //----------------------Team----------------------

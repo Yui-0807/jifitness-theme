@@ -1681,8 +1681,8 @@ body {
 
 .core-value-title {
 	font-size: 1.8rem;
-	font-weight: bold;
 	margin: 0;
+	color: white;
 }
 
 .core-value-text {

@@ -1,7 +1,8 @@
-
 <section class="banner">
   <?php if ( function_exists( 'get_field' ) ) : 
     $page_id = get_query_var( 'banner_page_id', get_the_ID() );
+    $is_homepage = is_front_page();
+
     if ( have_rows( 'page_banner', $page_id ) ) :
   ?>
     <div class="swiper banner-swiper">
@@ -12,20 +13,23 @@
           $view_all    = get_sub_field( 'view_all' );
           $image       = get_sub_field( 'image' );
         ?>
-          <div class="swiper-slide banner-content">
+          <div class="swiper-slide banner-content <?php echo $is_homepage ? 'is-front-page' : 'is-inner-page'; ?>">
             <div class="content-background">
               <?php if ( $heading ) : ?>
                 <h2><?php echo esc_html( $heading ); ?></h2>
               <?php endif; ?>
 
-              <?php if ( $description ) : 
-                $points = explode('｜', $description);
-              ?>
-                <ul class="banner-list">
-                  <?php foreach ( $points as $point ) : ?>
-                    <li><?php echo esc_html( trim( $point ) ); ?></li>
-                  <?php endforeach; ?>
-                </ul>
+              <?php if ( $description ) : ?>
+                <?php if ( $is_homepage ) : ?>
+                  <?php $points = explode( '｜', $description ); ?>
+                  <ul class="banner-list">
+                    <?php foreach ( $points as $point ) : ?>
+                      <li><?php echo esc_html( trim( $point ) ); ?></li>
+                    <?php endforeach; ?>
+                  </ul>
+                <?php else : ?>
+                  <p class="banner-paragraph"><?php echo esc_html( $description ); ?></p>
+                <?php endif; ?>
               <?php endif; ?>
 
               <?php if ( $view_all && is_array( $view_all ) && isset( $view_all['url'] ) ) : ?>

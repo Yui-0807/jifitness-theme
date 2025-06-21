@@ -3,24 +3,36 @@
 
   .banner-swiper {
     width: 100%;
-    height: 100vh;
     position: relative;
 
     .swiper-slide {
       position: relative;
-      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
 
-      // 遮罩：上透明下黑漸層
+      // 高度設定依頁面類型
+      &.is-front-page {
+        height: 100vh;
+      }
+
+      &.is-inner-page {
+        height: 40vh;
+        min-height: 280px;
+
+        @include mq(tablet-sm) {
+          height: 60vh;
+        }
+      }
+
+      // 黑色漸層遮罩
       &::before {
         content: "";
         position: absolute;
         inset: 0;
         background: linear-gradient(
-          to bottom,
+          to left,
           rgba(0, 0, 0, 0) 0%,
           rgba(0, 0, 0, 0.1) 30%,
           rgba(0, 0, 0, 0.2) 65%,
@@ -41,29 +53,18 @@
       .content-background {
         position: relative;
         z-index: 2;
-        width: 100%;
+        width: 50%;
         max-width: 700px;
         padding: 2rem 1.5rem;
-        margin-left: 1.5rem;
-        margin-right: auto;
-        text-align: left;
         color: white;
         border-radius: 0.5rem;
-
-        @include mq(tablet-sm) {
-          padding: 3rem 2rem;
-          margin-left: 5%;
-        }
 
         h2 {
           font-size: 2rem;
           font-weight: bold;
           margin-bottom: 1rem;
           color: #fff;
-
-          @include mq(tablet-sm) {
-            font-size: 3rem;
-          }
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
         }
 
         a {
@@ -80,6 +81,14 @@
             background-color: rgba(255, 255, 255, 0.2);
           }
         }
+
+        @include mq(tablet-sm) {
+          padding: 3rem 2rem;
+
+          h2 {
+            font-size: 3rem;
+          }
+        }
       }
 
       .banner-list {
@@ -91,15 +100,46 @@
           font-size: 1rem;
           line-height: 1.8;
           color: #fff;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 
           @include mq(tablet-sm) {
             font-size: 1.25rem;
           }
         }
       }
+
+      .banner-paragraph {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+
+        @include mq(tablet-sm) {
+          font-size: 1.25rem;
+        }
+      }
+
+      &.is-front-page {
+        .content-background {
+          text-align: left;
+          margin-left: 1.5rem;
+          margin-right: auto;
+
+          @include mq(tablet-sm) {
+            margin-left: 5%;
+          }
+        }
+      }
+
+      &.is-inner-page {
+        .content-background {
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
     }
 
-    // Swiper 控制按鈕
     .swiper-button-prev,
     .swiper-button-next {
       color: white;
@@ -116,19 +156,17 @@
     }
   }
 
+  // .banner-wave {
+  //   position: absolute;
+  //   bottom: -1rem;
+  //   left: 0;
+  //   width: 100%;
+  //   z-index: 5;
+
+  //   img {
+  //     display: block;
+  //     width: 100%;
+  //     height: auto;
+  //   }
+  // }
 }
-
-//  .banner-wave {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   z-index: 5;
-
-//   img {
-//     display: block;
-//     width: 100%;
-//     height: auto;
-//   }
-// }
-

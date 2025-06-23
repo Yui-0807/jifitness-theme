@@ -5,8 +5,9 @@
 get_header();
 ?>
 
+<?php get_template_part('template-parts/content', 'banner'); ?>
+
 <main id="primary" class="site-main">
-   <?php get_template_part('template-parts/content', 'banner'); ?>
           
    <div class="course-recommendation-container">
     <form id="course-recommendation-form">

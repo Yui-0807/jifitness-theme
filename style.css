@@ -1681,8 +1681,8 @@ body {
 
 .core-value-title {
 	font-size: 1.8rem;
-	font-weight: bold;
 	margin: 0;
+	color: white;
 }
 
 .core-value-text {
@@ -2971,22 +2971,32 @@ body {
 }
 .banner .banner-swiper {
 	width: 100%;
-	height: 100vh;
 	position: relative;
 }
 .banner .banner-swiper .swiper-slide {
 	position: relative;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
 }
+.banner .banner-swiper .swiper-slide.is-front-page {
+	height: 100vh;
+}
+.banner .banner-swiper .swiper-slide.is-inner-page {
+	height: 40vh;
+	min-height: 280px;
+}
+@media (min-width: 48em) {
+	.banner .banner-swiper .swiper-slide.is-inner-page {
+		height: 60vh;
+	}
+}
 .banner .banner-swiper .swiper-slide::before {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.2) 65%, rgba(0, 0, 0, 0.5) 100%);
+	background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.2) 65%, rgba(0, 0, 0, 0.5) 100%);
 	z-index: 1;
 }
 .banner .banner-swiper .swiper-slide img {
@@ -3001,31 +3011,18 @@ body {
 .banner .banner-swiper .swiper-slide .content-background {
 	position: relative;
 	z-index: 2;
-	width: 100%;
+	width: 50%;
 	max-width: 700px;
 	padding: 2rem 1.5rem;
-	margin-left: 1.5rem;
-	margin-right: auto;
-	text-align: left;
 	color: white;
 	border-radius: 0.5rem;
-}
-@media (min-width: 48em) {
-	.banner .banner-swiper .swiper-slide .content-background {
-		padding: 3rem 2rem;
-		margin-left: 5%;
-	}
 }
 .banner .banner-swiper .swiper-slide .content-background h2 {
 	font-size: 2rem;
 	font-weight: bold;
 	margin-bottom: 1rem;
 	color: #fff;
-}
-@media (min-width: 48em) {
-	.banner .banner-swiper .swiper-slide .content-background h2 {
-		font-size: 3rem;
-	}
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 .banner .banner-swiper .swiper-slide .content-background a {
 	display: inline-block;
@@ -3040,6 +3037,14 @@ body {
 .banner .banner-swiper .swiper-slide .content-background a:hover {
 	background-color: rgba(255, 255, 255, 0.2);
 }
+@media (min-width: 48em) {
+	.banner .banner-swiper .swiper-slide .content-background {
+		padding: 3rem 2rem;
+	}
+	.banner .banner-swiper .swiper-slide .content-background h2 {
+		font-size: 3rem;
+	}
+}
 .banner .banner-swiper .swiper-slide .banner-list {
 	list-style-type: disc;
 	padding-left: 1.5rem;
@@ -3049,11 +3054,38 @@ body {
 	font-size: 1rem;
 	line-height: 1.8;
 	color: #fff;
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 @media (min-width: 48em) {
 	.banner .banner-swiper .swiper-slide .banner-list li {
 		font-size: 1.25rem;
 	}
+}
+.banner .banner-swiper .swiper-slide .banner-paragraph {
+	font-size: 1rem;
+	line-height: 1.8;
+	color: #fff;
+	margin-bottom: 1.5rem;
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+@media (min-width: 48em) {
+	.banner .banner-swiper .swiper-slide .banner-paragraph {
+		font-size: 1.25rem;
+	}
+}
+.banner .banner-swiper .swiper-slide.is-front-page .content-background {
+	text-align: left;
+	margin-left: 1.5rem;
+	margin-right: auto;
+}
+@media (min-width: 48em) {
+	.banner .banner-swiper .swiper-slide.is-front-page .content-background {
+		margin-left: 5%;
+	}
+}
+.banner .banner-swiper .swiper-slide.is-inner-page .content-background {
+	text-align: center;
+	margin: 0 auto;
 }
 .banner .banner-swiper .swiper-button-prev,
 .banner .banner-swiper .swiper-button-next {
@@ -3066,6 +3098,33 @@ body {
 }
 .banner .banner-swiper .swiper-pagination-bullet-active {
 	opacity: 1;
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.banner .swiper-slide .content-background h2,
+.banner .swiper-slide .content-background .banner-paragraph,
+.banner .swiper-slide .content-background .banner-list {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.banner .swiper-slide.swiper-slide-active .content-background h2 {
+	animation: fadeInUp 0.6s ease-out 0.1s forwards;
+}
+.banner .swiper-slide.swiper-slide-active .content-background .banner-paragraph {
+	animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+.banner .swiper-slide.swiper-slide-active .content-background .banner-list {
+	animation: fadeInUp 0.6s ease-out 0.3s forwards;
 }
 
 .page-1-on-1 section {

@@ -20,7 +20,7 @@ get_header();
     <p>目前沒有內容。</p>
 <?php endif; ?>
 
-
+<div class="modals">
 <!-- Modal toggle -->
 <?php
 $args = array(
@@ -121,7 +121,7 @@ if ( $query->have_posts() ) {
     wp_reset_postdata();
 } 
 ?>
-
+</div>
 </main>
 <?php
 get_footer();

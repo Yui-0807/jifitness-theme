@@ -33,9 +33,8 @@ get_template_part( 'template-parts/content', 'manifesto' );
   <div class="bg-mid"></div>
   <div class="bg-bottom"></div>
 <section class="home-class">
-<h2>課程介紹</h2>
-<p>Fitness Classes</p>
-
+    <h2>課程介紹</h2>
+    <p>Fitness Classes</p>
 <div class="home-class-wrapper">
 <?php 
 $class_groups = ['home_page_class_info_1', 'home_page_class_info_2', 'home_page_class_info_3'];
@@ -94,10 +93,10 @@ endforeach;
 
 <!-- Testimonials -->
 <div class="home-testimonials-bg">
-<section class="home-testimonials-wrapper">
+<section class="home-testimonials">
   <h2>學員推薦</h2>
   <p>Get inspired by our members</p>
-  <div class="home-modals">
+  <div class="modals">
     <?php
     $testimonials = get_field('home_page_testimonials'); // ACF relationship
 

@@ -1636,7 +1636,7 @@ body {
 }
 
 .core-values-section {
-	padding: 3rem 1rem;
+	padding: 4rem 1rem;
 	text-align: center;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -1644,7 +1644,7 @@ body {
 .core-values-section .core-value-heading {
 	margin: 1rem 0 2rem;
 	color: #07699E;
-	line-height: 1;
+	line-height: 0.8;
 }
 .core-values-section .core-value-heading .zh,
 .core-values-section .core-value-heading .en {
@@ -1721,11 +1721,12 @@ body {
 	}
 }
 
-.coaches {
+.coaches-section {
 	padding: 4rem 1rem;
 	background-color: #f9f9f9;
 	max-width: 1200px;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .coach-nav {
@@ -1741,16 +1742,17 @@ body {
 	align-items: center;
 	text-align: center;
 	text-decoration: none;
-	max-width: 90px;
+	width: 100%;
+	max-width: 120px;
 }
 .coach-nav .coach-nav-item img {
-	width: 64px;
-	height: 64px;
+	width: 100%;
+	aspect-ratio: 1/1;
 	-o-object-fit: cover;
 	   object-fit: cover;
-	border-radius: 50%;
-	border: 2px solid #ccc;
-	transition: border-color 0.3s ease;
+	clip-path: url(#blob-2);
+	border: 4px solid transparent;
+	transition: border 0.3s ease, transform 0.3s ease;
 }
 .coach-nav .coach-nav-item .coach-nav-label {
 	margin-top: 0.5rem;
@@ -1758,7 +1760,8 @@ body {
 	color: #444;
 }
 .coach-nav .coach-nav-item:hover img {
-	border-color: #000;
+	border-color: #0072bc;
+	transform: scale(1.05);
 }
 
 .coach-profile {

@@ -164,7 +164,7 @@
 
 //----------------------Core Value----------------------
 .core-values-section {
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -172,7 +172,7 @@
   .core-value-heading {
     margin: 1rem 0 2rem;
     color: #07699E;
-    line-height: 1;
+    line-height: 0.8;
 
   .zh,
   .en {
@@ -260,11 +260,12 @@
 
 
 //----------------------Team----------------------
-.coaches {
+.coaches-section {
   padding: 4rem 1rem;
   background-color: #f9f9f9;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 // 教練導覽列
@@ -281,15 +282,16 @@
     align-items: center;
     text-align: center;
     text-decoration: none;
-    max-width: 90px;
+    width: 100%;
+    max-width: 120px;
 
     img {
-      width: 64px;
-      height: 64px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      transition: border-color 0.3s ease;
+      clip-path: url(#blob-2);
+      border: 4px solid transparent;
+      transition: border 0.3s ease, transform 0.3s ease;
     }
 
     .coach-nav-label {
@@ -299,10 +301,12 @@
     }
 
     &:hover img {
-      border-color: #000;
+      border-color: #0072bc;
+      transform: scale(1.05);
     }
   }
 }
+
 
 // 教練個人資料區塊
 .coach-profile {

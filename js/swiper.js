@@ -52,4 +52,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     }
 
+        // Studio 環境介紹輪播（僅小螢幕使用）
+    if (document.querySelector('.studio-swiper')) {
+        new Swiper('.studio-swiper', {
+            loop: false,
+            speed: 800,
+            spaceBetween: 16,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            grabCursor: true,
+            autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            },
+        });
+    }
+
 });

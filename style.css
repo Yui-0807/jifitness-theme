@@ -1636,23 +1636,45 @@ body {
 }
 
 .core-values-section {
-	padding: 4rem 1rem;
+	padding: 3rem 1rem;
 	text-align: center;
 	max-width: 1200px;
 	margin: 0 auto;
 }
-
-.core-values-grid {
+.core-values-section .core-value-heading {
+	margin: 1rem 0 2rem;
+	color: #07699E;
+	line-height: 1;
+}
+.core-values-section .core-value-heading .zh,
+.core-values-section .core-value-heading .en {
+	display: block;
+	font-family: "Zen Maru Gothic", "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", "Heiti TC", "PMingLiU", serif;
+	font-size: 1.5rem;
+}
+@media (min-width: 48em) {
+	.core-values-section .core-value-heading .zh,
+	.core-values-section .core-value-heading .en {
+		font-size: 2rem;
+	}
+}
+@media (min-width: 80em) {
+	.core-values-section .core-value-heading .zh,
+	.core-values-section .core-value-heading .en {
+		font-size: 2.25rem;
+	}
+}
+.core-values-section .core-values-grid {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.5rem;
 	justify-content: center;
 }
-
-.core-value-item {
-	width: 300px;
+.core-values-section .core-value-item {
+	width: 100%;
+	max-width: 300px;
 	height: 450px;
-	padding: 5rem 2rem 2rem 2rem;
+	padding: 5rem 2rem 2rem;
 	border-radius: 1rem;
 	background-size: cover;
 	background-position: center;
@@ -1661,34 +1683,42 @@ body {
 	overflow: hidden;
 	text-align: left;
 }
-.core-value-item::before {
+.core-values-section .core-value-item::before {
 	content: "";
 	position: absolute;
 	inset: 0;
 	background: rgba(0, 0, 0, 0.45);
 	z-index: 1;
 }
-.core-value-item .core-value-icon,
-.core-value-item .core-value-title,
-.core-value-item .core-value-text {
+.core-values-section .core-value-item .core-value-icon,
+.core-values-section .core-value-item .core-value-title,
+.core-values-section .core-value-item .core-value-text {
 	position: relative;
 	z-index: 2;
 }
-
-.core-value-icon {
+.core-values-section .core-value-item .core-value-icon {
 	width: 80px;
 	height: auto;
+	margin-bottom: 1rem;
 }
-
-.core-value-title {
-	font-size: 1.8rem;
-	margin: 0;
+.core-values-section .core-value-item .core-value-title {
+	font-size: 1.5rem;
+	margin: 0 0 0.5rem;
 	color: white;
 }
-
-.core-value-text {
+.core-values-section .core-value-item .core-value-text {
 	font-size: 1rem;
 	line-height: 1.6;
+}
+@media (min-width: 48em) {
+	.core-values-section .core-value-item {
+		width: 45%;
+	}
+}
+@media (min-width: 80em) {
+	.core-values-section .core-value-item {
+		width: 300px;
+	}
 }
 
 .coaches {

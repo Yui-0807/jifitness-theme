@@ -3505,7 +3505,7 @@ body {
 
 .manifesto-btn {
 	margin: 1rem auto;
-	padding: 1rem 2rem;
+	padding: 0.75rem 1rem;
 	border-radius: 25px;
 }
 
@@ -3659,17 +3659,18 @@ body {
 
 .swiper.blog-swiper {
 	width: 100%;
-	padding-left: 2rem;
-	padding-right: 2rem;
+	padding-top: 2rem;
 	position: relative;
 }
 @media (min-width: 48em) {
 	.swiper.blog-swiper {
 		padding-left: 25%;
+		padding-right: 2rem;
 	}
 }
 @media (min-width: 80em) {
 	.swiper.blog-swiper {
+		padding-top: 0;
 		padding-left: 0;
 		width: 60%;
 	}
@@ -3689,8 +3690,24 @@ body {
 	.home-blog-left h2 {
 		margin-top: 0;
 	}
+	.home-blog-left span {
+		text-align: left;
+	}
 	.home-blog-left a {
 		margin-left: 0;
+	}
+}
+
+.home-blog-bg {
+	background-image: url("images/home-blog-bg.webp");
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	padding-bottom: 10rem;
+}
+@media (min-width: 80em) {
+	.home-blog-bg {
+		background-position: -5% 100%;
+		background-size: 35%;
 	}
 }
 

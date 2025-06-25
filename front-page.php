@@ -169,6 +169,7 @@ endforeach;
 
 
 <!-- Blog -->
+<div class="home-blog-bg">
 <section class="home-blog">
   <div class="home-blog-left">
     <h2 class="home-blog-heading">Irene 教練小教室<span>Blog for fitness tips</span></h2>
@@ -208,14 +209,14 @@ endforeach;
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 </div>
-
 </section>
+</div>
 
 <!-- FAQ Section -->
 <?php if ( have_rows('faq_items') ) : ?>
 <section class="faq-section">
   <div class="container">
-    <h2 class="faq-heading">常見問題<br><span>Frequently Asked Questions</span></h2>
+    <h2 class="faq-heading">常見問題<span>Frequently Asked Questions</span></h2>
     <div class="faq-accordion">
       <?php while ( have_rows('faq_items') ) : the_row(); ?>
         <?php 

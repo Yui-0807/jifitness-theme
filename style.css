@@ -1787,34 +1787,108 @@ body {
 }
 
 .coach-profile {
-	max-width: 800px;
+	max-width: 900px;
 	margin: 0 auto 4rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+.coach-profile .coach-layout {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+@media (min-width: 48em) {
+	.coach-profile .coach-layout {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+}
+.coach-profile .coach-layout .coach-left {
+	flex: 1;
 	text-align: center;
 }
-.coach-profile h3 {
-	font-size: 1.5rem;
-	margin-bottom: 1rem;
+.coach-profile .coach-layout .coach-left .coach-title {
+	font-size: 1rem;
+	color: #666;
+	margin: 1rem 0 0;
 }
-.coach-profile img {
-	max-width: 300px;
+.coach-profile .coach-layout .coach-left .coach-name {
+	font-size: 1.5rem;
+	margin: 0 0 1rem;
+}
+.coach-profile .coach-layout .coach-left .coach-photo img {
 	width: 100%;
+	max-width: 300px;
 	height: auto;
 	border-radius: 0.5rem;
-	margin-bottom: 1.5rem;
 }
-.coach-profile .coach-info {
+.coach-profile .coach-layout .coach-right {
+	flex: 2;
+}
+.coach-profile .coach-layout .coach-right .coach-info {
 	font-size: 1rem;
-	line-height: 1.7;
-	margin-bottom: 1.5rem;
+	line-height: 1.6;
 	text-align: left;
 }
-.coach-profile blockquote {
-	font-style: italic;
-	border-left: 4px solid #ddd;
-	padding-left: 1rem;
-	color: #666;
-	margin: 1.5rem 0;
-	text-align: left;
+.coach-profile .coach-quote-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin: 2rem 0;
+	padding: 1rem;
+	color: #444;
+	background-color: #fff;
+}
+.coach-profile .coach-quote-block .quote-icon {
+	width: 40px;
+	flex-shrink: 0;
+	opacity: 0.7;
+	filter: grayscale(100%);
+}
+.coach-profile .coach-quote-block .quote-icon .quote-icon-img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.coach-profile .coach-quote-block .quote-content {
+	flex: 1;
+	text-align: center;
+}
+.coach-profile .coach-quote-block .quote-content .quote-text {
+	font-size: 1.125rem;
+	line-height: 1.8;
+	margin-bottom: 0.75rem;
+	color: #444;
+}
+.coach-profile .coach-quote-block .quote-content .quote-author {
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: #222;
+}
+@media (min-width: 30em) {
+	.coach-profile .coach-quote-block {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 2rem 2rem 1rem;
+	}
+	.coach-profile .coach-quote-block .quote-content .quote-text {
+		text-align: left;
+	}
+	.coach-profile .coach-quote-block .quote-content .quote-author {
+		text-align: right;
+		margin-top: 0.5rem;
+	}
+}
+@media (min-width: 48em) {
+	.coach-profile .coach-quote-block .quote-content .quote-text {
+		font-size: 1.5rem;
+		padding-left: 2rem;
+	}
+	.coach-profile .coach-quote-block .quote-content .quote-author {
+		font-size: 1.25rem;
+		margin-top: 0.5rem;
+	}
 }
 .coach-profile .coach-cert-swiper {
 	margin-top: 2rem;
@@ -1825,12 +1899,15 @@ body {
 	overflow: hidden;
 	padding: 2rem 0;
 }
+.coach-cert-swiper .swiper-wrapper {
+	display: flex;
+	gap: 1rem;
+}
 .coach-cert-swiper .cert-slide {
 	width: 100% !important;
 	max-width: 100%;
 	flex: 0 0 100%;
 	box-sizing: border-box;
-	min-width: 0;
 }
 .coach-cert-swiper .cert-slide .cert-content {
 	display: flex;
@@ -1883,7 +1960,6 @@ body {
 	flex: 1;
 	min-width: 0;
 	text-align: left;
-	overflow-wrap: break-word;
 }
 .coach-cert-swiper .cert-slide .cert-content .cert-text .cert-title {
 	font-size: 1.125rem;
@@ -1897,34 +1973,6 @@ body {
 	color: #333;
 }
 
-@media (min-width: 48em) {
-	.coach-profile {
-		text-align: left;
-	}
-	.coach-profile h3 {
-		text-align: left;
-		margin-bottom: 1rem;
-	}
-	.coach-profile .coach-profile-main {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 2rem;
-		align-items: start;
-	}
-	.coach-profile .coach-profile-main img {
-		grid-column: 1/2;
-		margin: 0;
-		max-width: 100%;
-		border-radius: 0.5rem;
-	}
-	.coach-profile .coach-profile-main .coach-info {
-		grid-column: 2/3;
-		margin: 0;
-	}
-	.coach-profile blockquote {
-		margin-top: 2rem;
-	}
-}
 .studio-environment-gallery {
 	padding: 4rem 1rem;
 	max-width: 1200px;

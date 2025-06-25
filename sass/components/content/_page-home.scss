@@ -249,9 +249,10 @@
 .home-blog-btn {
   width: fit-content;
   margin: 2rem auto;
-  
+
 }
-  /* home-blog-section
+
+/* home-blog-section
  * =============================== */
 
 .blog-swiper .default-card {
@@ -281,7 +282,7 @@
   width: 100%;
   padding-top: 2rem;
   position: relative;
-  
+
   @include mq(tablet-sm) {
     padding-left: 25%;
     padding-right: 2rem;
@@ -290,7 +291,8 @@
   @include mq(laptop) {
     padding-top: 0;
     padding-left: 0;
-    width: 60%
+    width: 60%;
+    height: fit-content;
   }
 }
 
@@ -307,15 +309,18 @@
     h2 {
       margin-top: 0;
     }
-    span{
+
+    span {
       text-align: left;
     }
+
     a {
       margin-left: 0;
     }
   }
 }
-.home-blog-bg{
+
+.home-blog-bg {
   background-image: url("images/home-blog-bg.webp");
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -324,5 +329,34 @@
   @include mq(laptop) {
     background-position: -5% 100%;
     background-size: 35%;
+  }
+}
+
+.blog-btn {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+
+  @include mq(tablet-sm) {
+    justify-content: start;
+  }
+}
+
+.blog-next,
+.blog-prev {
+  svg {
+    fill: #075b9a;
+    height: 36px;
+    width: 36px;
+    border: #075b9a solid 2.1px;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  svg:hover {
+    background-color: #075b9a;
+    fill: white;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
   }
 }

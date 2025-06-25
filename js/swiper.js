@@ -59,12 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
             speed: 800,
             spaceBetween: 16,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              },
-              pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
+                nextEl: '.blog-next',
+                prevEl: '.blog-prev',
               },
               breakpoints: {
                 0: {

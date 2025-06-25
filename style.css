@@ -3633,7 +3633,7 @@ body {
 }
 
 /* home-blog-section
-* =============================== */
+ * =============================== */
 @media (min-width: 48em) {
 	.blog-swiper .default-card {
 		width: 100%;
@@ -3673,6 +3673,8 @@ body {
 		padding-top: 0;
 		padding-left: 0;
 		width: 60%;
+		height: -moz-fit-content;
+		height: fit-content;
 	}
 }
 
@@ -3709,6 +3711,35 @@ body {
 		background-position: -5% 100%;
 		background-size: 35%;
 	}
+}
+
+.blog-btn {
+	display: flex;
+	gap: 4rem;
+	justify-content: center;
+}
+@media (min-width: 48em) {
+	.blog-btn {
+		justify-content: start;
+	}
+}
+
+.blog-next svg,
+.blog-prev svg {
+	fill: #075b9a;
+	height: 36px;
+	width: 36px;
+	border: #075b9a solid 2.1px;
+	border-radius: 50%;
+	opacity: 0.5;
+	cursor: pointer;
+}
+.blog-next svg:hover,
+.blog-prev svg:hover {
+	background-color: #075b9a;
+	fill: white;
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
 }
 
 .rental-pricing-section {

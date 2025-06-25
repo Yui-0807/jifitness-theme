@@ -162,70 +162,110 @@
   }
 }
 
+//----------------------Core Value----------------------
 .core-values-section {
   padding: 4rem 1rem;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-}
 
-.core-values-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
+  .core-value-heading {
+    margin: 1rem 0 2rem;
+    color: #07699E;
+    line-height: 0.8;
 
-.core-value-item {
-  width: 300px;
-  height: 450px;
-  padding: 5rem 2rem 2rem 2rem;
-  border-radius: 1rem;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  text-align: left;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1;
+  .zh,
+  .en {
+    display: block;
+    font-family: $font__heading;
+    font-size: 1.5rem;
   }
 
-  .core-value-icon,
-  .core-value-title,
-  .core-value-text {
+    @include mq(tablet-sm) {
+      .zh,
+      .en {
+        font-size: 2rem;
+      }
+    }
+
+    @include mq(laptop) {
+      .zh,
+      .en {
+        font-size: 2.25rem;
+      }
+    }
+  }
+
+  .core-values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .core-value-item {
+    width: 100%;
+    max-width: 300px;
+    height: 450px;
+    padding: 5rem 2rem 2rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+    color: white;
     position: relative;
-    z-index: 2;
+    overflow: hidden;
+    text-align: left;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    .core-value-icon,
+    .core-value-title,
+    .core-value-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .core-value-icon {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .core-value-title {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem;
+      color: white;
+    }
+
+    .core-value-text {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @include mq(tablet-sm) {
+      width: 45%;
+    }
+
+    @include mq(laptop) {
+      width: 300px;
+    }
   }
 }
 
-.core-value-icon {
-  width: 80px;
-  height: auto;
-}
-
-.core-value-title {
-  font-size: 1.8rem;
-  margin: 0;
-  color: white;
-}
-
-.core-value-text {
-  font-size: 1rem;
-  line-height: 1.6;
-}
 
 //----------------------Team----------------------
-.coaches {
+.coaches-section {
   padding: 4rem 1rem;
   background-color: #f9f9f9;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 // 教練導覽列
@@ -242,15 +282,16 @@
     align-items: center;
     text-align: center;
     text-decoration: none;
-    max-width: 90px;
+    width: 100%;
+    max-width: 120px;
 
     img {
-      width: 64px;
-      height: 64px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      transition: border-color 0.3s ease;
+      clip-path: url(#blob-2);
+      border: 4px solid transparent;
+      transition: border 0.3s ease, transform 0.3s ease;
     }
 
     .coach-nav-label {
@@ -260,10 +301,12 @@
     }
 
     &:hover img {
-      border-color: #000;
+      border-color: #0072bc;
+      transform: scale(1.05);
     }
   }
 }
+
 
 // 教練個人資料區塊
 .coach-profile {
@@ -492,8 +535,61 @@
       line-height: 1.4;
     }
   }
-}
+  // 小螢幕預設使用 Swiper 輪播，隱藏 grid
+  .studio-swiper {
+    display: block;
 
+    .swiper-slide {
+      width: 80%;
+      max-width: 320px;
+      aspect-ratio: 4 / 5; // 或 3 / 4；維持統一高寬比
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      .image-caption {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0;
+        width: 90%;
+        padding: 0 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+        text-align: center;
+        z-index: 2;
+        line-height: 1.4;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+      }
+    }
+  }
+
+  .gallery-grid {
+    display: none;
+  }
+
+  @include mq(tablet-sm) {
+    .studio-swiper {
+      display: none;
+    }
+
+    .gallery-grid {
+      display: block;
+      column-count: 2;
+
+      @include mq(tablet) {
+        column-count: 3;
+      }
+    }
+  }
+}
 
 //-------------------------------facility
 .facility-features {

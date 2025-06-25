@@ -21,7 +21,10 @@ get_header();
     ?>
         <section class="core-values-section">
             <div class="container">
-                <h2 class="core-value-heading"><?php echo esc_html( get_field('core_value_heading') ); ?></h2>
+                <h2 class="core-value-heading">
+                <span class="zh">核心價值</span><br>
+                <span class="en">Core Value</span>
+                </h2>
 
                 <div class="core-values-grid">
                     <?php for ( $i = 1; $i <= 3; $i++ ) :
@@ -34,13 +37,13 @@ get_header();
                         $title    = $value[ $group_key . '_title' ];
                         $text     = $value[ $group_key . '_text' ];
                     ?>
-                        <div class="core-value-item" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>')">
+                        <article class="core-value-item" style="background-image: url('<?php echo esc_url( $bg_image['url'] ); ?>')">
                             <?php if ( $icon ) : ?>
                                 <img class="core-value-icon" src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
                             <?php endif; ?>
                             <h3 class="core-value-title"><?php echo esc_html( $title ); ?></h3>
                             <p class="core-value-text"><?php echo esc_html( $text ); ?></p>
-                        </div>
+                        </article>
                     <?php endfor; ?>
                 </div>
             </div>

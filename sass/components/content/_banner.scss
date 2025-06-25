@@ -59,7 +59,7 @@
         color: white;
         border-radius: 0.5rem;
 
-        h2 {
+        h1 {
           font-size: 2rem;
           font-weight: bold;
           margin-bottom: 1rem;
@@ -85,7 +85,7 @@
         @include mq(tablet-sm) {
           padding: 3rem 2rem;
 
-          h2 {
+          h1 {
             font-size: 3rem;
           }
         }
@@ -187,7 +187,7 @@
 .banner {
   .swiper-slide {
     .content-background {
-      h2,
+      h1,
       .banner-paragraph,
       .banner-list {
         opacity: 0;
@@ -198,7 +198,7 @@
 
     &.swiper-slide-active {
       .content-background {
-        h2 {
+        h1 {
           animation: fadeInUp 0.6s ease-out 0.1s forwards;
         }
 

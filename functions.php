@@ -143,6 +143,15 @@ add_action( 'widgets_init', 'jifitness_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jifitness_scripts() {
+	
+	// Google Fonts：Zen Maru Gothic for headings, Roboto for body
+	wp_enqueue_style(
+		'jifitness-google-fonts',
+		'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap',
+		array(),
+		null
+	);
+
 	wp_enqueue_style( 'jifitness-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'jifitness-style', 'rtl', 'replace' );
 

@@ -16,7 +16,7 @@
           <div class="swiper-slide banner-content <?php echo $is_homepage ? 'is-front-page' : 'is-inner-page'; ?>">
             <div class="content-background">
               <?php if ( $heading ) : ?>
-                <h2><?php echo esc_html( $heading ); ?></h2>
+                <h1><?php echo esc_html( $heading ); ?></h1>
               <?php endif; ?>
 
               <?php if ( $description ) : ?>

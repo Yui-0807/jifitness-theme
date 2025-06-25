@@ -52,4 +52,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     }
 
+     // 新增 blog 文章輪播初始化
+    if (document.querySelector('.blog-swiper')) {
+        new Swiper('.blog-swiper', {
+            loop: false,
+            speed: 800,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              breakpoints: {
+                0: {
+                slidesPerView: 1,
+                },
+                768: {
+                slidesPerView: 1.5,
+                },
+                1280: {
+                slidesPerView: 2.2,
+                }
+            },
+        });
+    }
+    
+
 });

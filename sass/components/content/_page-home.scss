@@ -219,22 +219,70 @@
 
 /* home-testomonials-section
  * =============================== */
-.home-testimonials-bg {}
+ .home-testimonials-btn,
+ .home-blog-btn {
+   width: fit-content;
+   margin-left: auto;
+   margin-right: auto;
+ }
 
 /* home-blog-section
  * =============================== */
 
-.home-post-wrapper {
+.blog-swiper .default-card {
   @include mq(tablet-sm) {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    width: 100%;
+  }
+
+  img{
+    @include mq(laptop) {
+      height: 200px;
+    }
   }
 }
 
-.home-testimonials-btn,
-.home-blog-btn {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+.home-blog {
+  padding-top: 4rem;
+  max-width: 100%;
+  overflow: visible;
+
+  @include mq(laptop) {
+    display: flex;
+    gap: 5rem;
+  }
+}
+
+.swiper.blog-swiper {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+
+  @include mq(tablet-sm) {
+    padding-left: 25%;
+  }
+  @include mq(laptop) {
+    padding-left: 0;
+    width:60%
+  }
+}
+
+.swiper-slide {
+  box-sizing: border-box;
+}
+
+.home-blog-left{
+  text-align: center;
+  @include mq(laptop) {
+    text-align: left;
+
+    h2{
+      margin-top: 0;
+    }
+    
+    a{
+      margin-left: 0;
+    }
+  }
+
 }

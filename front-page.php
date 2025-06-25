@@ -174,14 +174,17 @@ endforeach;
 
 <!-- Blog -->
 <section class="home-blog">
-  <h2>Irene 教練小教室</h2>
-  <p>Blog for fitness tips</p>
+  <div class="home-blog-left">
+    <h2>Irene 教練小教室</h2>
+    <p>Blog for fitness tips</p>
+    <a class="default-btn home-blog-btn" 
+      href="<?php echo esc_url(home_url('/blog')); ?>">
+    更多關於 JI Fitness blog
+    </a>
+  </div>
 
-  <a class="default-btn home-blog-btn" href="<?php echo esc_url(home_url('/blog')); ?>">
-  更多關於 JI Fitness blog
-  </a>
-
-  <div class="home-post-wrapper">
+  <div class="swiper blog-swiper">
+  <div class="swiper-wrapper">
     <?php
     $posts = get_field('home_page_blog_posts'); // ACF relationship field
     
@@ -189,22 +192,28 @@ endforeach;
       foreach( $posts as $post ):
         setup_postdata($post); ?>
         
-        <article class="default-card" id="home-post-<?php the_ID(); ?>">
-          <a href="<?php the_permalink(); ?>">
-            <?php 
-              if ( has_post_thumbnail() ) {
-                the_post_thumbnail('landscape-blog');
-              }
-            ?>
-            <h3><?php the_title(); ?></h3>
-            <?php the_excerpt(); ?>
-          </a>
-        </article>
-    
+        <div class="swiper-slide">
+          <article class="default-card" id="home-post-<?php the_ID(); ?>">
+            <a href="<?php the_permalink(); ?>">
+              <?php 
+                if ( has_post_thumbnail() ) {
+                  the_post_thumbnail('landscape-blog');
+                }
+              ?>
+              <h3><?php the_title(); ?></h3>
+              <?php the_excerpt(); ?>
+            </a>
+          </article>
+        </div>
+
       <?php endforeach;
-      wp_reset_postdata();?>
+      wp_reset_postdata(); ?>
     <?php endif; ?>
   </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
 </section>
 
 <!-- FAQ Section -->

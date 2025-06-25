@@ -2729,7 +2729,8 @@ body {
 }
 .wp-singular .site-main .home-class,
 .wp-singular .site-main .manifesto-section,
-.wp-singular .site-main .modals {
+.wp-singular .site-main .modals,
+.wp-singular .site-main .home-blog {
 	width: 100%;
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -2738,7 +2739,8 @@ body {
 }
 .wp-singular .site-main .home-class .post-thumbnail img,
 .wp-singular .site-main .manifesto-section .post-thumbnail img,
-.wp-singular .site-main .modals .post-thumbnail img {
+.wp-singular .site-main .modals .post-thumbnail img,
+.wp-singular .site-main .home-blog .post-thumbnail img {
 	height: 368px;
 	display: block;
 	-o-object-fit: cover;
@@ -2749,7 +2751,8 @@ body {
 @media (min-width: 30em) {
 	.wp-singular .site-main .home-class,
 	.wp-singular .site-main .manifesto-section,
-	.wp-singular .site-main .modals {
+	.wp-singular .site-main .modals,
+	.wp-singular .site-main .home-blog {
 		max-width: 480px;
 		padding-left: 1.25rem;
 		padding-right: 1.25rem;
@@ -2758,7 +2761,8 @@ body {
 @media (min-width: 48em) {
 	.wp-singular .site-main .home-class,
 	.wp-singular .site-main .manifesto-section,
-	.wp-singular .site-main .modals {
+	.wp-singular .site-main .modals,
+	.wp-singular .site-main .home-blog {
 		max-width: 768px;
 		padding-left: 2rem;
 		padding-right: 2rem;
@@ -2767,21 +2771,24 @@ body {
 @media (min-width: 64em) {
 	.wp-singular .site-main .home-class,
 	.wp-singular .site-main .manifesto-section,
-	.wp-singular .site-main .modals {
+	.wp-singular .site-main .modals,
+	.wp-singular .site-main .home-blog {
 		max-width: 1024px;
 	}
 }
 @media (min-width: 80em) {
 	.wp-singular .site-main .home-class,
 	.wp-singular .site-main .manifesto-section,
-	.wp-singular .site-main .modals {
+	.wp-singular .site-main .modals,
+	.wp-singular .site-main .home-blog {
 		max-width: 1280px;
 	}
 }
 @media (min-width: 90em) {
 	.wp-singular .site-main .home-class,
 	.wp-singular .site-main .manifesto-section,
-	.wp-singular .site-main .modals {
+	.wp-singular .site-main .modals,
+	.wp-singular .site-main .home-blog {
 		max-width: 1440px;
 	}
 }
@@ -3452,22 +3459,74 @@ body {
 
 /* home-testomonials-section
  * =============================== */
-/* home-blog-section
- * =============================== */
-@media (min-width: 48em) {
-	.home-post-wrapper {
-		display: flex;
-		justify-content: space-between;
-		gap: 1rem;
-	}
-}
-
 .home-testimonials-btn,
 .home-blog-btn {
 	width: -moz-fit-content;
 	width: fit-content;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/* home-blog-section
+ * =============================== */
+@media (min-width: 48em) {
+	.blog-swiper .default-card {
+		width: 100%;
+	}
+}
+@media (min-width: 80em) {
+	.blog-swiper .default-card img {
+		height: 200px;
+	}
+}
+
+.home-blog {
+	padding-top: 4rem;
+	max-width: 100%;
+	overflow: visible;
+}
+@media (min-width: 80em) {
+	.home-blog {
+		display: flex;
+		gap: 5rem;
+	}
+}
+
+.swiper.blog-swiper {
+	width: 100%;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	position: relative;
+}
+@media (min-width: 48em) {
+	.swiper.blog-swiper {
+		padding-left: 25%;
+	}
+}
+@media (min-width: 80em) {
+	.swiper.blog-swiper {
+		padding-left: 0;
+		width: 60%;
+	}
+}
+
+.swiper-slide {
+	box-sizing: border-box;
+}
+
+.home-blog-left {
+	text-align: center;
+}
+@media (min-width: 80em) {
+	.home-blog-left {
+		text-align: left;
+	}
+	.home-blog-left h2 {
+		margin-top: 0;
+	}
+	.home-blog-left a {
+		margin-left: 0;
+	}
 }
 
 .rental-pricing-section {

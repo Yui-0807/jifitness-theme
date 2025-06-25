@@ -14,6 +14,7 @@ get_header();
 
 <main id="primary" class="site-main">
 
+<div class="modals">
 <!-- Modal toggle -->
 <?php
 $args = array(
@@ -114,6 +115,7 @@ if ( $query->have_posts() ) {
     wp_reset_postdata();
 } 
 ?>
+</div>
 </div>
 </main>
 <?php

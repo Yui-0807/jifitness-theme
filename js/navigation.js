@@ -122,5 +122,18 @@
             });
         }
     });
+
+    // manifesto-btn 開關
+    document.addEventListener('DOMContentLoaded', function () {
+        const manifestoButton = document.querySelector('.manifesto-btn');
+        const manifestoText = document.querySelector('.manifesto-text');
+
+        if (manifestoButton && manifestoText) {
+            manifestoButton.addEventListener('click', function () {
+                manifestoButton.classList.toggle('active');
+                manifestoText.classList.toggle('open');
+            });
+        }
+    });
     
 })();

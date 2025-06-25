@@ -65,10 +65,14 @@ $images    = get_field( 'manifesto_images', $page_id );
     <?php endif; ?>
 
     <?php if ( $quotation ) : ?>
-    <h3><?php echo nl2br( esc_html( $quotation ) ); ?></h3>
+        <h3><?php echo nl2br( esc_html( $quotation ) ); ?></h3>
     <?php endif; ?>
 
     <?php if ( $text ) : ?>
-        <p><?php echo wp_kses_post( $text ); ?></p>
+        <div class="manifesto-text">
+            <p><?php echo wp_kses_post( $text ); ?></p>
+        </div>
     <?php endif; ?>
+
+    <button class="default-btn manifesto-btn">更多關於 JI Fitness</button>
 </section>

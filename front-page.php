@@ -16,8 +16,6 @@ get_header();
 <div class="cotent-container">
 <main id="primary" class="site-main">
 
-<h1 class="bg-red-500">Tailwind Works!!</h1>
-
 <!-- manifesto -->
 <div class="home-manifesto-bg">
 <?php
@@ -33,8 +31,7 @@ get_template_part( 'template-parts/content', 'manifesto' );
   <div class="bg-mid"></div>
   <div class="bg-bottom"></div>
 <section class="home-class">
-    <h2>課程介紹</h2>
-    <p>Fitness Classes</p>
+    <h2 class="home-class-heading">課程介紹<span>Fitness Classes</span></h2>
 <div class="home-class-wrapper">
 <?php 
 $class_groups = ['home_page_class_info_1', 'home_page_class_info_2', 'home_page_class_info_3'];
@@ -94,8 +91,7 @@ endforeach;
 <!-- Testimonials -->
 <div class="home-testimonials-bg">
 <section class="home-testimonials">
-  <h2>學員推薦</h2>
-  <p>Get inspired by our members</p>
+  <h2 class="home-testimonials-heading">學員推薦<span>Get inspired by our members</span></h2>
   <div class="modals">
     <?php
     $testimonials = get_field('home_page_testimonials'); // ACF relationship
@@ -175,8 +171,7 @@ endforeach;
 <!-- Blog -->
 <section class="home-blog">
   <div class="home-blog-left">
-    <h2>Irene 教練小教室</h2>
-    <p>Blog for fitness tips</p>
+    <h2 class="home-blog-heading">Irene 教練小教室<span>Blog for fitness tips</span></h2>
     <a class="default-btn home-blog-btn" 
       href="<?php echo esc_url(home_url('/blog')); ?>">
     更多關於 JI Fitness blog

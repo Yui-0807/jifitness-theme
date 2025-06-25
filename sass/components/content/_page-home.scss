@@ -1,3 +1,28 @@
+/* headings
+ * =============================== */
+.home-class-heading,
+.home-testimonials-heading,
+.home-blog-heading {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+  }
+
+  @include mq(tablet-sm) {
+    font-size: 2.25rem;
+
+    span {
+      font-size: 1.75rem;
+    }
+  }
+}
+
 /* faq
  * =============================== */
 .faq-section {
@@ -80,32 +105,25 @@
   }
 }
 
-.home {
-
-  .home-class,
-  .home-testimonials,
-  .home-blog {
-
-    &>h2,
-    &>p {
-      text-align: center;
-    }
-
-    h2 {
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin-top: 0;
-    }
-  }
-}
-
 /* home-manifesto-section
  * =============================== */
-.home-manifesto-bg {
-  background-color: #f7f7f7;
+.manifesto-text {
+  position: static; // 讓 submenu 佔據空間
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
 }
+
+.manifesto-text.open {
+  max-height: 40rem;
+}
+
+.manifesto-btn {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+}
+
 
 /* home-class-section
  * =============================== */
@@ -131,24 +149,28 @@
   top: 0;
   height: 300px;
   background-image: url('images/home-class-bg-top.webp');
-  background-color: #f7f7f7;
 }
 
 .bg-mid {
   top: 290px;
-  height: 1550px;
+  height: 1580px;
   background-image: url('images/home-class-bg-mid.webp');
 
   @include mq(tablet-sm) {
-    height: 750px;
+    height: 920px;
   }
 }
 
 .bg-bottom {
   bottom: 0;
-  height: 300px;
+  height: 280px;
   background-image: url('images/home-class-bg-bottom.webp');
+  background-position: bottom;
   z-index: 1;
+
+  @include mq(tablet-sm) {
+    height: 200px;
+  }
 
 }
 
@@ -165,6 +187,7 @@
 }
 
 .home-class-wrapper {
+  margin-top: 3.5rem;
 
   .home-class-btns {
     display: flex;
@@ -201,9 +224,7 @@
 
 .home-class-section-btn {
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
+  margin: 3rem auto;
 
   @include mq(tablet) {
     display: flex;
@@ -212,6 +233,7 @@
 
     a {
       width: 200px;
+      margin-bottom: 0;
     }
 
   }
@@ -219,14 +241,17 @@
 
 /* home-testomonials-section
  * =============================== */
- .home-testimonials-btn,
- .home-blog-btn {
-   width: fit-content;
-   margin-left: auto;
-   margin-right: auto;
- }
+.home-testimonials {
+  margin-bottom: 5rem;
+}
 
-/* home-blog-section
+.home-testimonials-btn,
+.home-blog-btn {
+  width: fit-content;
+  margin: 2rem auto;
+  
+}
+  /* home-blog-section
  * =============================== */
 
 .blog-swiper .default-card {
@@ -234,7 +259,7 @@
     width: 100%;
   }
 
-  img{
+  img {
     @include mq(laptop) {
       height: 200px;
     }
@@ -261,9 +286,10 @@
   @include mq(tablet-sm) {
     padding-left: 25%;
   }
+
   @include mq(laptop) {
     padding-left: 0;
-    width:60%
+    width: 60%
   }
 }
 
@@ -271,16 +297,17 @@
   box-sizing: border-box;
 }
 
-.home-blog-left{
+.home-blog-left {
   text-align: center;
+
   @include mq(laptop) {
     text-align: left;
 
-    h2{
+    h2 {
       margin-top: 0;
     }
-    
-    a{
+
+    a {
       margin-left: 0;
     }
   }

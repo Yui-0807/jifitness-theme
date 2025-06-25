@@ -178,5 +178,16 @@
  * =============================== */
 .page-id-223 {
     background-image: url('images/circle-bg.png');
+    background-color: #FBFCF8;
     background-position: center;
+
+    .site-main{
+        background-color: initial;
+    }
 }
+
+/* modals
+ * =============================== */
+ .modals{
+    margin-top: 3rem;
+ }

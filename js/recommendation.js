@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
         $('#step-1').addClass('active');
         $('#primary-goals, #secondary-goals, #recommendation-results').empty().html('');
         updateNextButtonState();
-        $('html, body').animate({ scrollTop: 0 }, 300);
+        $('html, body').animate({ scrollTop: prevStep.offset().top - 100 }, 300);
     });
 
     // 更新下一步按鈕狀態

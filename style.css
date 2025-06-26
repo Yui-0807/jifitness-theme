@@ -3227,12 +3227,41 @@ body {
 	color: #07699E;
 }
 
+/* .testimonial-card
+ * =============================== */
+.testimonial-card {
+	margin-bottom: 2rem;
+}
+
+.testimonial-card_inner {
+	display: block;
+}
+
+@media (min-width: 768px) {
+	.testimonial-card_inner {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+	/* 偶數項反轉排列 */
+	.testimonial-card:nth-child(even) .testimonial-card_inner {
+		flex-direction: row-reverse;
+	}
+	.testimonial-text {
+		flex: 1;
+	}
+	.testimonial-image {
+		flex: 1;
+	}
+}
 /* page background
  * =============================== */
 .page-id-223 {
 	background-image: url("images/circle-bg.png");
 	background-color: #FBFCF8;
 	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 .page-id-223 .site-main {
 	background-color: initial;

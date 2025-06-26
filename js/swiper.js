@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loop: false,
         speed: 800,
         spaceBetween: 16,
+        slidesPerView: 1,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -37,17 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation: {
             nextEl: '.cert-next',
             prevEl: '.cert-prev',
-        },
-        breakpoints: {
-            0: {
-            slidesPerView: 1,
-            },
-            768: {
-            slidesPerView: 1,
-            },
-            1024: {
-            slidesPerView: 1,
-            }
         },
     });
     }

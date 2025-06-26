@@ -64,20 +64,23 @@ if ($team_members):
         <div class="swiper-wrapper">
           <?php foreach ($member['coach_certificates'] as $cert): ?>
             <div class="swiper-slide cert-slide">
+
               <div class="cert-content">
                 <div class="cert-image">
                   <img src="<?php echo esc_url($cert['cert_image']['url']); ?>" alt="<?php echo esc_attr($cert['cert_image']['alt']); ?>">
-
-                  <div class="swiper-nav">
-                    <div class="swiper-button-prev cert-prev"></div>
-                    <div class="swiper-button-next cert-next"></div>
-                  </div>
                 </div>
+
                 <div class="cert-text">
                   <h4 class="cert-title"><?php echo esc_html($cert['cert_title']); ?></h4>
                   <p class="cert-desc"><?php echo esc_html($cert['cert_desc']); ?></p>
                 </div>
+
+                <div class="swiper-nav">
+                  <div class="swiper-button-prev cert-prev"></div>
+                  <div class="swiper-button-next cert-next"></div>
+                </div>
               </div>
+
             </div>
           <?php endforeach; ?>
         </div>

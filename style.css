@@ -1795,7 +1795,7 @@ body {
 .coach-profile .coach-layout {
 	display: flex;
 	flex-direction: column;
-	gap: 2.5rem;
+	gap: 4rem;
 }
 @media (min-width: 48em) {
 	.coach-profile .coach-layout {
@@ -1839,6 +1839,7 @@ body {
 	padding: 1rem;
 	color: #444;
 	background-color: #fff;
+	border-radius: 0.75rem;
 }
 .coach-profile .coach-quote-block .quote-icon {
 	width: 40px;
@@ -1898,16 +1899,20 @@ body {
 	position: relative;
 	overflow: hidden;
 	padding: 2rem 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 .coach-cert-swiper .swiper-wrapper {
 	display: flex;
-	gap: 1rem;
 }
 .coach-cert-swiper .cert-slide {
 	width: 100% !important;
-	max-width: 100%;
-	flex: 0 0 100%;
+	flex: 0 0 100% !important;
+	max-width: 100% !important;
 	box-sizing: border-box;
+	overflow: hidden;
+	padding-left: 0;
+	padding-right: 0;
 }
 .coach-cert-swiper .cert-slide .cert-content {
 	display: flex;
@@ -1919,46 +1924,19 @@ body {
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	padding: 1rem;
 }
-@media (min-width: 48em) {
-	.coach-cert-swiper .cert-slide .cert-content {
-		flex-direction: row;
-		align-items: center;
-		padding: 2rem;
-	}
-}
 .coach-cert-swiper .cert-slide .cert-content .cert-image {
-	flex-shrink: 0;
-	width: 160px;
 	text-align: center;
 }
 .coach-cert-swiper .cert-slide .cert-content .cert-image img {
-	width: 100%;
+	width: 80%;
 	height: auto;
 	display: block;
 	margin: 0 auto;
-}
-.coach-cert-swiper .cert-slide .cert-content .cert-image .swiper-nav {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-	margin-top: 1rem;
-}
-.coach-cert-swiper .cert-slide .cert-content .cert-image .swiper-nav .swiper-button-prev,
-.coach-cert-swiper .cert-slide .cert-content .cert-image .swiper-nav .swiper-button-next {
-	width: 40px;
-	height: 40px;
-	background: #333;
-	color: #fff;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.2rem;
-	cursor: pointer;
+	aspect-ratio: 1/1;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .coach-cert-swiper .cert-slide .cert-content .cert-text {
-	flex: 1;
-	min-width: 0;
 	text-align: left;
 }
 .coach-cert-swiper .cert-slide .cert-content .cert-text .cert-title {
@@ -1972,9 +1950,67 @@ body {
 	line-height: 1.6;
 	color: #333;
 }
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 1rem;
+	position: static !important;
+}
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-prev,
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-next {
+	width: 48px;
+	height: 48px;
+	background: #6a6a6a;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	cursor: pointer;
+	position: static !important;
+	transition: background-color 0.3s ease;
+}
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-prev::after,
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-next::after {
+	content: "";
+	font-size: 1.25rem;
+}
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-prev:hover,
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-next:hover {
+	background-color: #000;
+}
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-prev::after {
+	content: "←";
+}
+.coach-cert-swiper .cert-slide .cert-content .swiper-nav .swiper-button-next::after {
+	content: "→";
+}
+@media (min-width: 48em) {
+	.coach-cert-swiper .cert-slide .cert-content {
+		flex-direction: row;
+		align-items: center;
+		padding: 2rem;
+	}
+	.coach-cert-swiper .cert-slide .cert-content .cert-image {
+		width: 160px;
+	}
+	.coach-cert-swiper .cert-slide .cert-content .cert-text {
+		flex: 1;
+		min-width: 0;
+		padding-left: 2rem;
+	}
+	.coach-cert-swiper .cert-slide .cert-content .swiper-nav {
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 0;
+		margin-left: 1rem;
+	}
+}
 
 .studio-environment-gallery {
-	padding: 4rem 1rem;
+	padding: 0 1rem 0;
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -2091,8 +2127,8 @@ body {
 }
 
 .facility-features {
-	padding: 4rem 1rem;
 	background-color: #f9f9f9;
+	margin-right: 1.5rem;
 }
 .facility-features .container {
 	max-width: 800px;

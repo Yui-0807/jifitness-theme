@@ -6,12 +6,16 @@
   margin: 0 auto;
   background-color: #f9f9f9;
 
+  .pricing-table-heading {
+    text-align: center;
+  }
+
   .pricing-table {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-    @include mq(laptop) {
+    @include mq(tablet-sm) {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -19,31 +23,47 @@
     .venue-block {
       flex: 1;
       border: 1px solid #ddd;
-      padding: 2rem;
+      padding: 1rem; // 預設最小螢幕 padding
+
       border-radius: 10px;
       background-color: #fff;
 
+      @include mq(mobile) {
+        padding: 3rem;
+      }
+
+      @include mq(tablet) {
+        padding: 4rem;
+      }
+
       @include mq(laptop) {
-        max-width: 48%;
+        padding: 5rem;
       }
 
       .venue-title {
         font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin: 0 0 1rem 0;
         color: #0077b6;
+        text-align: center;
       }
 
       .rental-fee-table {
         width: 100%;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
 
-        th, td {
-          font-size: 0.95rem;
+        th,
+        td {
+          font-size: 1rem;
           text-align: left;
         }
       }
 
       .equipment-description {
+        h4 {
+          padding: 0;
+          margin: 0;
+        }
+
         .equipment-grid {
           display: flex;
           flex-direction: column;
@@ -59,7 +79,7 @@
 
             h5 {
               font-size: 1rem;
-              margin-bottom: 0.5rem;
+              margin: 0.5rem 0 0 0;
               color: #333;
             }
 
@@ -67,6 +87,11 @@
               font-size: 0.95rem;
               line-height: 1.6;
               text-align: left;
+
+              ul {
+                margin: 0;
+                padding: 0.5rem 1rem;
+              }
             }
           }
         }

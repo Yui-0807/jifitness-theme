@@ -12,7 +12,7 @@ if ( ! function_exists( 'get_field' ) ) {
     $heading = get_field('rental_pricing_table_heading');
     ?>
     <?php if ( $heading ) : ?>
-    <h2 class="section-heading"><?php echo esc_html( $heading ); ?></h2>
+    <h2 class="pricing-table-heading"><?php echo esc_html( $heading ); ?></h2>
     <?php endif; ?>
 
     <?php if (have_rows('pricing_sections')) : ?>

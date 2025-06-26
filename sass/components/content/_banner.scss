@@ -14,10 +14,10 @@
 
 
       &.is-front-page {
-        height: 60vh;
+        height: 100vh;
 
         @include mq(tablet-sm) {
-          height: 80vh;
+          height: 100vh;
         }
       }
 

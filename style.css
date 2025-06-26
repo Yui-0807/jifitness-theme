@@ -3250,11 +3250,11 @@ body {
 	overflow: hidden;
 }
 .banner .banner-swiper .banner-content.is-front-page {
-	height: 60vh;
+	height: 100vh;
 }
 @media (min-width: 48em) {
 	.banner .banner-swiper .banner-content.is-front-page {
-		height: 80vh;
+		height: 100vh;
 	}
 }
 .banner .banner-swiper .banner-content.is-inner-page {

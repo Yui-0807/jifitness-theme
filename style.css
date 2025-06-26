@@ -1658,7 +1658,7 @@ body {
 }
 
 .core-values-section {
-	padding: 4rem 1rem;
+	padding: 1rem;
 	text-align: center;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -1744,11 +1744,21 @@ body {
 }
 
 .coaches-section {
-	padding: 4rem 1rem;
+	padding: 1.5rem;
 	background-color: #f9f9f9;
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: center;
+}
+@media (min-width: 30em) {
+	.coaches-section {
+		padding: 0 2rem;
+	}
+}
+@media (min-width: 48em) {
+	.coaches-section {
+		padding: 0 2.5rem;
+	}
 }
 
 .coach-nav {
@@ -1795,12 +1805,18 @@ body {
 .coach-profile .coach-layout {
 	display: flex;
 	flex-direction: column;
-	gap: 4rem;
+	gap: 1rem;
 }
 @media (min-width: 48em) {
 	.coach-profile .coach-layout {
 		flex-direction: row;
 		align-items: flex-start;
+		gap: 4rem;
+	}
+}
+@media (min-width: 80em) {
+	.coach-profile .coach-layout {
+		gap: 5rem;
 	}
 }
 .coach-profile .coach-layout .coach-left {
@@ -1827,8 +1843,27 @@ body {
 }
 .coach-profile .coach-layout .coach-right .coach-info {
 	font-size: 1rem;
-	line-height: 1.6;
+	line-height: 1.7;
 	text-align: left;
+}
+.coach-profile .coach-layout .coach-right .coach-info ul {
+	padding: 0 0 0 1rem;
+}
+.coach-profile .coach-layout .coach-right .coach-info p {
+	margin-bottom: 1rem;
+}
+.coach-profile .coach-layout .coach-right .coach-info ::marker {
+	color: #07699E;
+}
+@media (min-width: 30em) {
+	.coach-profile .coach-layout .coach-right .coach-info {
+		padding: 0 3rem;
+	}
+}
+@media (min-width: 48em) {
+	.coach-profile .coach-layout .coach-right .coach-info {
+		padding: 0rem;
+	}
 }
 .coach-profile .coach-quote-block {
 	display: flex;
@@ -1857,15 +1892,15 @@ body {
 	text-align: center;
 }
 .coach-profile .coach-quote-block .quote-content .quote-text {
-	font-size: 1.125rem;
+	font-size: 1rem;
 	line-height: 1.8;
 	margin-bottom: 0.75rem;
 	color: #444;
 }
 .coach-profile .coach-quote-block .quote-content .quote-author {
-	font-size: 0.95rem;
+	font-size: 0.9rem;
 	font-weight: 500;
-	color: #222;
+	color: #383838;
 }
 @media (min-width: 30em) {
 	.coach-profile .coach-quote-block {
@@ -1882,12 +1917,15 @@ body {
 	}
 }
 @media (min-width: 48em) {
+	.coach-profile .coach-quote-block {
+		padding: 2.5rem 4rem 1rem;
+	}
 	.coach-profile .coach-quote-block .quote-content .quote-text {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		padding-left: 2rem;
 	}
 	.coach-profile .coach-quote-block .quote-content .quote-author {
-		font-size: 1.25rem;
+		font-size: 1rem;
 		margin-top: 0.5rem;
 	}
 }
@@ -2016,7 +2054,7 @@ body {
 }
 .studio-environment-gallery .section-heading {
 	text-align: center;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin-bottom: 2rem;
 }
 .studio-environment-gallery .gallery-grid {
@@ -2029,6 +2067,7 @@ body {
 	.studio-environment-gallery .gallery-grid {
 		-moz-column-count: 2;
 		     column-count: 2;
+		margin: 0 4rem;
 	}
 }
 @media (min-width: 64em) {
@@ -2128,42 +2167,35 @@ body {
 
 .facility-features {
 	background-color: #f9f9f9;
-	margin-right: 1.5rem;
 }
 .facility-features .container {
 	max-width: 800px;
 	margin: 0 auto;
 }
-.facility-features .section-heading {
-	text-align: center;
-	font-size: 2rem;
-	margin-bottom: 2.5rem;
+.facility-features ul.features-grid {
+	padding: 0;
 }
 .facility-features .features-grid {
 	list-style: none;
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
-	margin: 0;
+	margin: 1rem;
 }
 @media (min-width: 30em) {
 	.facility-features .features-grid {
-		grid-template-columns: repeat(2, 1fr);
+		margin: 1rem 2rem;
 	}
 }
-@media (min-width: 64em) {
-	.facility-features .features-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-@media (min-width: 80em) {
+@media (min-width: 48em) {
 	.facility-features .features-grid {
 		grid-template-columns: repeat(4, 1fr);
+		margin: 1rem;
 	}
 }
 .facility-features .feature-item {
 	background-color: #fff;
-	padding: 2rem 1rem;
+	padding: 2rem 1rem 0;
 	text-align: center;
 	border-radius: 8px;
 	transition: background 0.3s ease;
@@ -2180,9 +2212,14 @@ body {
 	transition: all 0.3s ease;
 }
 .facility-features .feature-item p {
-	font-size: 1rem;
+	font-size: 0.8rem;
 	color: #444;
 	transition: color 0.3s ease;
+}
+@media (min-width: 48em) {
+	.facility-features .feature-item p {
+		font-size: 1rem;
+	}
 }
 .facility-features .feature-item:hover {
 	background-color: #333;

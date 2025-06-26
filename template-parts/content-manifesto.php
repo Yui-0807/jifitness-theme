@@ -19,7 +19,7 @@ $images    = get_field( 'manifesto_images', $page_id );
 <section class="manifesto-section" id="manifesto">
 
     <?php if ( $heading ) : ?>
-        <h3><?php echo esc_html( $heading ); ?></h3>
+        <h2><?php echo esc_html( $heading ); ?></h2>
     <?php endif; ?>
 
    <!-- Blob Clip SVG 定義（使用比例座標）-->

@@ -11,8 +11,10 @@ get_header();
 ?>
 
 <!-- Carousel Banners -->
+<div class="home-banner-bg">
 <?php get_template_part('template-parts/content', 'banner'); ?>
-
+<div class="home-banner-wave"></div>
+</div>
 <div class="cotent-container">
 <main id="primary" class="site-main">
 

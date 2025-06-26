@@ -56,6 +56,8 @@
       <div class="swiper-button-next"></div>
     </div>
 
+    <div class="banner-bottom"></div>
+
     <?php 
     $wave_decor = get_field( 'banner_decor', $page_id );
     if ( $wave_decor ) : 

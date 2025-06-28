@@ -184,32 +184,52 @@
   max-width: 1200px;
   margin: 0 auto;
 
+  // .core-value-heading {
+  //   margin: 1rem 0 2rem;
+  //   color: #07699E;
+  //   line-height: 0.8;
+
+  // .zh,
+  // .en {
+  //   display: block;
+  //   font-family: $font__heading;
+  //   font-size: 1.5rem;
+  // }
+
+  //   @include mq(tablet-sm) {
+  //     .zh,
+  //     .en {
+  //       font-size: 2rem;
+  //     }
+  //   }
+
+  //   @include mq(laptop) {
+  //     .zh,
+  //     .en {
+  //       font-size: 2.25rem;
+  //     }
+  //   }
+  // }
   .core-value-heading {
-    margin: 1rem 0 2rem;
-    color: #07699E;
-    line-height: 0.8;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
 
-  .zh,
-  .en {
+  span {
     display: block;
-    font-family: $font__heading;
     font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
   }
 
-    @include mq(tablet-sm) {
-      .zh,
-      .en {
-        font-size: 2rem;
-      }
-    }
+  @include mq(tablet-sm) {
+    font-size: 2.25rem;
 
-    @include mq(laptop) {
-      .zh,
-      .en {
-        font-size: 2.25rem;
-      }
+    span {
+      font-size: 1.75rem;
     }
   }
+}
 
   .core-values-grid {
     display: flex;

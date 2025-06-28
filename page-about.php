@@ -21,10 +21,7 @@ get_header();
     ?>
         <section class="core-values-section">
             <div class="container">
-                <h2 class="core-value-heading">
-                <span class="zh">核心價值</span><br>
-                <span class="en">Core Value</span>
-                </h2>
+                <h2 class="core-value-heading">核心理念<span>Core Value</span></h2>
 
                 <div class="core-values-grid">
                     <?php for ( $i = 1; $i <= 3; $i++ ) :

@@ -1672,26 +1672,22 @@ body {
 	margin: 0 auto;
 }
 .core-values-section .core-value-heading {
-	margin: 1rem 0 2rem;
-	color: #07699E;
-	line-height: 0.8;
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
 }
-.core-values-section .core-value-heading .zh,
-.core-values-section .core-value-heading .en {
+.core-values-section .core-value-heading span {
 	display: block;
-	font-family: "Zen Maru Gothic", "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", "Heiti TC", "PMingLiU", serif;
 	font-size: 1.5rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
 }
 @media (min-width: 48em) {
-	.core-values-section .core-value-heading .zh,
-	.core-values-section .core-value-heading .en {
-		font-size: 2rem;
-	}
-}
-@media (min-width: 80em) {
-	.core-values-section .core-value-heading .zh,
-	.core-values-section .core-value-heading .en {
+	.core-values-section .core-value-heading {
 		font-size: 2.25rem;
+	}
+	.core-values-section .core-value-heading span {
+		font-size: 1.75rem;
 	}
 }
 .core-values-section .core-values-grid {

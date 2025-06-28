@@ -128,12 +128,18 @@
   background-color: #f5f5f5;
 }
 
-.home-manifesto-bg h3{
-  font-size: 2.5rem;
+.home-manifesto-bg h3 {
+  font-size: 1.5rem;
+  
+  @include mq(mobile) {
+    font-size: 2rem;
+  }
  }
+
  .home-manifesto-bg h2{
   display: none;
  }
+
 .manifesto-text {
   position: static; // 讓 submenu 佔據空間
   max-height: 0;

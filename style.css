@@ -1496,8 +1496,8 @@ body {
 	margin: 0 auto;
 }
 .manifesto-section h3 {
-	font-size: 2rem;
-	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	margin: 2rem 0 1rem;
 	line-height: 1.4;
 }
 .manifesto-section p {
@@ -3259,7 +3259,7 @@ body {
 	overflow: hidden;
 }
 .banner .banner-swiper .banner-content.is-front-page {
-	height: 100vh;
+	height: 90vh;
 }
 @media (min-width: 48em) {
 	.banner .banner-swiper .banner-content.is-front-page {
@@ -3382,36 +3382,6 @@ body {
 }
 .banner .banner-swiper .swiper-pagination-bullet-active {
 	opacity: 1;
-}
-.banner .banner-wave {
-	position: absolute;
-	bottom: -4rem;
-	left: 0;
-	width: 100%;
-	z-index: 5;
-}
-.banner .banner-wave img {
-	display: block;
-	width: 100%;
-	height: auto;
-}
-@media (min-width: 30em) {
-	.banner .banner-wave {
-		bottom: -6rem;
-		width: 90%;
-	}
-}
-@media (min-width: 48em) {
-	.banner .banner-wave {
-		bottom: -6rem;
-		width: 80%;
-	}
-}
-@media (min-width: 80em) {
-	.banner .banner-wave {
-		bottom: -10rem;
-		width: 70%;
-	}
 }
 
 @keyframes fadeInUp {
@@ -3691,7 +3661,12 @@ body {
 }
 
 .home-manifesto-bg h3 {
-	font-size: 2.5rem;
+	font-size: 1.5rem;
+}
+@media (min-width: 30em) {
+	.home-manifesto-bg h3 {
+		font-size: 2rem;
+	}
 }
 
 .home-manifesto-bg h2 {

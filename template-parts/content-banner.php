@@ -58,16 +58,6 @@
 
     <div class="banner-bottom"></div>
 
-    <?php 
-    $wave_decor = get_field( 'banner_decor', $page_id );
-    if ( $wave_decor ) : 
-    ?>
-      <div class="banner-wave">
-        <img 
-          src="<?php echo esc_url( is_array( $wave_decor ) ? $wave_decor['url'] : $wave_decor ); ?>" 
-          alt="波浪裝飾圖"
-        >
-      </div>
-    <?php endif; ?>
+
   <?php endif; endif; ?>
 </section>

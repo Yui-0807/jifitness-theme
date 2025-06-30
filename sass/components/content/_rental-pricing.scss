@@ -1,7 +1,7 @@
 .rental-pricing-section {
   position: relative;
   z-index: 2;
-  padding: 4rem 1rem;
+  padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
   background-color: #f9f9f9;
@@ -29,15 +29,15 @@
       background-color: #fff;
 
       @include mq(mobile) {
-        padding: 3rem;
+        padding: 2rem;
       }
 
       @include mq(tablet) {
-        padding: 4rem;
+        padding: 3rem;
       }
 
       @include mq(laptop) {
-        padding: 5rem;
+        padding: 4rem;
       }
 
       .venue-title {
@@ -45,6 +45,10 @@
         margin: 0 0 1rem 0;
         color: #0077b6;
         text-align: center;
+
+        @include mq(tablet-sm) {
+          margin: 0 0 2rem 0;;
+      }
       }
 
       .rental-fee-table {

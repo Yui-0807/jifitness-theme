@@ -3486,51 +3486,100 @@ body {
 }
 
 .page-1-on-1 section {
-	padding: 3rem 1rem;
+	padding: 1rem 1rem 3rem;
 	max-width: 1200px;
 	margin: 0 auto;
 }
 .page-1-on-1 section:first-of-type h2 {
 	color: #07699E;
 	font-size: 1.5rem;
-	margin-bottom: 1rem;
-	font-weight: 700;
+	font-weight: bold;
+	padding: 0 0.5rem;
 }
 .page-1-on-1 section:first-of-type .intro-text {
 	font-size: 1.0625rem;
 	line-height: 1.8;
 	margin-bottom: 2rem;
+	padding: 0 0.5rem;
 }
 @media (min-width: 48em) {
 	.page-1-on-1 section:first-of-type h2 {
-		font-size: 1.75rem;
+		font-size: 2rem;
+		padding: 0 1rem;
 	}
 	.page-1-on-1 section:first-of-type .intro-text {
 		font-size: 1.125rem;
+		padding: 0 1rem;
+	}
+}
+@media (min-width: 80em) {
+	.page-1-on-1 section:first-of-type h2 {
+		font-size: 2.25rem;
+		text-align: center;
+		padding: 1rem 2rem;
+	}
+	.page-1-on-1 section:first-of-type .intro-text {
+		font-size: 1.2rem;
+		padding: 0 3rem;
 	}
 }
 .page-1-on-1 .one-on-one-item {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
+	background: #fff;
+	border-radius: 1rem;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+	overflow: visible;
 }
-.page-1-on-1 .one-on-one-item img {
+@media (min-width: 30em) {
+	.page-1-on-1 .one-on-one-item {
+		padding: 1rem;
+	}
+}
+@media (min-width: 64em) {
+	.page-1-on-1 .one-on-one-item {
+		padding: 2rem;
+	}
+}
+.page-1-on-1 .one-on-one-item .image-wrapper {
+	position: relative;
+	top: -2rem;
+	width: 85%;
+	margin: 0 auto;
+}
+.page-1-on-1 .one-on-one-item .image-wrapper img {
 	width: 100%;
-	border-radius: 0.5rem;
+	border-radius: 0.5rem 0.5rem 0 0;
 	-o-object-fit: cover;
 	   object-fit: cover;
+	display: block;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.page-1-on-1 .one-on-one-item .text-block {
+	padding: 0 1.5rem;
 }
 .page-1-on-1 .one-on-one-item .text-block h3 {
 	color: #07699E;
-	font-size: 1.5rem;
-	margin-bottom: 1rem;
+	font-size: 1.3rem;
+	margin: 0rem;
 }
 .page-1-on-1 .one-on-one-item .text-block .class-description {
-	font-size: 1.125rem;
+	font-size: 1rem;
 	line-height: 1.8;
 }
-@media (min-width: 48em) {
+@media (min-width: 64em) {
+	.page-1-on-1 .one-on-one-item .text-block h3 {
+		font-size: 1.5rem;
+		padding: 0 1rem;
+	}
+	.page-1-on-1 .one-on-one-item .text-block .class-description {
+		font-size: 1.2rem;
+		padding: 0 1rem;
+	}
+}
+@media (min-width: 30em) {
 	.page-1-on-1 .one-on-one-item {
 		flex-direction: row;
 		align-items: flex-start;
@@ -3538,12 +3587,40 @@ body {
 	.page-1-on-1 .one-on-one-item.reverse {
 		flex-direction: row-reverse;
 	}
-	.page-1-on-1 .one-on-one-item img {
+	.page-1-on-1 .one-on-one-item .image-wrapper {
 		flex: 1;
+		top: -3rem;
 		max-width: 360px;
+		margin: 0;
 	}
 	.page-1-on-1 .one-on-one-item .text-block {
 		flex: 2;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+	.page-1-on-1 .one-on-one-item.reverse .text-block {
+		padding-left: 0;
+		padding-right: 1rem;
+	}
+}
+.page-1-on-1 .training-rates-heading {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin-top: 4rem;
+}
+.page-1-on-1 .training-rates-heading span {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
+}
+@media (min-width: 48em) {
+	.page-1-on-1 .training-rates-heading {
+		font-size: 2.25rem;
+	}
+	.page-1-on-1 .training-rates-heading span {
+		font-size: 1.75rem;
 	}
 }
 
@@ -4001,7 +4078,7 @@ body {
 .rental-pricing-section {
 	position: relative;
 	z-index: 2;
-	padding: 4rem 1rem;
+	padding: 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
 	background-color: #f9f9f9;
@@ -4029,17 +4106,17 @@ body {
 }
 @media (min-width: 30em) {
 	.rental-pricing-section .pricing-table .venue-block {
-		padding: 3rem;
+		padding: 2rem;
 	}
 }
 @media (min-width: 64em) {
 	.rental-pricing-section .pricing-table .venue-block {
-		padding: 4rem;
+		padding: 3rem;
 	}
 }
 @media (min-width: 80em) {
 	.rental-pricing-section .pricing-table .venue-block {
-		padding: 5rem;
+		padding: 4rem;
 	}
 }
 .rental-pricing-section .pricing-table .venue-block .venue-title {
@@ -4047,6 +4124,11 @@ body {
 	margin: 0 0 1rem 0;
 	color: #0077b6;
 	text-align: center;
+}
+@media (min-width: 48em) {
+	.rental-pricing-section .pricing-table .venue-block .venue-title {
+		margin: 0 0 2rem 0;
+	}
 }
 .rental-pricing-section .pricing-table .venue-block .rental-fee-table {
 	width: 100%;

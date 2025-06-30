@@ -8,8 +8,6 @@ if ( ! function_exists( 'get_field' ) ) {
 <section class="rental-pricing-section">
   <div class="container">
 
-    <h2 class="studio-rates-heading">健身房租借收費方式<span>Studio Rental Rates</span></h2>
-
     <?php if (have_rows('pricing_sections')) : ?>
       <div class="pricing-table">
         <?php while (have_rows('pricing_sections')) : the_row(); ?>

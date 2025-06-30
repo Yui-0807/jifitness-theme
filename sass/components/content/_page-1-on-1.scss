@@ -1,6 +1,6 @@
 .page-1-on-1 {
   section {
-    padding: 3rem 1rem;
+    padding: 1rem 1rem 3rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -9,53 +9,105 @@
     h2 {
       color: #07699E;
       font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
+      font-weight: bold;
+      padding: 0 0.5rem;
     }
 
     .intro-text {
       font-size: 1.0625rem;
       line-height: 1.8;
       margin-bottom: 2rem;
+      padding: 0 0.5rem;
     }
 
     @include mq(tablet-sm) {
       h2 {
-        font-size: 1.75rem;
+        font-size: 2rem;
+        padding: 0 1rem;
       }
 
       .intro-text {
         font-size: 1.125rem;
+        padding: 0 1rem;
+      }
+    }
+    
+    @include mq(laptop) {
+      h2 {
+        font-size: 2.25rem;
+        text-align: center;
+        padding: 1rem 2rem;
+      }
+
+      .intro-text {
+        font-size: 1.2rem;
+        padding: 0 3rem;
       }
     }
   }
 
   .one-on-one-item {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    overflow: visible;
 
-    img {
-      width: 100%;
-      border-radius: 0.5rem;
-      object-fit: cover;
+    @include mq(mobile) {
+      padding: 1rem;
+    }
+
+    @include mq(tablet) {
+      padding: 2rem;
+    }
+
+    .image-wrapper {
+      position: relative;
+      top: -2rem;
+      width: 85%;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        border-radius: 0.5rem 0.5rem 0 0;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
     }
 
     .text-block {
+      padding: 0 1.5rem;
+
       h3 {
         color: #07699E;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        margin: 0rem;
       }
 
       .class-description {
-        font-size: 1.125rem;
+        font-size: 1rem;
         line-height: 1.8;
       }
+
+      @include mq(tablet) {        
+      
+        h3 {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+      }
+
+      .class-description {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+      }
+    }
     }
 
-    @include mq(tablet-sm) {
+    @include mq(mobile) {
       flex-direction: row;
       align-items: flex-start;
 
@@ -63,13 +115,44 @@
         flex-direction: row-reverse;
       }
 
-      img {
+      .image-wrapper {
         flex: 1;
+        top: -3rem;
         max-width: 360px;
+        margin: 0;
       }
 
       .text-block {
         flex: 2;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      &.reverse .text-block {
+        padding-left: 0;
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  .training-rates-heading {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-top: 4rem;
+
+    span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-top: 0.5rem;
+    }
+
+    @include mq(tablet-sm) {
+      font-size: 2.25rem;
+
+      span {
+        font-size: 1.75rem;
       }
     }
   }

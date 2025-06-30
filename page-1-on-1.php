@@ -59,10 +59,12 @@ get_header();
           data-aos-duration="1500">
 
           <?php if ( $image ) : ?>
-            <img 
-              src="<?php echo esc_url( $image['url'] ); ?>" 
-              alt="<?php echo esc_attr( $image['alt'] ); ?>" 
-            />
+            <div class="image-wrapper">
+              <img 
+                src="<?php echo esc_url( $image['url'] ); ?>" 
+                alt="<?php echo esc_attr( $image['alt'] ); ?>" 
+              />
+            </div>
           <?php endif; ?>
 
           <div class="text-block">
@@ -83,9 +85,10 @@ get_header();
   </section>
 
   <section class="mood-wrapper">
-  <?php get_template_part('template-parts/content', 'mood'); ?>
+    <?php get_template_part('template-parts/content', 'mood'); ?>
   </section>
 
+  <h2 class="training-rates-heading">課程收費方式<span>Invest in Your Training</span></h2>
   <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
 
 </main>

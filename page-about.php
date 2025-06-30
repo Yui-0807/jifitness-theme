@@ -50,7 +50,10 @@ get_header();
     <?php get_template_part( 'template-parts/content', 'team' ); ?>
     <?php get_template_part( 'template-parts/content', 'studio-environment' ); ?>
     <?php get_template_part( 'template-parts/content', 'facility' ); ?>
-    <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
+
+        <h2 class="studio-rates-heading">健身房租借收費方式<span>Studio Rental Rates</span></h2>
+        <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
+        
     <?php get_template_part( 'template-parts/content', 'contact' ); ?>
     <?php get_template_part( 'template-parts/content', 'joinus' ); ?>
 

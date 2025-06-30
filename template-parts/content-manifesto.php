@@ -10,7 +10,6 @@ if ( ! function_exists( 'get_field' ) ) {
 }
 
 $page_id   = get_query_var('manifesto_page_id', get_the_ID());
-$heading   = get_field( 'manifesto_heading', $page_id );
 $quotation = get_field( 'manifesto_quotation', $page_id );
 $text      = get_field( 'manifesto_text', $page_id );
 $images    = get_field( 'manifesto_images', $page_id );
@@ -18,9 +17,7 @@ $images    = get_field( 'manifesto_images', $page_id );
 
 <section class="manifesto-section" id="manifesto">
 
-    <?php if ( $heading ) : ?>
-        <h2><?php echo esc_html( $heading ); ?></h2>
-    <?php endif; ?>
+    <h2 class="manifesto-heading">我們的理念<span>Manifesto</span></h2>
 
    <!-- Blob Clip SVG 定義（使用比例座標）-->
     <svg width="0" height="0" style="position: absolute;">

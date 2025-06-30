@@ -1,16 +1,11 @@
 
-
-
 <?php
 $team_members = get_field('team_members');
 if ($team_members):
 ?>
 <section class="coaches-section" id="coaches">
   
-  <h2 class="core-value-heading">
-  <span class="zh">專業團隊</span><br>
-  <span class="en">Team</span>
-  </h2>
+  <h2 class="team-heading">專業團隊<span>Team</span></h2>
 
   <div class="coach-nav">
     <?php foreach ($team_members as $member): ?>

@@ -1489,6 +1489,26 @@ body {
 	margin: 0 0 1.5em;
 }
 
+.manifesto-heading {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+.manifesto-heading span {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
+}
+@media (min-width: 48em) {
+	.manifesto-heading {
+		font-size: 2.25rem;
+	}
+	.manifesto-heading span {
+		font-size: 1.75rem;
+	}
+}
+
 .manifesto-section {
 	text-align: center;
 	padding: 4rem 2rem;
@@ -1762,6 +1782,26 @@ body {
 @media (min-width: 48em) {
 	.coaches-section {
 		padding: 0 2.5rem;
+	}
+}
+
+.team-heading {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+.team-heading span {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
+}
+@media (min-width: 48em) {
+	.team-heading {
+		font-size: 2.25rem;
+	}
+	.team-heading span {
+		font-size: 1.75rem;
 	}
 }
 
@@ -2067,10 +2107,24 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-.studio-environment-gallery .section-heading {
+.studio-environment-gallery .studio-env-heading {
 	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+.studio-environment-gallery .studio-env-heading span {
+	display: block;
 	font-size: 1.5rem;
-	margin-bottom: 2rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
+}
+@media (min-width: 48em) {
+	.studio-environment-gallery .studio-env-heading {
+		font-size: 2.25rem;
+	}
+	.studio-environment-gallery .studio-env-heading span {
+		font-size: 1.75rem;
+	}
 }
 .studio-environment-gallery .gallery-grid {
 	-moz-column-count: 1;
@@ -2180,6 +2234,26 @@ body {
 	}
 }
 
+.studio-rates-heading {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+.studio-rates-heading span {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
+}
+@media (min-width: 48em) {
+	.studio-rates-heading {
+		font-size: 2.25rem;
+	}
+	.studio-rates-heading span {
+		font-size: 1.75rem;
+	}
+}
+
 .facility-features {
 	background-color: #f9f9f9;
 }
@@ -2247,6 +2321,26 @@ body {
 	color: #fff;
 }
 
+.contact-heading {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+.contact-heading span {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
+}
+@media (min-width: 48em) {
+	.contact-heading {
+		font-size: 2.25rem;
+	}
+	.contact-heading span {
+		font-size: 1.75rem;
+	}
+}
+
 .contact-section {
 	padding: 3rem 1rem;
 }
@@ -2256,23 +2350,6 @@ body {
 	gap: 2rem;
 	max-width: 1200px;
 	margin: 0 auto;
-}
-.contact-section .contact-heading {
-	font-size: 2rem;
-	font-weight: 700;
-	color: #07699E;
-	text-align: center;
-	margin: 0 auto 2rem;
-}
-@media (min-width: 48em) {
-	.contact-section .contact-heading {
-		text-align: left;
-		font-size: 2.25rem;
-		margin-bottom: 2.5rem;
-		max-width: 1200px;
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
 }
 .contact-section .contact-left .contact-list {
 	list-style: none;
@@ -2394,6 +2471,26 @@ body {
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.join-us-heading {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+.join-us-heading span {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: normal;
+	margin-top: 0.5rem;
+}
+@media (min-width: 48em) {
+	.join-us-heading {
+		font-size: 2.25rem;
+	}
+	.join-us-heading span {
+		font-size: 1.75rem;
+	}
+}
+
 .join-us-section {
 	padding: 4rem 1.5rem;
 	background-color: #f9f9f9;
@@ -2401,25 +2498,6 @@ body {
 .join-us-section .container {
 	max-width: 1200px;
 	margin: 0 auto;
-}
-.join-us-section .join-us-heading {
-	text-align: center;
-	margin-bottom: 2rem;
-}
-.join-us-section .join-us-heading h2 {
-	font-size: 1.5rem;
-	color: #07699E;
-	font-weight: 700;
-}
-@media (min-width: 48em) {
-	.join-us-section .join-us-heading h2 {
-		font-size: 2rem;
-	}
-}
-@media (min-width: 80em) {
-	.join-us-section .join-us-heading h2 {
-		font-size: 2.25rem;
-	}
 }
 .join-us-section .join-us-content {
 	display: flex;

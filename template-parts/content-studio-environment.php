@@ -3,9 +3,8 @@ $images = get_field('studio_environment_gallery');
 if ($images) : ?>
 <section class="studio-environment-gallery" id="studio-environment-gallery">
   <div class="container">
-    <?php if (get_field('studio_environment_heading')) : ?>
-      <h2 class="section-heading"><?php the_field('studio_environment_heading'); ?></h2>
-    <?php endif; ?>
+
+    <h2 class="studio-env-heading">環境設施<span>Studio Environment</span></h2>
 
     <!-- Swiper 輪播（小螢幕用） -->
     <div class="swiper studio-swiper">

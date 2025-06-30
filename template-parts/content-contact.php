@@ -11,15 +11,12 @@ $address = get_field('address', $menu);
 $phone = get_field('phone', $menu);
 $email = get_field('email', $menu);
 $line_id = get_field('line_id', $menu);
-$contact_image = get_field('contact_image'); // 圖片 from ACF
-$contact_heading = get_field('contact_heading');
+$contact_image = get_field('contact_image'); 
 ?>
 
 <section class="contact-section" id="contact">
 
-    <?php if ($contact_heading): ?>
-    <h2 class="contact-heading"><?php echo esc_html($contact_heading); ?></h2>
-    <?php endif; ?>
+    <h2 class="contact-heading">聯絡我們<span>Contact Info</span></h2>
 
     <div class="contact-wrapper">
 

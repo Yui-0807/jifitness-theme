@@ -556,7 +556,7 @@
   }
 }
 
-// Swiper 證照輪播樣式
+// 證照輪播
 .coach-cert-swiper {
   position: relative;
   overflow: hidden;
@@ -690,8 +690,8 @@
         .swiper-nav {
           flex-direction: column;
           justify-content: center;
-          margin-top: 0;
           margin-left: 1rem;
+          gap: 2rem
         }
       }
     }

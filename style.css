@@ -2123,8 +2123,8 @@ body {
 	.coach-cert-swiper .cert-slide .cert-content .swiper-nav {
 		flex-direction: column;
 		justify-content: center;
-		margin-top: 0;
 		margin-left: 1rem;
+		gap: 2rem;
 	}
 }
 

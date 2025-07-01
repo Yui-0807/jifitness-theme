@@ -247,6 +247,12 @@ function jifitness_scripts() {
             null,
             true
         );
+		
+		//傳 logo 路徑給 contact-map.js
+    	wp_localize_script('ji-contact-map', 'contactMapData', array(
+			'jiLogoUrl' => get_template_directory_uri() . '/images/ji-logo.png',
+			));
+
     	}
 	}
 

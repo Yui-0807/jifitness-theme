@@ -2144,6 +2144,10 @@ body {
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .studio-environment-gallery {
 	padding: 0 1rem 0;
 	max-width: 1200px;

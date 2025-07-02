@@ -360,10 +360,15 @@
 // 教練導覽列
 .coach-nav {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq(tablet-sm) {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
 
   .coach-nav-item {
     display: flex;
@@ -372,29 +377,45 @@
     text-align: center;
     text-decoration: none;
     width: 100%;
-    max-width: 120px;
+    max-width: 200px;
+    cursor: pointer;
 
-    img {
+    .coach-avatar-svg {
       width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      clip-path: url(#blob-2);
-      border: 4px solid transparent;
-      transition: border 0.3s ease, transform 0.3s ease;
+      height: auto;
+      display: block;
     }
 
     .coach-nav-label {
-      margin-top: 0.5rem;
+      text-align: center;
       font-size: 0.85rem;
       color: #444;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+
+      .coach-title {
+        font-weight: 600;
+      }
+
+      .coach-name {
+        display: block;
+        color: #333;
+      }
     }
 
-    &:hover img {
-      border-color: #0072bc;
-      transform: scale(1.05);
+    // 藍色邊框初始為透明，hover 時才出現
+    .avatar-border {
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    &:hover .avatar-border {
+      opacity: 1;
     }
   }
 }
+
 
 // 教練個人資料區塊
 .coach-profile {

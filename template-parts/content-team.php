@@ -10,13 +10,38 @@ if ($team_members):
   <div class="coach-nav">
     <?php foreach ($team_members as $member): ?>
       <a href="#<?php echo esc_attr($member['coach_id']); ?>" class="coach-nav-item">
-        <?php if (!empty($member['coach_thumbnail'])): ?>
-          <img src="<?php echo esc_url($member['coach_thumbnail']['url']); ?>" alt="<?php echo esc_attr($member['coach_name']); ?>">
-        <?php endif; ?>
-        <p class="coach-nav-label"><?php echo esc_html($member['coach_title'] . ' ' . $member['coach_name']); ?></p>
+        <svg viewBox="0 0 100 100" class="coach-avatar-svg" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="clip-<?php echo esc_attr($member['coach_id']); ?>">
+              <path d="M82,59Q67,81,45,78Q23,75,20,54Q17,33,35,22Q53,11,71,26Q89,41,82,59Z"/>
+            </clipPath>
+          </defs>
+
+          <!-- Blob 藍框（預設透明，hover 顯示）-->
+          <path class="avatar-border"
+                d="M82,59Q67,81,45,78Q23,75,20,54Q17,33,35,22Q53,11,71,26Q89,41,82,59Z"
+                fill="none" stroke="#07699E" stroke-width="5" opacity="0"/>
+
+          <!-- 圖片 -->
+          <?php if (!empty($member['coach_thumbnail'])): ?>
+            <image
+              xlink:href="<?php echo esc_url($member['coach_thumbnail']['url']); ?>"
+              x="0" y="0" width="100" height="100"
+              clip-path="url(#clip-<?php echo esc_attr($member['coach_id']); ?>)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+          <?php endif; ?>
+        </svg>
+
+        <p class="coach-nav-label">
+          <span class="coach-title"><?php echo esc_html($member['coach_title']); ?></span><br>
+          <span class="coach-name"><?php echo esc_html($member['coach_name']); ?></span>
+        </p>
       </a>
+
     <?php endforeach; ?>
   </div>
+
 
   <?php foreach ($team_members as $member): ?>
   <article class="coach-profile" id="<?php echo esc_attr($member['coach_id']); ?>">

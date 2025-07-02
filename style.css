@@ -1833,10 +1833,16 @@ body {
 
 .coach-nav {
 	display: flex;
-	justify-content: center;
-	gap: 1.5rem;
-	margin-bottom: 3rem;
-	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+@media (min-width: 48em) {
+	.coach-nav {
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 3rem;
+	}
 }
 .coach-nav .coach-nav-item {
 	display: flex;
@@ -1845,25 +1851,35 @@ body {
 	text-align: center;
 	text-decoration: none;
 	width: 100%;
-	max-width: 120px;
+	max-width: 200px;
+	cursor: pointer;
 }
-.coach-nav .coach-nav-item img {
+.coach-nav .coach-nav-item .coach-avatar-svg {
 	width: 100%;
-	aspect-ratio: 1/1;
-	-o-object-fit: cover;
-	   object-fit: cover;
-	clip-path: url(#blob-2);
-	border: 4px solid transparent;
-	transition: border 0.3s ease, transform 0.3s ease;
+	height: auto;
+	display: block;
 }
 .coach-nav .coach-nav-item .coach-nav-label {
-	margin-top: 0.5rem;
+	text-align: center;
 	font-size: 0.85rem;
 	color: #444;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
 }
-.coach-nav .coach-nav-item:hover img {
-	border-color: #0072bc;
-	transform: scale(1.05);
+.coach-nav .coach-nav-item .coach-nav-label .coach-title {
+	font-weight: 600;
+}
+.coach-nav .coach-nav-item .coach-nav-label .coach-name {
+	display: block;
+	color: #333;
+}
+.coach-nav .coach-nav-item .avatar-border {
+	transition: opacity 0.3s ease;
+	opacity: 0;
+}
+.coach-nav .coach-nav-item:hover .avatar-border {
+	opacity: 1;
 }
 
 .coach-profile {

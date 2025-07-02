@@ -4219,28 +4219,35 @@ html {
 	padding: 0.5rem 1rem;
 }
 
-.mood-wrapper {
-	position: relative;
-	height: 100vh;
-	z-index: 1;
-	overflow: hidden;
-}
-
 .mood-section {
-	position: sticky;
-	top: 0;
+	position: relative;
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
-	z-index: 1;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	z-index: 1;
 	color: white;
-	background-attachment: fixed;
+}
+.mood-section::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.285);
+	z-index: 1;
+}
+@media (min-width: 64em) {
+	.mood-section {
+		background-attachment: fixed;
+	}
 }
 .mood-section .mood-overlay {
+	position: relative;
+	z-index: 2;
 	background: rgba(0, 0, 0, 0.35);
 	padding: 2rem 1rem;
 	max-width: 90%;
@@ -4287,16 +4294,12 @@ html {
 	}
 }
 
-.page-1-on-1 .one-on-one-item {
-	position: relative;
-	z-index: 2;
-	background-color: #fff;
-}
-
+.page-1-on-1 .one-on-one-item,
 .rental-pricing-section {
 	position: relative;
 	z-index: 2;
-	background-color: #f9f9f9;
+	background-color: #fff;
+	box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* Comments

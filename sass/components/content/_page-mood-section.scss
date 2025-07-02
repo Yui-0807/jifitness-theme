@@ -1,26 +1,35 @@
-//------ Mood -------
-.mood-wrapper {
-  position: relative;
-  height: 100vh;
-  z-index: 1;
-  overflow: hidden;
-}
-
+//------ Mood Section ------
 .mood-section {
-  position: sticky;
-  top: 0;
+  position: relative;
   height: 100vh;
   background-size: cover;
   background-position: center;
-  z-index: 1;
+  background-repeat: no-repeat;
+  background-attachment: scroll; // 避免 iOS 上 fixed 出錯
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 1;
   color: white;
-  background-attachment: fixed;
 
+  // 背景遮罩層，增強對比
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.285);
+    z-index: 1;
+  }
+
+  @include mq(tablet) {
+    background-attachment: fixed;
+  }
+
+  
   .mood-overlay {
+    position: relative; // 讓文字在遮罩之上
+    z-index: 2;
     background: rgba(0, 0, 0, 0.35);
     padding: 2rem 1rem;
     max-width: 90%;
@@ -71,17 +80,13 @@
   }
 }
 
-.page-1-on-1 {
-  .one-on-one-item {
-    position: relative;
-    z-index: 2;
-    background-color: #fff; // 蓋住 mood image！
-  }
-}
-
+//------ 上下白底區塊，確保能蓋住 mood-section ------
+.page-1-on-1 .one-on-one-item,
 .rental-pricing-section {
   position: relative;
-  z-index: 2; // 比 mood-section 高
-  background-color: #f9f9f9;
-}
+  z-index: 2;
+  background-color: #fff;
 
+  // 增加蓋住感覺
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+}

@@ -2635,6 +2635,8 @@ html {
 	max-width: 1000px;
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 .course-recommendation-container button {
 	width: 200px;

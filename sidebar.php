@@ -35,7 +35,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 							<li>
 								<a href="<?php the_permalink(); ?>">
 									<?php if ( has_post_thumbnail() ) {
-										the_post_thumbnail( 'thumbnail' );
+										the_post_thumbnail( 'medium' );
 									} ?>
 									<span><?php echo get_the_date(); ?></span>
 									<h3><?php the_title(); ?></h3>

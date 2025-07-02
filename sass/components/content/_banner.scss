@@ -1,3 +1,17 @@
+// === Banner 區塊以外的外層裝飾圖 ===
+.pages-banner-deco {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  margin-top: -1px;
+
+  @include mq(tablet-sm) {
+    margin-top: -3px;
+  }
+}
+
+// === 以下是原本的 Banner 內容 ===
 .banner {
   position: relative;
 

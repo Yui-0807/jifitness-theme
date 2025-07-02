@@ -60,4 +60,9 @@
 
 
   <?php endif; endif; ?>
+
+    <?php if ( ! is_front_page() ) : ?>
+    <img class="pages-banner-deco" src="<?php echo get_template_directory_uri(); ?>/images/banner-deco.webp" alt="banner-deco" loading="lazy">
+    <?php endif; ?>
+    
 </section>

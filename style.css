@@ -3365,6 +3365,20 @@ html {
 	margin-top: 3rem;
 }
 
+.pages-banner-deco {
+	width: 100%;
+	height: auto;
+	display: block;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	margin-top: -1px;
+}
+@media (min-width: 48em) {
+	.pages-banner-deco {
+		margin-top: -3px;
+	}
+}
+
 .banner {
 	position: relative;
 }

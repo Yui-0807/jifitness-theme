@@ -3405,6 +3405,7 @@ html {
 	-o-object-fit: cover;
 	   object-fit: cover;
 	margin-top: -1px;
+	background-color: #FBFCF8;
 }
 @media (min-width: 48em) {
 	.pages-banner-deco {

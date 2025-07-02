@@ -119,7 +119,7 @@ $contact_image = get_field('contact_image');
     
 
   <div class="contact-map-container">
-    <div id="map" style="width: 100%; height: 400px; margin-top: 2rem;"></div>
+    <div id="map" style="width: 100%; height: 450px; margin-top: 2rem;"></div>
   </div>
   
 </section>

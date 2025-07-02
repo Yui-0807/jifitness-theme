@@ -58,55 +58,6 @@ get_header();
     <?php get_template_part( 'template-parts/content', 'joinus' ); ?>
 
 
-    <?php
-    /*
-    <section class="contact-section">
-        <div class="contact-wrapper">
-            <div class="contact-left">
-                <?php get_template_part( 'template-parts/content', 'contact' ); ?>
-            </div>
-            <div class="contact-right">
-                <?php
-                $contact_image_id  = get_field('contact_image');
-                $contact_image_alt = $contact_image_id ? get_post_meta( $contact_image_id, '_wp_attachment_image_alt', true ) : '';
-                ?>
-                <div class="contact-image-wrapper">
-                    <?php if ( $contact_image_id ) : ?>
-                        <?php echo wp_get_attachment_image( $contact_image_id, 'large', false, [
-                            'alt'    => esc_attr( $contact_image_alt ),
-                            'class'  => 'responsive-contact-image',
-                            'loading'=> 'lazy',
-                        ] ); ?>
-                    <?php endif; ?>
-
-                    <div class="contact-words">
-                        <h3>HEALTH<br>CONFIDENCE<br>BEAUTY</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    */
-    ?>
-
-    <!-- Studio Icon -->
-    <?php 
-    /*
-    if ( have_rows( 'studio_description' ) ) : ?>
-        <?php while ( have_rows( 'studio_description' ) ) : the_row(); ?>
-            <?php
-            $icon = get_sub_field( 'studio_icon' );
-            if ( $icon ) :
-                echo '<div class="studio-icon">';
-                echo $icon;
-                echo '</div>';
-            endif;
-            ?>
-        <?php endwhile; ?>
-    <?php endif; ?>
-    */
-    ?>
-
 </main>
 
 <?php get_footer(); ?>

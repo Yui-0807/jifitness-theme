@@ -115,7 +115,7 @@
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    
+
     @include mq(tablet-sm) {
         width: initial;
 
@@ -127,9 +127,6 @@
 }
 
 .testimonial-card__image {
-    flex: 0 0 300px; 
-    max-width: 300px;
-    overflow: hidden;
     img {
         width: 100%;
         height: 15rem;
@@ -140,14 +137,18 @@
     }
 
     @include mq(tablet-sm) {
+        flex: 0 0 300px;
         max-width: 300px;
         overflow: hidden;
     }
 }
 
 .testimonial-card__content {
-    flex: 1; 
     padding: 1rem;
+
+    @include mq(tablet-sm) {
+        flex: 1;
+    }
 
     h2 {
         margin-top: 0;
@@ -186,13 +187,13 @@
     background-color: #FBFCF8;
     background-position: center;
 
-    .site-main{
+    .site-main {
         background-color: initial;
     }
 }
 
 /* modals
  * =============================== */
- .modals{
+.modals {
     margin-top: 3rem;
- }
+}

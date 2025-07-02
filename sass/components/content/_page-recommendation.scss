@@ -1,7 +1,8 @@
 /* 課程推薦系統樣式 */
 .course-recommendation-container {
     max-width: 1000px;
-    margin: 2.5rem auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 
     button {
         width: 200px;
@@ -245,7 +246,7 @@
 
 //---------------------------------------------- registration-process
 .registration-process {
-    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;

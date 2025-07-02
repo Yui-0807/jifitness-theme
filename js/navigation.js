@@ -127,13 +127,19 @@
     document.addEventListener('DOMContentLoaded', function () {
         const manifestoButton = document.querySelector('.manifesto-btn');
         const manifestoText = document.querySelector('.manifesto-text');
-
+        let expanded = false;
+    
         if (manifestoButton && manifestoText) {
-            manifestoButton.addEventListener('click', function () {
-                manifestoButton.classList.toggle('active');
-                manifestoText.classList.toggle('open');
+            manifestoButton.addEventListener('click', function (event) {
+                if (!expanded) {
+                    event.preventDefault(); // 防止跳轉
+                    manifestoButton.classList.toggle('active');
+                    manifestoText.classList.toggle('open');
+                    expanded = true;
+                } 
             });
         }
     });
+    
     
 })();

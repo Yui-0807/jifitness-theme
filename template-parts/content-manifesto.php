@@ -71,5 +71,5 @@ $images    = get_field( 'manifesto_images', $page_id );
         </div>
     <?php endif; ?>
 
-    <button class="default-btn manifesto-btn">更多關於 JI Fitness</button>
+    <a href="<?php echo esc_url( get_permalink( '38' ) ); ?>" class="default-btn manifesto-btn" role="button">更多關於 JI Fitness</a>
 </section>

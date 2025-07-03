@@ -1,25 +1,24 @@
-
 //---------------Manifesto------------------
 .manifesto-heading {
-    text-align: center;
-    font-size: 1.75rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+  }
+
+  @include mq(tablet-sm) {
+    font-size: 2.25rem;
 
     span {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-top: 0.5rem;
-    }
-
-    @include mq(tablet-sm) {
-      font-size: 2.25rem;
-
-      span {
-        font-size: 1.75rem;
-      }
+      font-size: 1.75rem;
     }
   }
+}
 
 .manifesto-section {
   text-align: center;
@@ -28,7 +27,7 @@
 
   h3 {
     font-size: 1.25rem;
-    margin: 2rem 0rem 0rem ;
+    margin: 2rem 0rem 0rem;
     font-weight: bold;
     padding: 0 1rem;
   }
@@ -39,39 +38,52 @@
     text-align: left;
   }
 
-    @include mq(mobile) {
-      h3 {
-        font-size: 1.5rem;
-      }
-      p {
-        text-align: center;
-      }
-    }
-      
-    @include mq(tablet-sm) {
-      h3 {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1.25rem;
-      }
+  @include mq(mobile) {
+    h3 {
+      font-size: 1.5rem;
     }
 
-    @include mq(tablet) {
-      h3 {
-        font-size: 2.25rem;
-        margin: 1rem;
-      }
-      p {
-        font-size: 1.35rem;
-        margin: 2rem;
-        line-height: 2;
-      }
+    p {
+      text-align: center;
     }
+  }
+
+  @include mq(tablet-sm) {
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include mq(tablet) {
+    h3 {
+      font-size: 2.25rem;
+      margin: 1rem;
+    }
+
+    p {
+      font-size: 1.35rem;
+      margin: 2rem;
+      line-height: 2;
+    }
+  }
 
   .acf-gallery {
     position: relative;
     height: 300px;
+
+    @media screen and (min-width: 400px) {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include mq(mobile) {
+      width: initial;
+    }
 
     @include mq(tablet-sm) {
       height: 500px;
@@ -80,8 +92,6 @@
     @include mq(tablet) {
       height: 420px;
       max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .gallery-item {
@@ -111,11 +121,13 @@
 
       top: 0%;
       left: 5%;
-     
+
+      @media screen and (min-width: 360px) {
+        left: 10%;
+      }
 
       @include mq(mobile) {
         top: 13%;
-        left: 10%;
         z-index: 4;
       }
 
@@ -142,17 +154,17 @@
 
       top: 0%;
       left: 30%;
+      z-index: 3;
 
       @include mq(mobile) {
-        left: 30%;
+        z-index: 0;
       }
 
       @include mq(tablet-sm) {
         width: 300px;
         height: 300px;
-
-        left: 30%;
       }
+
       @include mq(tablet) {
         width: 360px;
         height: 360px;
@@ -164,13 +176,12 @@
       clip-path: url(#blob-3);
       width: 140px;
       height: 140px;
-      
+
       top: 40%;
       left: 10%;
       z-index: 4;
 
       @include mq(mobile) {
-        top: 40%;
         left: 28%;
       }
 
@@ -178,7 +189,6 @@
         width: 240px;
         height: 240px;
         top: 48%;
-        left: 28%;
       }
 
       @include mq(tablet) {
@@ -195,18 +205,25 @@
       height: 120px;
 
       top: 58%;
-      left: 60%;
+      left: 51%;
+
+      @media screen and (min-width: 360px) {
+        left: 45%;
+      }
+
+      @media screen and (min-width: 400px) {
+        top: 45%;
+        left: 58%;
+      }
 
       @include mq(mobile) {
         top: 40%;
-        left: 58%;
       }
 
       @include mq(tablet-sm) {
         width: 200px;
         height: 200px;
 
-        top: 40%;
         left: 60%;
       }
 
@@ -221,11 +238,11 @@
   }
 }
 
-.page-id-38 .manifesto-btn{
+.page-id-38 .manifesto-btn {
   display: none;
 }
 
-.page-id-38 .manifesto-text{
+.page-id-38 .manifesto-text {
   max-height: initial;
 }
 
@@ -237,25 +254,25 @@
   margin: 0 auto;
 
   .core-value-heading {
-  text-align: center;
-  font-size: 1.75rem;
-  font-weight: bold;
-
-  span {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin-top: 0.5rem;
-  }
-
-  @include mq(tablet-sm) {
-    font-size: 2.25rem;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
 
     span {
-      font-size: 1.75rem;
+      display: block;
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-top: 0.5rem;
+    }
+
+    @include mq(tablet-sm) {
+      font-size: 2.25rem;
+
+      span {
+        font-size: 1.75rem;
+      }
     }
   }
-}
 
   .core-values-grid {
     display: flex;
@@ -329,15 +346,15 @@
   text-align: center;
 
   @include mq(mobile) {
-      padding: 0 2rem;
+    padding: 0 2rem;
   }
 
   @include mq(tablet-sm) {
-      padding: 0 2.5rem;
+    padding: 0 2.5rem;
   }
 }
 
-  .team-heading {
+.team-heading {
   text-align: center;
   font-size: 1.75rem;
   font-weight: bold;
@@ -479,7 +496,7 @@
           margin-bottom: 1rem;
         }
 
-        ::marker{
+        ::marker {
           // color: #179EC8;
           color: #07699E;
         }
@@ -547,6 +564,7 @@
         .quote-text {
           text-align: left;
         }
+
         .quote-author {
           text-align: right;
           margin-top: 0.5rem;
@@ -619,7 +637,7 @@
           margin: 0 auto;
           aspect-ratio: 1 / 1;
           object-fit: cover;
-          
+
         }
       }
 
@@ -673,11 +691,11 @@
         }
 
         .swiper-button-prev::after {
-          content: '←'; 
+          content: '←';
         }
 
         .swiper-button-next::after {
-          content: '→'; 
+          content: '→';
         }
       }
 
@@ -733,25 +751,25 @@ html {
   margin: 0 auto;
 
   .studio-env-heading {
-  text-align: center;
-  font-size: 1.75rem;
-  font-weight: bold;
-
-  span {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin-top: 0.5rem;
-  }
-
-  @include mq(tablet-sm) {
-    font-size: 2.25rem;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
 
     span {
-      font-size: 1.75rem;
+      display: block;
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-top: 0.5rem;
+    }
+
+    @include mq(tablet-sm) {
+      font-size: 2.25rem;
+
+      span {
+        font-size: 1.75rem;
+      }
     }
   }
-}
 
   .gallery-grid {
     column-count: 1;
@@ -961,26 +979,26 @@ html {
 
 
 //---------------contact
-  .contact-heading {
-    text-align: center;
-    font-size: 1.75rem;
-    font-weight: bold;
+.contact-heading {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+  }
+
+  @include mq(tablet-sm) {
+    font-size: 2.25rem;
 
     span {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-top: 0.5rem;
-    }
-
-    @include mq(tablet-sm) {
-      font-size: 2.25rem;
-
-      span {
-        font-size: 1.75rem;
-      }
+      font-size: 1.75rem;
     }
   }
+}
 
 .contact-section {
   padding: 3rem 1rem;
@@ -1144,25 +1162,25 @@ html {
 
 //-------------Join us
 .join-us-heading {
-    text-align: center;
-    font-size: 1.75rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+  }
+
+  @include mq(tablet-sm) {
+    font-size: 2.25rem;
 
     span {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-top: 0.5rem;
-    }
-
-    @include mq(tablet-sm) {
-      font-size: 2.25rem;
-
-      span {
-        font-size: 1.75rem;
-      }
+      font-size: 1.75rem;
     }
   }
+}
 
 .join-us-section {
   padding: 4rem 1.5rem;

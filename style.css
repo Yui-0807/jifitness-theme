@@ -3525,6 +3525,7 @@ html {
 	color: #fff;
 	text-decoration: none;
 	transition: background 0.3s ease;
+	margin-top: 1rem;
 }
 .banner .banner-swiper .banner-content .content-background a:hover {
 	background-color: rgba(255, 255, 255, 0.2);
@@ -3541,15 +3542,27 @@ html {
 	}
 }
 .banner .banner-swiper .banner-content .banner-list {
-	list-style-type: disc;
-	padding-left: 1.5rem;
-	margin-bottom: 1.5rem;
+	list-style: none;
+	padding-left: 0;
+	margin-top: 1rem;
 }
 .banner .banner-swiper .banner-content .banner-list li {
+	position: relative;
+	padding-left: 1.5rem;
 	font-size: 1rem;
 	line-height: 1.8;
 	color: #fff;
 	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+.banner .banner-swiper .banner-content .banner-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.7em;
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: #c9e5f8;
+	border-radius: 50%;
 }
 @media (min-width: 48em) {
 	.banner .banner-swiper .banner-content .banner-list li {
@@ -3572,15 +3585,37 @@ html {
 	text-align: left;
 	margin-left: 1.5rem;
 	margin-right: auto;
+	margin-top: -8rem;
 }
 @media (min-width: 48em) {
 	.banner .banner-swiper .banner-content.is-front-page .content-background {
 		margin-left: 5%;
+		margin-top: -11rem;
 	}
 }
 .banner .banner-swiper .banner-content.is-inner-page .content-background {
 	text-align: center;
 	margin: 0 auto;
+}
+.banner .banner-swiper .banner-content .content-background h1,
+.banner .banner-swiper .banner-content .content-background .banner-paragraph,
+.banner .banner-swiper .banner-content .content-background .banner-list,
+.banner .banner-swiper .banner-content .content-background a {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.banner .banner-swiper .banner-content.swiper-slide-active .content-background h1 {
+	animation: fadeInUp 0.6s ease-out 0.1s forwards;
+}
+.banner .banner-swiper .banner-content.swiper-slide-active .content-background .banner-list {
+	animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+.banner .banner-swiper .banner-content.swiper-slide-active .content-background .banner-paragraph {
+	animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+.banner .banner-swiper .banner-content.swiper-slide-active .content-background a {
+	animation: fadeInUp 0.6s ease-out 0.5s forwards;
 }
 .banner .banner-swiper .swiper-button-prev,
 .banner .banner-swiper .swiper-button-next {
@@ -3594,6 +3629,24 @@ html {
 .banner .banner-swiper .swiper-pagination-bullet-active {
 	opacity: 1;
 }
+.banner .scroll-indicator {
+	position: absolute;
+	bottom: 8rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 3;
+	font-size: 1rem;
+	color: white;
+	opacity: 0.8;
+	animation: bounceDown 2s infinite;
+	pointer-events: none;
+}
+@media (min-width: 48em) {
+	.banner .scroll-indicator {
+		font-size: 2.5rem;
+		bottom: 9rem;
+	}
+}
 
 @keyframes fadeInUp {
 	0% {
@@ -3605,23 +3658,14 @@ html {
 		transform: translateY(0);
 	}
 }
-.banner .banner-content .content-background h1,
-.banner .banner-content .content-background .banner-paragraph,
-.banner .banner-content .content-background .banner-list {
-	opacity: 0;
-	transform: translateY(20px);
-	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+@keyframes bounceDown {
+	0%, 100% {
+		transform: translateX(-50%) translateY(0);
+	}
+	50% {
+		transform: translateX(-50%) translateY(10px);
+	}
 }
-.banner .banner-content.swiper-slide-active .content-background h1 {
-	animation: fadeInUp 0.6s ease-out 0.1s forwards;
-}
-.banner .banner-content.swiper-slide-active .content-background .banner-paragraph {
-	animation: fadeInUp 0.6s ease-out 0.3s forwards;
-}
-.banner .banner-content.swiper-slide-active .content-background .banner-list {
-	animation: fadeInUp 0.6s ease-out 0.3s forwards;
-}
-
 .page-1-on-1 section {
 	padding: 1rem 1rem 3rem;
 	max-width: 1200px;

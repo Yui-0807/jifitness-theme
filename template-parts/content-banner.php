@@ -32,9 +32,15 @@
                 <?php endif; ?>
               <?php endif; ?>
 
-              <?php if ( $view_all && is_array( $view_all ) && isset( $view_all['url'] ) ) : ?>
-                <a href="<?php echo esc_url( $view_all['url'] ); ?>">View All</a>
+              <?php
+                if ( $view_all && is_array( $view_all ) && isset( $view_all['url'] ) ) :
+                  $button_label = isset( $view_all['title'] ) && $view_all['title'] ? $view_all['title'] : 'View All';
+              ?>
+                <a href="<?php echo esc_url( $view_all['url'] ); ?>">
+                  <?php echo esc_html( $button_label ); ?>
+                </a>
               <?php endif; ?>
+
             </div>
 
             <?php 
@@ -61,8 +67,14 @@
 
   <?php endif; endif; ?>
 
-    <?php if ( ! is_front_page() ) : ?>
-    <img class="pages-banner-deco" src="<?php echo get_template_directory_uri(); ?>/images/banner-deco.webp" alt="banner-deco" loading="lazy">
+    <?php if ( is_front_page() ) : ?>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>↓</span>
+      </div>
     <?php endif; ?>
-    
+
+    <?php if ( ! is_front_page() ) : ?>
+      <img class="pages-banner-deco" src="<?php echo get_template_directory_uri(); ?>/images/banner-deco.webp" alt="banner-deco" loading="lazy">
+    <?php endif; ?>
+  
 </section>

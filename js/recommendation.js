@@ -146,7 +146,7 @@ jQuery(document).ready(function($) {
                 success: function(goals) {
                     if (goals && goals.length > 0) {
     
-                        // 這裡加過濾邏輯👇
+                        // 這裡加過濾邏輯
                         let filteredGoals = goals;
                         if (window.selectedCourseType === 'ji-small-group') {
                             const excludedForSmallGroup = ['癌後體適能運動', '防身技巧'];

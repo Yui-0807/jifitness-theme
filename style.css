@@ -889,6 +889,12 @@ textarea {
 		display: flex;
 		gap: 1rem;
 	}
+	.blog .cotent-container .site-main,
+	.single-post .cotent-container .site-main,
+	.archive.category .cotent-container .site-main,
+	.archive.date .cotent-container .site-main {
+		flex: 0 0 64%;
+	}
 	.blog .cotent-container .widget-area,
 	.single-post .cotent-container .widget-area,
 	.archive.category .cotent-container .widget-area,
@@ -2645,7 +2651,7 @@ html {
 
 /* 課程推薦系統樣式 */
 .course-recommendation-container {
-	max-width: 1000px;
+	max-width: 1200px;
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
 	margin-left: auto;
@@ -2766,7 +2772,7 @@ html {
 .class-delivery-list {
 	width: -moz-fit-content;
 	width: fit-content;
-	margin: 0 auto;
+	margin: 0 auto 1rem;
 }
 
 .class-delivery-list > li {

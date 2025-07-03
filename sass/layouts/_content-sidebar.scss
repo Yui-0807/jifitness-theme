@@ -47,6 +47,10 @@
 			display: flex;
 			gap: 1rem;
 
+			.site-main {
+				flex: 0 0 64%;
+			}
+
 			.widget-area{
 				flex: 0 0 36%;
 			}

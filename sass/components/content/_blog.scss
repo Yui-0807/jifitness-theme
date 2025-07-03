@@ -84,7 +84,9 @@
 
 .widget-area {
     padding: 1rem;
-    border-left: #4f4f4f 1px solid;
+    @include mq(tablet-sm) {
+        border-left: #4f4f4f 1px solid;   
+    }
 
     .wp-block-latest-posts__list.wp-block-latest-posts {
         padding-left: 40px;

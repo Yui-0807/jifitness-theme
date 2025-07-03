@@ -590,14 +590,11 @@ body {
 
 	.nav-links {
 		display: flex;
+		flex-wrap: wrap;
+	
+		.nav-previous,.nav-next {
+			width: fit-content;
+		}
 	}
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
-
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
-	}
 }

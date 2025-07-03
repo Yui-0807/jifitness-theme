@@ -893,7 +893,7 @@ textarea {
 	.single-post .cotent-container .widget-area,
 	.archive.category .cotent-container .widget-area,
 	.archive.date .cotent-container .widget-area {
-		max-width: 240px;
+		flex: 0 0 36%;
 	}
 }
 @media (min-width: 64em) {
@@ -912,12 +912,6 @@ textarea {
 	.archive.date .cotent-container {
 		max-width: 1280px;
 	}
-	.blog .cotent-container .widget-area,
-	.single-post .cotent-container .widget-area,
-	.archive.category .cotent-container .widget-area,
-	.archive.date .cotent-container .widget-area {
-		max-width: 280px;
-	}
 }
 @media (min-width: 90em) {
 	.blog .cotent-container,
@@ -926,12 +920,6 @@ textarea {
 	.archive.date .cotent-container {
 		max-width: 1440px;
 		gap: 2.5rem;
-	}
-	.blog .cotent-container .widget-area,
-	.single-post .cotent-container .widget-area,
-	.archive.category .cotent-container .widget-area,
-	.archive.date .cotent-container .widget-area {
-		max-width: 300px;
 	}
 }
 .blog .site-footer,
@@ -1465,17 +1453,15 @@ body {
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
 	display: flex;
+	flex-wrap: wrap;
 }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
-}
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+.comment-navigation .nav-links .nav-previous, .comment-navigation .nav-links .nav-next,
+.posts-navigation .nav-links .nav-previous,
+.posts-navigation .nav-links .nav-next,
+.post-navigation .nav-links .nav-previous,
+.post-navigation .nav-links .nav-next {
+	width: -moz-fit-content;
+	width: fit-content;
 }
 
 /* Posts and pages
@@ -2970,6 +2956,7 @@ html {
 	background-color: #f5f5f5;
 	border-radius: 10px;
 	padding-bottom: 0.2rem;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 80em) {
 	.blog .site-main article,
@@ -3022,10 +3009,10 @@ html {
 	.blog .site-main article .entry-header,
 	.archive.category .site-main article .entry-header,
 	.archive.date .site-main article .entry-header {
-		max-width: 320px;
 		max-height: 260px;
 		border-top-right-radius: initial;
 		border-bottom-left-radius: 10px;
+		flex: 0 0 320px;
 	}
 }
 .blog .site-main article img,
@@ -3816,13 +3803,13 @@ html {
 /* faq
  * =============================== */
 .faq-section {
-	padding: 4rem 1rem;
+	padding: 0 1rem 4rem;
 }
 .faq-section .faq-heading {
 	text-align: center;
+	margin-top: 0;
 	font-size: 1.75rem;
 	font-weight: bold;
-	color: #075b9a;
 }
 .faq-section .faq-heading span {
 	display: block;

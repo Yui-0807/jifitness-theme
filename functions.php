@@ -323,12 +323,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // Change the excerpt more text
 function ji_excerpt_more () {
-    
 	$more = '...';
 	return $more;
-    
 }
 add_filter('excerpt_more', 'ji_excerpt_more');
+
+function ji_excerpt_length( $length ) {
+    return 40; // 顯示 20 個單字，可依需求調整
+}
+add_filter( 'excerpt_length', 'ji_excerpt_length' );
+
 
 /**
 * Custom Post Types & Taxonomies.

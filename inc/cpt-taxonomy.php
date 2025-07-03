@@ -25,7 +25,7 @@ function ji_register_custom_post_types() {
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'publicly_queryable' => true,
+        'publicly_queryable' => false,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'show_in_rest'       => true,
@@ -62,7 +62,7 @@ function ji_register_custom_post_types() {
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'publicly_queryable' => true,
+        'publicly_queryable' => false,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'show_in_rest'       => true,
@@ -100,7 +100,7 @@ function ji_register_custom_post_types() {
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'publicly_queryable' => true,
+        'publicly_queryable' => false,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'show_in_rest'       => true,

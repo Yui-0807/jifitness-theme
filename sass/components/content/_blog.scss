@@ -35,6 +35,7 @@
             @include mq(laptop) {
                 display: flex;
                 flex-direction: row;
+                gap: 1rem;
             }
 
             hr {
@@ -56,7 +57,7 @@
             overflow: hidden;
 
             @include mq(laptop) {
-                max-height: 260px;
+                max-height: 300px;
                 border-top-right-radius: initial;
                 border-bottom-left-radius: 10px;
                 flex: 0 0 320px;
@@ -78,13 +79,12 @@
             margin-top: 0;
         }
 
-
     }
 }
 
 .widget-area {
-
     padding: 1rem;
+    border-left: #4f4f4f 1px solid;
 
     .wp-block-latest-posts__list.wp-block-latest-posts {
         padding-left: 40px;
@@ -110,7 +110,7 @@
         }
 
         li {
-            border-bottom: #4f4f4f 1px solid;
+            border-bottom: #4f4f4f 1px dotted;
             padding-top: 24px;
         }
 

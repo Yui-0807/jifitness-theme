@@ -912,6 +912,12 @@ textarea {
 	.archive.date .cotent-container {
 		max-width: 1280px;
 	}
+	.blog .cotent-container .widget-area,
+	.single-post .cotent-container .widget-area,
+	.archive.category .cotent-container .widget-area,
+	.archive.date .cotent-container .widget-area {
+		flex: 0 0 30%;
+	}
 }
 @media (min-width: 90em) {
 	.blog .cotent-container,
@@ -2733,6 +2739,20 @@ html {
 	transition: all 0.3s;
 	text-align: center;
 	width: 100%;
+	height: 100%;
+}
+
+.class-delivery-list {
+	width: -moz-fit-content;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.class-delivery-list > li {
+	text-align: left;
+}
+.class-delivery-list > li::marker {
+	color: #179EC8;
 }
 
 .option-card.goal-option p {
@@ -2983,6 +3003,7 @@ html {
 	.archive.date .site-main article a {
 		display: flex;
 		flex-direction: row;
+		gap: 1rem;
 	}
 }
 .blog .site-main article a hr,
@@ -3009,7 +3030,7 @@ html {
 	.blog .site-main article .entry-header,
 	.archive.category .site-main article .entry-header,
 	.archive.date .site-main article .entry-header {
-		max-height: 260px;
+		max-height: 300px;
 		border-top-right-radius: initial;
 		border-bottom-left-radius: 10px;
 		flex: 0 0 320px;
@@ -3040,6 +3061,7 @@ html {
 
 .widget-area {
 	padding: 1rem;
+	border-left: #4f4f4f 1px solid;
 }
 .widget-area .wp-block-latest-posts__list.wp-block-latest-posts {
 	padding-left: 40px;
@@ -3059,7 +3081,7 @@ html {
 	list-style: none;
 }
 .widget-area .widget_sticky_posts li {
-	border-bottom: #4f4f4f 1px solid;
+	border-bottom: #4f4f4f 1px dotted;
 	padding-top: 24px;
 }
 .widget-area .widget_sticky_posts img {

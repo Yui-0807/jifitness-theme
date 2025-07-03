@@ -120,6 +120,18 @@
     transition: all 0.3s;
     text-align: center;
     width: 100%;
+    height: 100%;
+}
+.class-delivery-list{
+    width: fit-content;
+    margin: 0 auto;
+}
+.class-delivery-list > li{
+    text-align: left;
+
+    &::marker {
+        color: #179EC8;
+    }
 }
 
 .option-card.goal-option {

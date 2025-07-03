@@ -19,7 +19,22 @@ get_header();
                     <input type="radio" name="course_selection" value="ji-1-on-1|in-person" required class="sr-only">
                     <div class="option-content">
                         <h3>一對一課程</h3>
-                        <p>個性化指導，面對面上課</p>
+                        <?php
+                         $class_delivery_1_on_1 = get_field('class_delivery_1_on_1');
+
+                         if ($class_delivery_1_on_1 && isset($class_delivery_1_on_1['class_description'])) :
+                            $class_description = $class_delivery_1_on_1['class_description'];
+                        
+                            echo '<ul class="class-delivery-list">';
+                            foreach ($class_description as $row) {
+                                $description_item = $row['description_item'];
+                                if ($description_item) {
+                                    echo '<li>' . esc_html($description_item) . '</li>';
+                                }
+                            }
+                            echo '</ul>';
+                        endif;
+                        ?>
                     </div>
                 </label>
                 
@@ -27,7 +42,22 @@ get_header();
                     <input type="radio" name="course_selection" value="ji-small-group|in-person" required class="sr-only">
                     <div class="option-content">
                         <h3>小班團體課</h3>
-                        <p>小組學習，面對面上課</p>
+                        <?php
+                         $class_delivery_small_group = get_field('class_delivery_small_group');
+
+                         if ($class_delivery_small_group && isset($class_delivery_small_group['class_description'])) :
+                            $class_description = $class_delivery_small_group['class_description'];
+                        
+                            echo '<ul class="class-delivery-list">';
+                            foreach ($class_description as $row) {
+                                $description_item = $row['description_item'];
+                                if ($description_item) {
+                                    echo '<li>' . esc_html($description_item) . '</li>';
+                                }
+                            }
+                            echo '</ul>';
+                        endif;
+                        ?>
                     </div>
                 </label>
 
@@ -35,7 +65,22 @@ get_header();
                     <input type="radio" name="course_selection" value="ji-1-on-1|online" required class="sr-only">
                     <div class="option-content">
                         <h3>線上課程</h3>
-                        <p>一對一線上授課</p>
+                        <?php
+                         $class_delivery_online = get_field('class_delivery_online');
+
+                         if ($class_delivery_online && isset($class_delivery_online['class_description'])) :
+                            $class_description = $class_delivery_online['class_description'];
+                        
+                            echo '<ul class="class-delivery-list">';
+                            foreach ($class_description as $row) {
+                                $description_item = $row['description_item'];
+                                if ($description_item) {
+                                    echo '<li>' . esc_html($description_item) . '</li>';
+                                }
+                            }
+                            echo '</ul>';
+                        endif;
+                        ?>
                     </div>
                 </label>
             </div>

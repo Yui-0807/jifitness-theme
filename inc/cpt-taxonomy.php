@@ -174,6 +174,29 @@ function ji_register_taxonomies() {
     );
     register_taxonomy( 'ji-delivery-method', array( 'ji-1-on-1','ji-small-group',), $args );
 
+    // Add testimonials order to testimonials taxonomy.
+    $labels = array(
+        'name'              => _x( 'Testimonials Order', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Testimonials Order', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Testimonials Order' ),
+        'all_items'         => __( 'All Testimonials Order' ),
+        'edit_item'         => __( 'Edit Testimonials Order' ),
+        'update_item'       => __( 'Update Testimonials Order' ),
+        'add_new_item'      => __( 'Add New Testimonials Order' ),
+        'new_item_name'     => __( 'New Work Testimonials Order' ),
+        'menu_name'         => __( 'Testimonials Order' ),
+    );
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'testimonials-order' ),
+    );
+    register_taxonomy( 'ji-testimonials-order', array( 'ji-testimonials'), $args );
+
 
 }
 add_action( 'init', 'ji_register_taxonomies');

@@ -339,3 +339,46 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 // }
 // add_action( 'init', 'ji_register_custom_post_types' );
 
+// 在分類表單中加入欄位
+function add_order_field_to_taxonomy($term) {
+    $order = get_term_meta($term->term_id, 'order', true);
+    ?>
+    <tr class="form-field">
+        <th scope="row"><label for="order">排序順序</label></th>
+        <td>
+            <select name="order" id="order">
+                <?php for ($i = 1; $i <= 20; $i++) : ?>
+                    <option value="<?php echo $i; ?>" <?php selected($order, $i); ?>><?php echo $i; ?></option>
+                <?php endfor; ?>
+            </select>
+            <p class="description">選擇一個排序數字，數字越小越前面。</p>
+        </td>
+    </tr>
+    <?php
+}
+add_action('ji-testimonials-order_edit_form_fields', 'add_order_field_to_taxonomy');
+
+// 新增分類時顯示欄位（可選）
+function add_order_field_to_taxonomy_create() {
+    ?>
+    <div class="form-field">
+        <label for="order">排序順序</label>
+        <select name="order" id="order">
+            <?php for ($i = 1; $i <= 20; $i++) : ?>
+                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+            <?php endfor; ?>
+        </select>
+        <p class="description">選擇一個排序數字，數字越小越前面。</p>
+    </div>
+    <?php
+}
+add_action('ji-testimonials-order_add_form_fields', 'add_order_field_to_taxonomy_create');
+
+function save_order_term_meta($term_id) {
+    if (isset($_POST['order'])) {
+        update_term_meta($term_id, 'order', intval($_POST['order']));
+    }
+}
+add_action('edited_ji-testimonials-order', 'save_order_term_meta');
+add_action('create_ji-testimonials-order', 'save_order_term_meta');
+

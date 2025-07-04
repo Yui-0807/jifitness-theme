@@ -1116,10 +1116,56 @@ body {
 
 /* 點擊箭頭展開 */
 .menu-header-container .menu-item-has-children .sub-menu-toggle[aria-expanded=true] + ul {
-	max-height: 12.5rem;
+	max-height: 15rem;
 }
 
 /* -----------------------------------Laptop, Desktop Menu-------*/
+@media (min-width: 48em) {
+	.site-branding {
+		padding-left: 1rem;
+	}
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation .menu-header-container > ul {
+		padding: 0;
+		padding-left: 1rem;
+		align-items: center;
+	}
+	.main-navigation .menu-header-container > ul a {
+		font-size: 14px;
+	}
+	.main-navigation ul {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.main-navigation ul ul {
+		background-color: gray;
+	}
+	.main-navigation li {
+		position: relative;
+	}
+	.main-navigation ul ul {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		display: block;
+		padding: 0;
+		width: -moz-max-content;
+		width: max-content;
+		z-index: 999;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out;
+	}
+	.menu-header-container .menu-item-has-children {
+		align-items: center;
+	}
+	.sub-menu-toggle {
+		margin: 0;
+	}
+}
 @media (min-width: 80em) {
 	.main-navigation ul:first-child > li:first-child {
 		display: initial;
@@ -1135,6 +1181,12 @@ body {
 	}
 	.main-navigation .sub-menu-toggle {
 		display: none;
+	}
+	.main-navigation .menu-header-container > ul {
+		padding: 0 1rem;
+	}
+	.main-navigation .menu-header-container > ul a {
+		font-size: initial;
 	}
 	.main-navigation ul {
 		display: flex;

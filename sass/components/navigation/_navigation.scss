@@ -1,6 +1,6 @@
 body {
 	padding-top: 64px;
-	
+
 	@include mq(laptop) {
 		padding-top: 104px;
 	}
@@ -116,7 +116,7 @@ body {
 		display: block;
 		text-decoration: none;
 		color: white;
-		
+
 		&:visited {
 			color: white;
 		}
@@ -179,10 +179,78 @@ body {
 
 /* 點擊箭頭展開 */
 .menu-header-container .menu-item-has-children .sub-menu-toggle[aria-expanded="true"]+ul {
-	max-height: 12.5rem;
+	max-height: 15rem;
 }
 
 /* -----------------------------------Laptop, Desktop Menu-------*/
+@include mq(tablet-sm) {
+	// .main-navigation ul:first-child>li:first-child {
+	// 	// display: initial; //show home icon
+
+	// 	a {
+	// 		height: 36px;
+	// 	}
+	// }
+	.site-branding {
+		padding-left: 1rem;
+	}
+
+	.menu-toggle {
+		display: none; //hide hamburger menu
+	}
+
+	.main-navigation .menu-header-container>ul {
+		padding: 0;
+		padding-left: 1rem;
+		align-items: center;
+
+		a {
+			font-size: 14px;
+		}
+	}
+
+	.main-navigation {
+
+		ul {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+
+			ul {
+				background-color: gray;
+			}
+		}
+
+		li {
+			position: relative; // submenu 的 absolute 會參考這個 li
+		}
+	}
+
+	.main-navigation ul ul {
+		position: absolute;
+		top: 100%;
+		left: 0;
+
+		display: block;
+		padding: 0;
+		width: max-content;
+		z-index: 999;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out;
+		// pointer-events: none; // 防止 hover 還沒展開就被 hover 到
+
+	}
+
+	.menu-header-container .menu-item-has-children {
+		align-items: center;
+	}
+
+	.sub-menu-toggle {
+		margin: 0;
+	}
+}
+
 @include mq(laptop) {
 	.main-navigation ul:first-child>li:first-child {
 		display: initial; //show home icon
@@ -191,7 +259,8 @@ body {
 			height: 40px;
 		}
 	}
-	.site-branding{
+
+	.site-branding {
 		padding-left: 1rem;
 	}
 
@@ -201,6 +270,14 @@ body {
 
 	.main-navigation .sub-menu-toggle {
 		display: none; //hide sub menu arrow
+	}
+
+	.main-navigation .menu-header-container>ul {
+		padding: 0 1rem;
+
+		a {
+			font-size: initial;
+		}
 	}
 
 	.main-navigation {
@@ -237,15 +314,14 @@ body {
 		overflow: hidden;
 		transition: max-height 0.3s ease-in-out;
 		pointer-events: none; // 防止 hover 還沒展開就被 hover 到
-
 	}
 
 	.main-navigation li:hover>ul {
 		max-height: 15rem;
 		pointer-events: auto;
 	}
-
 }
+
 @media screen and (min-width: 1440px) {
 	.menu-header-container>ul {
 		padding: 0;
@@ -256,7 +332,7 @@ body {
 .site-footer {
 	background-color: #333;
 
-	a{
+	a {
 		color: #fff;
 	}
 }
@@ -353,6 +429,7 @@ body {
 	a:visited {
 		color: #fff;
 	}
+
 	a:hover {
 		text-decoration: underline;
 	}

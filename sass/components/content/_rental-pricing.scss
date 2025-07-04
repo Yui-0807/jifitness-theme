@@ -83,7 +83,7 @@
 
             h5 {
               font-size: 1rem;
-              margin: 0.5rem 0 0 0;
+              margin: 0.5rem 0 0 0.5rem;
               color: #333;
             }
 
@@ -91,10 +91,16 @@
               font-size: 0.95rem;
               line-height: 1.6;
               text-align: left;
+              margin-left: 0.5rem;
 
               ul {
                 margin: 0;
                 padding: 0.5rem 1rem;
+              }
+
+              ::marker {
+                color: #179EC8;
+                // color: #07699E;
               }
             }
           }

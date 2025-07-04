@@ -87,7 +87,9 @@ get_header();
   </section>
 
   <h2 class="training-rates-heading">課程收費方式<span>Invest in Your Training</span></h2>
-  <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
+    <div class="small-group-table">
+        <?php get_template_part( 'template-parts/content', 'rental-pricing' ); ?>
+    </div>
 
 </main>
 

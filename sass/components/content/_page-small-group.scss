@@ -155,4 +155,19 @@
       }
     }
   }
+
+  .small-group-table {
+
+    @include mq(mobile) {
+      margin: 0 3rem;
+    }
+
+     @include mq(tablet-sm) {
+      margin: 0 10rem;
+    }
+
+    @include mq(tablet) {
+      margin: 0 20rem;
+    }
+  }
 }

@@ -3943,6 +3943,21 @@ html {
 		font-size: 1.75rem;
 	}
 }
+@media (min-width: 30em) {
+	.page-small-group .small-group-table {
+		margin: 0 3rem;
+	}
+}
+@media (min-width: 48em) {
+	.page-small-group .small-group-table {
+		margin: 0 10rem;
+	}
+}
+@media (min-width: 64em) {
+	.page-small-group .small-group-table {
+		margin: 0 20rem;
+	}
+}
 
 /* headings
  * =============================== */
@@ -4420,17 +4435,21 @@ html {
 }
 .rental-pricing-section .pricing-table .venue-block .equipment-description .equipment-grid .equipment-floor h5 {
 	font-size: 1rem;
-	margin: 0.5rem 0 0 0;
+	margin: 0.5rem 0 0 0.5rem;
 	color: #333;
 }
 .rental-pricing-section .pricing-table .venue-block .equipment-description .equipment-grid .equipment-floor .floor-items {
 	font-size: 0.95rem;
 	line-height: 1.6;
 	text-align: left;
+	margin-left: 0.5rem;
 }
 .rental-pricing-section .pricing-table .venue-block .equipment-description .equipment-grid .equipment-floor .floor-items ul {
 	margin: 0;
 	padding: 0.5rem 1rem;
+}
+.rental-pricing-section .pricing-table .venue-block .equipment-description .equipment-grid .equipment-floor .floor-items ::marker {
+	color: #179EC8;
 }
 
 .mood-section {

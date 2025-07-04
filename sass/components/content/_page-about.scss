@@ -1198,6 +1198,7 @@ html {
       background-color: #07699E;
       border-radius: 1rem;
       overflow: hidden;
+      gap: 0;
     }
 
     .join-us-image {
@@ -1231,13 +1232,17 @@ html {
         color: #0072bc;
         margin-bottom: 1rem;
 
-        @include mq(tablet) {
-          font-size: 2.75rem;
-          color: white;
+        @include mq(mobile) {
+          font-size: 1.8rem;
         }
 
-        @include mq(laptop) {
-          font-size: 3rem;
+        @include mq(tablet-sm) {
+          font-size: 2rem;
+        }
+
+        @include mq(tablet) {
+          font-size: 2.5rem;
+          color: white;
         }
       }
 

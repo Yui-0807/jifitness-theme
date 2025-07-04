@@ -17,7 +17,7 @@ if ( $join_us_group ) :
         <?php endif; ?>
       </div>
       <div class="join-us-text-block">
-        <p class="join-us-styling">JOIN OUR TEAM</p>
+        <p class="join-us-styling">Together for Active Aging</p>
         <div class="join-us-body"><?php echo wp_kses_post($join_text); ?></div>
       </div>
     </div>

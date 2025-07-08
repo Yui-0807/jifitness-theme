@@ -135,6 +135,7 @@
                     event.preventDefault(); // 防止跳轉
                     manifestoButton.classList.toggle('active');
                     manifestoText.classList.toggle('open');
+                    manifestoButton.textContent = '關於我們';
                     expanded = true;
                 } 
             });

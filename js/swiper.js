@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 slidesPerView: 1,
                 },
                 768: {
-                slidesPerView: 1.5,
+                slidesPerView: 2,
                 },
                 1280: {
                 slidesPerView: 2.2,

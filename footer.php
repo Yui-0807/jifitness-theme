@@ -55,10 +55,10 @@
 
 			<div class="footer-certificate">
 				<?php
-
 				$certificates  = get_field( 'certificate_logo' ,$menu);
 
 				if( $certificates ): ?>
+				<h2>認證機構</h2>
 					<ul>
 						<?php foreach( $certificates as $certificate ): ?>
 							<li>

@@ -144,6 +144,8 @@
 
     let lastScrollTop = 0;
     const header = document.querySelector('.site-header');
+    const header_menu = document.querySelector('.menu-header-container');
+    
 
     window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -152,10 +154,14 @@
         // 下滑：變透明
         header.classList.add('transparent');
         header.classList.remove('solid');
+        header_menu.classList.add('transparent');
+        header_menu.classList.remove('solid');
     } else {
         // 上滑：實心
         header.classList.add('solid');
         header.classList.remove('transparent');
+        header_menu.classList.add('solid');
+        header_menu.classList.remove('transparent');
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;

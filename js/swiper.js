@@ -27,13 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // 教練證照輪播初始化
     if (document.querySelector('.coach-cert-swiper')) {
         new Swiper('.coach-cert-swiper', {
-        loop: false,
+        loop: true,
         speed: 800,
         spaceBetween: 16,
         slidesPerView: 1,
         autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
+            delay: 20000, //5000ms = 5s 五秒
+            disableOnInteraction: true, //使用者操作（例如點擊箭頭）後，停止自動播放，true ➜ 會停止（需要手動播放）
         },
         navigation: {
             nextEl: '.cert-next',
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Studio 環境介紹輪播（僅小螢幕使用）
     if (document.querySelector('.studio-swiper')) {
         new Swiper('.studio-swiper', {
-            loop: false,
+            loop: true,
             speed: 800,
             spaceBetween: 16,
             slidesPerView: 'auto',

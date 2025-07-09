@@ -142,31 +142,32 @@
         }
     });
 
-    let lastScrollTop = 0;
+    let lastScroll = 0;
     const header = document.querySelector('.site-header');
     const header_menu = document.querySelector('.menu-header-container');
+    const menuBtn = document.querySelector('.menu-toggle');
     
+    const showTransparentThreshold = 250;    // 何時變透明
 
     window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) {
-        // 下滑：變透明
-        header.classList.add('transparent');
-        header.classList.remove('solid');
-        header_menu.classList.add('transparent');
-        header_menu.classList.remove('solid');
-    } else {
-        // 上滑：實心
-        header.classList.add('solid');
-        header.classList.remove('transparent');
-        header_menu.classList.add('solid');
-        header_menu.classList.remove('transparent');
+    // 判斷選單是否展開
+    const isMenuExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    
+    if (!isMenuExpanded) {
+        if (currentScroll > showTransparentThreshold && currentScroll > lastScroll) {
+            // 向下滾動時變透明
+            header.classList.add('transparent');
+            header_menu.classList.add('transparent');
+        } else if (currentScroll < lastScroll ) {
+            // 向上滾動時恢復不透明
+            header.classList.remove('transparent');
+            header_menu.classList.remove('transparent');
+        }
     }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    
+    lastScroll = currentScroll;
     });
 
-    
-    
 })();

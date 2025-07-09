@@ -64,16 +64,13 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 
 	&.transparent {
 		background-color: rgba(255, 255, 255, 0.6); 
 		backdrop-filter: blur(8px); 
 	}
 
-	&.solid {
-		background-color: rgba(0, 0, 0, 1); 
-		backdrop-filter: none;
-	}
 }
 
 .header-custom-logo {
@@ -157,6 +154,7 @@ body {
 		right: 0;
 		width: 100%;
 		background-color: #333;
+		transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 
 		&>ul {
 			max-width: 1440px;
@@ -173,10 +171,6 @@ body {
 			backdrop-filter: blur(8px); 
 		}
 	
-		&.solid {
-			background-color: rgba(0, 0, 0, 1); 
-			backdrop-filter: none;
-		}
 	}
 }
 

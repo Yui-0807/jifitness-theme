@@ -44,7 +44,7 @@ if ( $query->have_posts() ) {
 ?>
 
 <?php
-// 第二段：非 featured 的 testimonials
+// 非 featured 的 testimonials
 $non_featured_args = array(
     'post_type'      => 'ji-testimonials',
     'posts_per_page' => -1,

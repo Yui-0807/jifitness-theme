@@ -141,6 +141,26 @@
             });
         }
     });
+
+    let lastScrollTop = 0;
+    const header = document.querySelector('.site-header');
+
+    window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // 下滑：變透明
+        header.classList.add('transparent');
+        header.classList.remove('solid');
+    } else {
+        // 上滑：實心
+        header.classList.add('solid');
+        header.classList.remove('transparent');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
     
     
 })();

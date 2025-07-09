@@ -509,7 +509,6 @@ object {
 img {
 	height: auto;
 	max-width: 100%;
-	border-radius: 10px;
 }
 
 figure {
@@ -3210,6 +3209,7 @@ html {
 	-o-object-position: center 25%;
 	   object-position: center 25%;
 	margin-bottom: 24px;
+	border-radius: 10px;
 }
 .widget-area .widget_sticky_posts h3 {
 	margin: 0;
@@ -3277,6 +3277,7 @@ html {
 	   object-fit: cover;
 	-o-object-position: center 40%;
 	   object-position: center 40%;
+	border-radius: 10px;
 }
 .wp-singular .site-main .home-class,
 .wp-singular .site-main .manifesto-section,

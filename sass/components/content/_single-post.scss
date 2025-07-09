@@ -1,6 +1,20 @@
 .wp-singular .site-main {
     background-color: #FBFCF8;
 
+    .post-thumbnail {
+        height: 580px;
+        overflow: hidden;
+        border-radius: 10px;
+    
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+    }
+
     .home-class,
     .manifesto-section,
     .modals,

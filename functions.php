@@ -329,7 +329,11 @@ function ji_excerpt_more () {
 add_filter('excerpt_more', 'ji_excerpt_more');
 
 function ji_excerpt_length( $length ) {
-    return 40; // 顯示 20 個單字，可依需求調整
+	if (is_page( array( 15, 223 ) ) ) {
+		return 100;
+	}else{
+		return 40; 
+	}
 }
 add_filter( 'excerpt_length', 'ji_excerpt_length' );
 
@@ -339,13 +343,4 @@ add_filter( 'excerpt_length', 'ji_excerpt_length' );
 */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
-
-// function ji_register_custom_post_types() {
-//     $args = array(
-//         'public' => true,
-//         'label'  => 'Testimonials'
-//     );
-//     register_post_type( 'ji-testimonials', $args );
-// }
-// add_action( 'init', 'ji_register_custom_post_types' );
 

@@ -115,6 +115,8 @@
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    background: rgba(255, 255, 255, 0.5);
+    
 
     @include mq(tablet-sm) {
         width: initial;
@@ -150,9 +152,13 @@
         flex: 1;
     }
 
-    h2 {
+    h2
+    ,h3 {
         margin-top: 0;
-        color: #4f4f4f;
+        font-size: 1.25rem;
+    }
+    p{
+        margin-bottom: 0;
     }
 
     @include mq(tablet-sm) {
@@ -182,12 +188,14 @@
 
 /* page background
  * =============================== */
-.page-id-223 {
+ .page-id-223 {
     background-image: url('images/circle-bg.png');
     background-color: #FBFCF8;
     background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 
-    .site-main {
+    .site-main{
         background-color: initial;
     }
 }

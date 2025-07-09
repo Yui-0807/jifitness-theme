@@ -33,8 +33,8 @@ function initMap() {
   const parkingIcon = {
     url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
-        <circle cx="20" cy="20" r="20" fill="#0072bc"/>
-        <text x="20" y="26" font-size="20" font-family="Arial" font-weight="bold" fill="white" text-anchor="middle">P</text>
+        <circle cx="20" cy="20" r="20" fill="#FFDE00"/>
+        <text x="20" y="26" font-size="20" font-family="Arial" font-weight="bold" fill="#404040" text-anchor="middle">P</text>
       </svg>
     `),
     scaledSize: new google.maps.Size(32, 32)

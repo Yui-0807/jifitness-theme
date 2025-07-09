@@ -102,57 +102,10 @@ endforeach;
       foreach ( $testimonials as $post ):
         setup_postdata($post);
         $post_id = get_the_ID(); ?>
-        <div class="default-card testimonial-card">
-          <!-- Modal Button -->
-          <label for="modal-<?php echo $post_id; ?>">
-            <?php if (has_post_thumbnail()): ?>
-              <div class="testimonial-card__image">
-                <?php the_post_thumbnail('medium', ['class' => 'w-full h-auto']); ?>
-              </div>
-            <?php endif; ?>
-              <div class="testimonial-card__content">
-                <h3><?php the_title(); ?></h3>
-                <div class="testimonial-card_hashtag">
-                  <?php if( have_rows('testimoniales_hashtag') ):
-                    while( have_rows('testimoniales_hashtag') ) : the_row();
-                      $hashtag = get_sub_field('hashtag');
-                      if( $hashtag ): ?>
-                        <a class="hashtag" href="<?php echo esc_url($hashtag['url']); ?>">
-                          <?php echo esc_html($hashtag['title']); ?>
-                        </a>
-                      <?php endif;
-                    endwhile;
-                  endif; ?>
-                </div>
-                <?php the_excerpt(); ?>
-              </div>
-          </label>
-        </div>
-        <!-- Modal Content -->
-        <input type="checkbox" id="modal-<?php echo $post_id; ?>" class="modal-state">
-        <div class="modal">
-          <label for="modal-<?php echo $post_id; ?>" class="modal__bg"></label>
-          <div class="modal__inner">
-            <label class="modal__close" for="modal-<?php echo $post_id; ?>"></label>
-            <div class="modal__content">
-              <?php the_post_thumbnail('large'); ?>
-              <h3><?php the_title(); ?></h3>
-              <div class="modal__hashtag">
-              <?php if( have_rows('testimoniales_hashtag') ):
-                while( have_rows('testimoniales_hashtag') ) : the_row();
-                  $hashtag = get_sub_field('hashtag');
-                  if( $hashtag ): ?>
-                    <a class="hashtag" href="<?php echo esc_url($hashtag['url']); ?>">
-                      <?php echo esc_html($hashtag['title']); ?>
-                    </a>
-                  <?php endif;
-                endwhile;
-              endif; ?>
-              </div>
-              <?php the_content(); ?>
-            </div>
-          </div>
-        </div>
+
+        <!-- Modal -->
+        <?php get_template_part( 'template-parts/content', 'testimonials-card' ); ?>
+        
     <?php
       endforeach;
       wp_reset_postdata();?>

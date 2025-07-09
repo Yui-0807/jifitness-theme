@@ -2,7 +2,8 @@
  * =============================== */
 .home-class-heading,
 .home-testimonials-heading,
-.home-blog-heading {
+.home-blog-heading,
+.faq-heading {
   text-align: center;
   font-size: 1.75rem;
   font-weight: bold;
@@ -27,91 +28,70 @@
  * =============================== */
 .faq-section {
   padding: 0 1rem 4rem;
+}
 
-  .faq-heading {
-    text-align: center;
-    margin-top: 0;
-    font-size: 1.75rem;
-    font-weight: bold;
+.faq-accordion {
+  max-width: 800px;
+  margin: 2rem auto 0;
 
-    span {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-top: 0.5rem;
-    }
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
 
-    @include mq(tablet-sm) {
-      font-size: 2.25rem;
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding: 0.5rem 0;
 
-      span {
-        font-size: 1.75rem;
+      .faq-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1f1f1f;
+        text-align: left;
+      }
+
+      .faq-icon {
+        font-size: 1.5rem;
+        color: #07699e;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      &.active .faq-icon {
+        transform: rotate(45deg); // 變減號
       }
     }
-  }
 
-  .faq-accordion {
-    max-width: 800px;
-    margin: 2rem auto 0;
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding-top 0.4s ease;
+      padding-top: 0;
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
 
-    .faq-item {
-      border-bottom: 1px solid #ddd;
-      padding: 1rem 0;
-
-      .faq-question {
-        width: 100%;
-        background: none;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        padding: 0.5rem 0;
-
-        .faq-text {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: #1f1f1f;
-          text-align: left;
-        }
-
-        .faq-icon {
-          font-size: 1.5rem;
-          color: #07699e;
-          transition: transform 0.3s ease;
-          flex-shrink: 0;
-        }
-
-        &.active .faq-icon {
-          transform: rotate(45deg); // 變減號
-        }
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding-top 0.4s ease;
-        padding-top: 0;
-        color: #666;
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-
-      &.open .faq-answer {
-        max-height: 500px;
-        padding-top: 0.75rem;
-      }
+    &.open .faq-answer {
+      max-height: 500px;
+      padding-top: 0.75rem;
     }
   }
 }
 
+
 /* home-banner-section
  * =============================== */
- .home-banner-bg{
+.home-banner-bg {
   position: relative;
- }
+}
 
- .home-banner-wave{
+.home-banner-wave {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -120,25 +100,25 @@
   background-image: url("images/home-banner-wave.webp");
   background-position: 44% bottom;
   z-index: 5;
- }
+}
 
 /* home-manifesto-section
  * =============================== */
- .home-manifesto-bg {
+.home-manifesto-bg {
   background-color: #f5f5f5;
 }
 
 .home-manifesto-bg h3 {
   font-size: 1.5rem;
-  
+
   @include mq(mobile) {
     font-size: 2rem;
   }
- }
+}
 
- .home-manifesto-bg h2{
+.home-manifesto-bg h2 {
   display: none;
- }
+}
 
 .manifesto-text {
   position: static; // 讓 submenu 佔據空間
@@ -152,7 +132,7 @@
 }
 
 .manifesto-btn {
-  width: fit-content;
+  width: 200px;
   margin: 1rem auto;
   padding: 0.75rem 1rem;
   border-radius: 25px;
@@ -319,11 +299,6 @@
   padding-top: 2rem;
   position: relative;
 
-  @include mq(tablet-sm) {
-    padding-left: 25%;
-    padding-right: 2rem;
-  }
-
   @include mq(laptop) {
     padding-top: 0;
     padding-left: 0;
@@ -373,7 +348,7 @@
   gap: 4rem;
   justify-content: center;
 
-  @include mq(tablet-sm) {
+  @include mq(laptop) {
     justify-content: start;
   }
 }
@@ -389,6 +364,7 @@
     opacity: 0.5;
     cursor: pointer;
   }
+
   svg:hover {
     background-color: #075b9a;
     fill: white;

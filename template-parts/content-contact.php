@@ -107,12 +107,21 @@ $contact_image = get_field('contact_image');
     <div class="contact-right">
         <div class="contact-image-wrapper">
             <img src="<?php echo esc_url($contact_image['url']); ?>" alt="<?php echo esc_attr($contact_image['alt'] ?? '聯絡我們圖片'); ?>" />
-            <div class="contact-slogan">
-            <p>HEALTH</p>
-            <p>CONFIDENCE</p>
-            <p>BEAUTY</p>
-            </div>
+
+        <!-- ✅ 小螢幕用的 slogan -->
+        <div class="contact-slogan">
+          <p>HEALTH</p>
+          <p>CONFIDENCE</p>
+          <p>BEAUTY</p>
         </div>
+      </div>
+
+      <!-- ✅ 768px 以上用的新 slogan -->
+      <div class="contact-slogan-below">
+        <p>HEALTH</p>
+        <p>CONFIDENCE</p>
+        <p>BEAUTY</p>
+      </div>
     </div>
 
   </div>

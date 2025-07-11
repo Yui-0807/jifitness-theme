@@ -1,3 +1,4 @@
+<div class="about-deco"></div>
 
 <?php
 $team_members = get_field('team_members');

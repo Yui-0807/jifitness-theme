@@ -13,7 +13,8 @@
           $view_all    = get_sub_field( 'view_all' );
           $image       = get_sub_field( 'image' );
         ?>
-          <div class="swiper-slide banner-content <?php echo $is_homepage ? 'is-front-page' : 'is-inner-page'; ?>">
+          <article class="swiper-slide banner-content <?php echo $is_homepage ? 'is-front-page' : 'is-inner-page'; ?>">
+
             <div class="content-background">
               <?php if ( $heading ) : ?>
                 <h1><?php echo esc_html( $heading ); ?></h1>
@@ -27,9 +28,11 @@
                       <li><?php echo esc_html( trim( $point ) ); ?></li>
                     <?php endforeach; ?>
                   </ul>
+
                 <?php else : ?>
                   <p class="banner-paragraph"><?php echo esc_html( $description ); ?></p>
                 <?php endif; ?>
+
               <?php endif; ?>
 
               <?php
@@ -43,17 +46,18 @@
 
             </div>
 
-            <?php 
-            if ( $image ) {
-              echo wp_get_attachment_image( 
-                $image['id'], 
-                'full', 
-                false, 
-                [ 'alt' => esc_attr( $image['alt'] ) ] 
-              );
-            }
-            ?>
-          </div>
+              <?php 
+                if ( $image ) {
+                  echo wp_get_attachment_image( 
+                    $image['id'], 
+                    'full', 
+                    false, 
+                    [ 'alt' => esc_attr( $image['alt'] ) ] 
+                  );
+                }
+              ?>
+          </article>
+
         <?php endwhile; ?>
       </div>
 

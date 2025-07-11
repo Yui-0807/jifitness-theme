@@ -1,3 +1,5 @@
+<div class="about-deco"></div>
+
 <?php
 $images = get_field('studio_environment_gallery');
 if ($images) : ?>

@@ -1,3 +1,5 @@
+<div class="ji-small-deco"></div>
+
 <?php
 /**
  * Partial template for the Contact section

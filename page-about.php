@@ -14,6 +14,8 @@ get_header();
 <main id="primary" class="site-main">
 
     <?php get_template_part( 'template-parts/content', 'manifesto' ); ?>
+    
+    <div class="ji-small-deco"></div>
 
     <?php
     $core_values = get_field('core_value_group');

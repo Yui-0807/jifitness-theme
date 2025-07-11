@@ -1788,6 +1788,35 @@ body {
 	max-height: initial;
 }
 
+.ji-small-deco {
+	background-image: url("images/ji-deco.webp");
+	padding: 3rem;
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: right 15% bottom 0%;
+}
+@media (min-width: 30em) {
+	.ji-small-deco {
+		background-size: 20%;
+	}
+}
+@media (min-width: 48em) {
+	.ji-small-deco {
+		background-size: 15%;
+	}
+}
+@media (min-width: 64em) {
+	.ji-small-deco {
+		background-size: 10%;
+	}
+}
+@media (min-width: 80em) {
+	.ji-small-deco {
+		background-size: 10%;
+		background-position: right 25% bottom -2%;
+	}
+}
+
 .core-values-section {
 	padding: 1rem;
 	text-align: center;
@@ -1870,9 +1899,42 @@ body {
 	}
 }
 
+.about-deco {
+	background-image: url("images/home-blog-bg.webp");
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-bottom: 15rem;
+	background-size: 85%;
+	background-position: -1% -5%;
+}
+@media (min-width: 48em) {
+	.about-deco {
+		background-position: -1% -5%;
+		background-size: 79%;
+	}
+}
+@media (min-width: 64em) {
+	.about-deco {
+		background-position: -1% -2%;
+		background-size: 63%;
+	}
+}
+@media (min-width: 80em) {
+	.about-deco {
+		background-position: -1% -3%;
+		background-size: 51%;
+	}
+}
+@media (min-width: 90em) {
+	.about-deco {
+		background-position: -1% -10%;
+		background-size: 71%;
+		padding: 12rem;
+	}
+}
+
 .coaches-section {
-	padding: 1.5rem;
-	background-color: #f9f9f9;
+	padding: 0 1.5rem 0;
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: center;
@@ -1912,6 +1974,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 0 0 3rem 0;
 }
 @media (min-width: 48em) {
 	.coach-nav {
@@ -1961,7 +2024,7 @@ body {
 
 .coach-profile {
 	max-width: 900px;
-	margin: 0 auto 4rem;
+	margin: 0 auto 2rem;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
@@ -2446,7 +2509,7 @@ html {
 }
 
 .contact-section {
-	padding: 3rem 0.5rem;
+	padding: 0rem 0.5rem 2rem;
 }
 .contact-section .contact-heading {
 	text-align: center;
@@ -2457,7 +2520,7 @@ html {
 	display: block;
 	font-size: 1.5rem;
 	font-weight: normal;
-	margin-top: 0.5rem;
+	margin: 0.5rem 0 1rem;
 }
 @media (min-width: 48em) {
 	.contact-section .contact-heading {
@@ -2470,16 +2533,26 @@ html {
 .contact-section .contact-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
-	max-width: 1360px;
 	margin: 0 auto;
-	padding-inline: 1rem;
+	gap: 1.5rem;
+	padding-inline: 0.5rem;
 }
 @media (min-width: 48em) {
 	.contact-section .contact-wrapper {
 		flex-direction: row;
 		align-items: flex-start;
-		gap: 1.5rem;
+		padding-inline: 1.5rem;
+	}
+}
+@media (min-width: 64em) {
+	.contact-section .contact-wrapper {
+		padding-inline: 4rem;
+		gap: 1rem;
+	}
+}
+@media (min-width: 80em) {
+	.contact-section .contact-wrapper {
+		padding-inline: 10rem;
 	}
 }
 .contact-section .contact-left {
@@ -2507,6 +2580,11 @@ html {
 	width: 100%;
 	height: auto;
 }
+@media (min-width: 64em) {
+	.contact-section .contact-left .contact-list .contact-item .icon {
+		width: 1.8rem;
+	}
+}
 .contact-section .contact-left .contact-list .contact-item .info span {
 	font-weight: 700;
 	font-size: 1rem;
@@ -2516,6 +2594,11 @@ html {
 	letter-spacing: 0.05em;
 	color: #333;
 }
+@media (min-width: 64em) {
+	.contact-section .contact-left .contact-list .contact-item .info span {
+		font-size: 1.2rem;
+	}
+}
 .contact-section .contact-left .contact-list .contact-item .info p,
 .contact-section .contact-left .contact-list .contact-item .info a {
 	font-size: 0.9rem;
@@ -2524,6 +2607,12 @@ html {
 	color: #000;
 	text-decoration: none;
 }
+@media (min-width: 64em) {
+	.contact-section .contact-left .contact-list .contact-item .info p,
+	.contact-section .contact-left .contact-list .contact-item .info a {
+		font-size: 1.1rem;
+	}
+}
 .contact-section .contact-left .contact-list .contact-item .info .line-qrcode {
 	width: 5rem;
 	margin-top: 0.5rem;
@@ -2531,7 +2620,6 @@ html {
 @media (min-width: 48em) {
 	.contact-section .contact-left {
 		flex: 0 1 40%;
-		padding-right: 0.5rem;
 	}
 }
 .contact-section .contact-right {
@@ -2544,6 +2632,12 @@ html {
 	width: 100%;
 	border-radius: 0 1rem 0 0;
 	display: block;
+}
+@media (min-width: 64em) {
+	.contact-section .contact-right .contact-image-wrapper img {
+		margin: 0 1rem 0 2rem;
+		width: 95%;
+	}
 }
 .contact-section .contact-right .contact-image-wrapper .contact-slogan {
 	position: absolute;
@@ -2575,7 +2669,7 @@ html {
 		display: block;
 		position: relative;
 		padding: 0 1rem 0 0;
-		margin-top: -8rem;
+		margin-top: -5rem;
 		z-index: 2;
 		border-radius: 0 0 1rem 1rem;
 		text-align: right;
@@ -2588,15 +2682,12 @@ html {
 }
 @media (min-width: 48em) and (min-width: 64em) {
 	.contact-section .contact-right .contact-slogan-below {
-		font-size: 3rem;
-		padding: 2.5rem 2rem;
-		margin-top: -4rem;
+		font-size: 4rem;
 	}
 }
 @media (min-width: 48em) and (min-width: 80em) {
 	.contact-section .contact-right .contact-slogan-below {
-		font-size: 3.5rem;
-		margin-top: -5rem;
+		font-size: 4.5rem;
 	}
 }
 @media (min-width: 48em) {
@@ -2608,16 +2699,6 @@ html {
 	.contact-section .contact-right {
 		flex: 1 1 60%;
 		padding-left: 0.5rem;
-	}
-}
-@media (min-width: 80em) {
-	.contact-section .contact-left .contact-list .contact-item .info span {
-		font-size: 1.125rem;
-	}
-}
-@media (min-width: 90em) {
-	.contact-section .contact-right .contact-slogan-below {
-		font-size: 3.25rem;
 	}
 }
 
@@ -2654,7 +2735,6 @@ html {
 
 .join-us-section {
 	padding: 4rem 1.5rem;
-	background-color: #f9f9f9;
 }
 .join-us-section .container {
 	max-width: 1200px;
@@ -2663,7 +2743,7 @@ html {
 .join-us-section .join-us-content {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 1rem;
 }
 @media (min-width: 64em) {
 	.join-us-section .join-us-content {
@@ -2688,7 +2768,7 @@ html {
 .join-us-section .join-us-content .join-us-text-block {
 	flex: 1 1 50%;
 	text-align: center;
-	padding: 2rem;
+	padding: 0 1rem;
 }
 @media (min-width: 64em) {
 	.join-us-section .join-us-content .join-us-text-block {
@@ -3947,7 +4027,7 @@ html {
 }
 
 .page-small-group section {
-	padding: 1rem 1rem 3rem;
+	padding: 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -4068,7 +4148,6 @@ html {
 	text-align: center;
 	font-size: 1.75rem;
 	font-weight: bold;
-	margin-top: 4rem;
 }
 .page-small-group .training-rates-heading span {
 	display: block;

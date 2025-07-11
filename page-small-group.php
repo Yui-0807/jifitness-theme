@@ -82,9 +82,7 @@ get_header();
     ?>
   </section>
 
-  <section class="mood-wrapper">
-    <?php get_template_part('template-parts/content', 'mood'); ?>
-  </section>
+  <div class="ji-small-deco"></div>
 
   <h2 class="training-rates-heading">課程收費方式<span>Invest in Your Training</span></h2>
     <div class="small-group-table">

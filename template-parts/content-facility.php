@@ -1,5 +1,4 @@
 <?php
-
 $features = get_field('facility_features');
 
 if ($features) :

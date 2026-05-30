@@ -29,10 +29,22 @@
             $line_svg = file_get_contents(get_template_directory() . '/images/line.php');
             
             if($category === 'google-form'){
-                echo '<a href="' . $social_media_links . '" target="_blank" rel="noopener noreferrer">預約諮詢與體驗課</a>';
+                echo '<a 
+                        href="' . $social_media_links . '"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onclick="gtag(\'event\', \'booking_click\');"
+                        >
+                        預約諮詢與體驗課
+                        </a>';
             }
             if($category === 'line'){
-                echo '<a href="' . $social_media_links . '" target="_blank" rel="noopener noreferrer">'. $line_svg . '</a>';
+                echo '<a 
+                        href="' . $social_media_links . '" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onclick="gtag(\'event\', \'line_click\');"
+                        >'. $line_svg . '</a>';
             }
         }
     }?>

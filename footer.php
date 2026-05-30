@@ -73,7 +73,7 @@
 		<hr />
 		
 		<div class="site-info">
-			<p>©2025 Jifitness_Theme</p>
+			<p>©Sailing studio Jean & Marie</p>
 			<?php wp_footer(); ?>
 		</div><!-- .site-info -->
 
